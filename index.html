@@ -100,40 +100,6 @@
     .voice-section aside { border-left: 2px solid var(--accent); padding-left: 16px; min-width: 150px; }
     .voice-section aside span { font-size: 0.75rem; color: var(--accent); font-weight: 700; display: block; }
     
-    .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .region-card {
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 16px;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
-    }
-    .region-card:hover { transform: translateY(-4px); background: var(--bg-card-hover); border-color: var(--accent); }
-    .region-card span { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
-    .region-card b { display: block; font-size: 1.15rem; margin-bottom: 2px; }
-    .region-card small { color: var(--text-sub); font-size: 0.85rem; }
-
-    /* 전체 지역 링크 스크롤 박스 스타일 */
-    .quick-dong-wrapper {
-      margin-top: 30px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 24px;
-    }
-    .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-      max-height: 280px; overflow-y: auto; padding: 12px 8px;
-    }
-    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
-    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
-    .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--text-sub);
-      transition: all 0.2s ease;
-    }
-    .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
-    }
-
     .course-section { background: #050e14; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
     .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .course-card {
@@ -158,7 +124,7 @@
     .review-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
     .review-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; }
 
-    .map-container { max-width: var(--max-w); margin: 0 auto 60px; padding: 0 20px; }
+    .map-container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
     .map-frame {
       width: 100%; height: 360px; border-radius: 16px; overflow: hidden;
       border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -170,6 +136,40 @@
     .faq-list summary { cursor: pointer; font-weight: 700; }
     .faq-list details p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-sub); font-size: 0.9rem; }
     
+    /* 하단 지역 섹션 스타일 */
+    .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .region-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 16px;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .region-card:hover { transform: translateY(-4px); background: var(--bg-card-hover); border-color: var(--accent); }
+    .region-card span { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
+    .region-card b { display: block; font-size: 1.15rem; margin-bottom: 2px; }
+    .region-card small { color: var(--text-sub); font-size: 0.85rem; }
+
+    .quick-dong-wrapper {
+      margin-top: 30px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .quick-dong-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+      max-height: 280px; overflow-y: auto; padding: 12px 8px;
+    }
+    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
+    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .quick-dong-tags a {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--text-sub);
+      transition: all 0.2s ease;
+    }
+    .quick-dong-tags a:hover {
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
+    }
+
     .final-cta { text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, transparent, #050e14); }
     .final-cta h2 { font-size: 2rem; margin: 12px 0; }
     .site-footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color); color: var(--text-sub); font-size: 0.85rem; }
@@ -205,10 +205,10 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <nav class="site-nav">
-      <a href="#areas">지역선택</a>
       <a href="#course">코스·요금</a>
       <a href="#review">이용후기</a>
       <a href="#faq">FAQ</a>
+      <a href="#areas">지역안내</a>
       <a class="nav-call" href="tel:0507-1280-3296">전화 상담</a>
     </nav>
   </header>
@@ -221,7 +221,7 @@
         <p class="hero-lead">서울·경기·인천. 위치와 시간을 먼저 듣고<br>오늘 필요한 힐링 코스를 차분히 맞춥니다.</p>
         <div class="hero-actions">
           <a class="button button--signal" href="tel:0507-1280-3296">전화로 시간 맞추기 <i>↗</i></a>
-          <a class="button button--line" href="#areas">지역 바로가기</a>
+          <a class="button button--line" href="#course">코스·요금 보기</a>
         </div>
         <div class="hero-facts">
           <span><b>24H</b> 상담 창구</span>
@@ -245,12 +245,156 @@
       </div>
     </section>
 
-    <!-- [핵심] 서비스 가능 지역 선택 섹션 -->
-    <section class="section-shell" id="areas">
+    <section class="voice-section">
+      <div class="voice-number">01</div>
+      <p>서울·경기·인천에서 밖으로 다시 나갈 힘보다 조용한 방문이 먼저인 밤. 계신 곳의 위치와 희망 시간을 듣고 최적의 힐링 코스를 제안합니다.</p>
+      <aside><span>OUR MANNER</span><b>짧게 묻고,<br>분명하게 안내합니다.</b></aside>
+    </section>
+
+    <!-- 1. 코스 & 요금 섹션 -->
+    <section class="course-section" id="course">
+      <div class="section-shell">
+        <div class="section-intro">
+          <span>COURSE &amp; PRICE</span>
+          <h2>코스 및 이용 요금</h2>
+          <p>선입금 없는 100% 후불제 안심 케어</p>
+        </div>
+        <div class="course-grid">
+          
+          <article class="course-card">
+            <div class="course-top"><span>01</span><small>DRY</small></div>
+            <h3>건식 힐링 코스</h3>
+            <p>오일 없이 건식 지압과 스트레칭으로 굳은 전신 근육을 시원하게 풀어가는 코스.</p>
+            <dl>
+              <div><dt>60분</dt><dd>60,000원</dd></div>
+              <div><dt>90분</dt><dd>80,000원</dd></div>
+              <div><dt>120분</dt><dd>100,000원</dd></div>
+            </dl>
+          </article>
+
+          <article class="course-card">
+            <div class="course-top"><span>02</span><small>AROMA</small></div>
+            <h3>아로마 힐링 코스</h3>
+            <p>고급 아로마 오일을 사용하여 뭉친 피로를 부드럽게 이완시키는 릴렉싱 케어.</p>
+            <dl>
+              <div><dt>60분</dt><dd>70,000원</dd></div>
+              <div><dt>90분</dt><dd>80,000원</dd></div>
+              <div><dt>120분</dt><dd>100,000원</dd></div>
+            </dl>
+          </article>
+
+          <article class="course-card">
+            <div class="course-top"><span>03</span><small>SWEDISH</small></div>
+            <h3>힐링스웨디시 코스</h3>
+            <p>따뜻한 오일과 부드러운 압으로 림프 순환과 깊은 휴식을 이끄는 감성 테라피.</p>
+            <dl>
+              <div><dt>60분</dt><dd>80,000원</dd></div>
+              <div><dt>90분</dt><dd>100,000원</dd></div>
+              <div><dt>120분</dt><dd>120,000원</dd></div>
+            </dl>
+          </article>
+
+          <article class="course-card course-card--highlight">
+            <div class="course-top"><span>04</span><small>VIP SPECIAL</small></div>
+            <h3>VIP 스페셜 코스</h3>
+            <p>건식의 시원함과 스웨디시의 부드러움을 한 번에 누리는 퀸즈 시그니처 코스.</p>
+            <dl>
+              <div><dt>60분</dt><dd>100,000원</dd></div>
+              <div><dt>90분</dt><dd>120,000원</dd></div>
+              <div><dt>120분</dt><dd>150,000원</dd></div>
+            </dl>
+          </article>
+
+          <article class="course-card course-card--highlight">
+            <div class="course-top"><span>05</span><small>KOREAN CARE</small></div>
+            <h3>한국 관리사 코스</h3>
+            <p>전문적인 실력과 정성을 겸비한 20~30대 한국인 전문 관리사의 프리미엄 케어.</p>
+            <dl>
+              <div><dt>60분</dt><dd>150,000원</dd></div>
+              <div><dt>90분</dt><dd>180,000원</dd></div>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 고객 이용 후기 -->
+    <section class="section-shell" id="review">
+      <div class="section-intro">
+        <span>REAL REVIEWS</span>
+        <h2>실제 고객 이용 후기</h2>
+        <p>퀸즈홈테라피를 직접 이용해 주신 분들의 솔직한 후기입니다.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"야근 끝나고 늦은 새벽에 예약했는데 25분 만에 오셨네요. 선입금 요구도 전혀 없고 관리사분도 너무 친절하게 뭉친 어깨를 다 풀어주셔서 대만족입니다."</p>
+          </div>
+          <div class="review-meta"><span>강남구 직장인 김*우 고객님</span><span>VIP 스페셜 코스</span></div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"출장 와서 호텔에서 처음 이용해봤는데 대기 시간도 짧고 시설 밖으로 안 나가도 되니 너무 편합니다. 스웨디시 코스 진짜 부드럽고 힐링 제대로 했어요."</p>
+          </div>
+          <div class="review-meta"><span>수원 호텔 이용 이*현 고객님</span><span>스웨디시 코스</span></div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"한국 관리사 코스로 받았는데 대화도 잘 통하고 원하는 압 세기에 맞춰 세심하게 케어해주시네요. 내 집에서 편하게 받을 수 있어서 단골 될 것 같습니다."</p>
+          </div>
+          <div class="review-meta"><span>송도 거주 박*준 고객님</span><span>한국 관리사 코스</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FAQ 4개 -->
+    <section class="section-shell" id="faq">
+      <div class="section-intro">
+        <span>FAQ</span>
+        <h2>자주 묻는 질문</h2>
+        <p>상담 전 가장 많이 여쭤보시는 질문 4가지입니다.</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>01. 선입금이나 예약금이 전혀 없나요?</summary>
+          <p>네, 맞습니다. 퀸즈홈테라피는 선입금이나 예약금을 1원도 요구하지 않는 100% 후불제 시스템입니다. 관리사가 계신 곳에 도착한 후 결제하시면 되므로 안심하고 이용하실 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>02. 호텔, 모텔, 오피스텔에서도 이용이 가능한가요?</summary>
+          <p>네, 가능합니다. 자택(아파트·빌라·주택)은 물론 출장지 호텔, 모텔, 오피스텔 등 머무시는 장소의 위치와 방 번호만 말씀해 주시면 신속하게 배정해 드립니다.</p>
+        </details>
+        <details>
+          <summary>03. 예약 후 도착까지 얼마나 걸리나요?</summary>
+          <p>서울·경기·인천 각 거점별로 관리사가 상시 대기하고 있어, 통화 후 평균 25분~35분 내에 빠르게 도착합니다. (도로 사정 및 기상 상황에 따라 약간의 차이가 있을 수 있습니다.)</p>
+        </details>
+        <details>
+          <summary>04. 어떤 코스를 골라야 할지 고민되는데 추천해 주시나요?</summary>
+          <p>강한 압과 스트레칭으로 뭉친 근육을 풀고 싶다면 '건식 힐링', 부드러운 릴렉싱과 스트레스 완화를 원하시면 '아로마'나 '스웨디시', 둘 다 원하시면 'VIP 스페셜'을 추천합니다. 전화 주시면 컨디션에 맞춰 추천해 드립니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 4. 구글 맵 영역 -->
+    <section class="map-container">
+      <div class="section-intro" style="margin-bottom: 20px;">
+        <span>SERVICE AREA MAP</span>
+        <h2>방문 서비스 지역 지도</h2>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=서울,경기,인천&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- 5. [맨 아래로 이동 완료] 서비스 가능 지역 선택 섹션 -->
+    <section class="section-shell" id="areas" style="padding-top: 40px;">
       <div class="section-intro">
         <span>AREA DIRECTORY</span>
-        <h2>서비스 가능 지역</h2>
-        <p>광역 시·도 또는 원하시는 동네를 선택하시면 세부 안내로 이동합니다.</p>
+        <h2>서비스 가능 지역 둘러보기</h2>
+        <p>광역 시·도 또는 원하시는 세부 동네를 선택하시면 상세 페이지로 이동합니다.</p>
       </div>
       
       <!-- 광역 3대 지역 카드 -->
@@ -329,7 +473,7 @@
 <a href="/seoul/songpa/가락동/">서울 가락동</a>
 <a href="/seoul/songpa/문정동/">서울 문정동</a>
 <a href="/seoul/songpa/장지동/">서울 장지동</a>
-<a href="/seoul/songpa/방이드동/">서울 방이드동</a>
+<a href="/seoul/songpa/방이동/">서울 방이동</a>
 <a href="/seoul/songpa/오금동/">서울 오금동</a>
 <a href="/seoul/songpa/거여동/">서울 거여동</a>
 <a href="/seoul/songpa/마천동/">서울 마천동</a>
@@ -339,22 +483,14 @@
 <a href="/seoul/mapo/용강동/">서울 용강동</a>
 <a href="/seoul/mapo/대흥동/">서울 대흥동</a>
 <a href="/seoul/mapo/염리동/">서울 염리동</a>
-<a href="/seoul/mapo/노고산동/">서울 노고산동</a>
 <a href="/seoul/mapo/신수동/">서울 신수동</a>
-<a href="/seoul/mapo/현석동/">서울 현석동</a>
-<a href="/seoul/mapo/구수동/">서울 구수동</a>
-<a href="/seoul/mapo/창전동/">서울 창전동</a>
 <a href="/seoul/mapo/상수동/">서울 상수동</a>
-<a href="/seoul/mapo/하중동/">서울 하중동</a>
-<a href="/seoul/mapo/신정동/">서울 신정동</a>
-<a href="/seoul/mapo/당인동/">서울 당인동</a>
 <a href="/seoul/mapo/서교동/">서울 서교동</a>
 <a href="/seoul/mapo/동교동/">서울 동교동</a>
 <a href="/seoul/mapo/합정동/">서울 합정동</a>
 <a href="/seoul/mapo/망원동/">서울 망원동</a>
 <a href="/seoul/mapo/연남동/">서울 연남동</a>
 <a href="/seoul/mapo/성산동/">서울 성산동</a>
-<a href="/seoul/mapo/중동/">서울 중동</a>
 <a href="/seoul/mapo/상암동/">서울 상암동</a>
 <a href="/seoul/yeongdeungpo/영등포동/">서울 영등포동</a>
 <a href="/seoul/yeongdeungpo/여의도동/">서울 여의도동</a>
@@ -364,6 +500,20 @@
 <a href="/seoul/yeongdeungpo/양평동/">서울 양평동</a>
 <a href="/seoul/yeongdeungpo/신길동/">서울 신길동</a>
 <a href="/seoul/yeongdeungpo/대림동/">서울 대림동</a>
+<a href="/seoul/yongsan/이태원동/">서울 이태원동</a>
+<a href="/seoul/yongsan/한남동/">서울 한남동</a>
+<a href="/seoul/yongsan/한강로동/">서울 한강로동</a>
+<a href="/seoul/yongsan/용산동/">서울 용산동</a>
+<a href="/seoul/yongsan/후암동/">서울 후암동</a>
+<a href="/seoul/yongsan/원효로동/">서울 원효로동</a>
+<a href="/seoul/junggu/명동/">서울 명동</a>
+<a href="/seoul/junggu/을지로동/">서울 을지로동</a>
+<a href="/seoul/junggu/신당동/">서울 신당동</a>
+<a href="/seoul/junggu/다산동/">서울 다산동</a>
+<a href="/seoul/junggu/약수동/">서울 약수동</a>
+<a href="/seoul/junggu/청구동/">서울 청구동</a>
+<a href="/seoul/junggu/황학동/">서울 황학동</a>
+<a href="/seoul/junggu/중림동/">서울 중림동</a>
 <a href="/gyeonggi/suwon/인계동/">경기 인계동</a>
 <a href="/gyeonggi/suwon/매탄동/">경기 매탄동</a>
 <a href="/gyeonggi/suwon/원천동/">경기 원천동</a>
@@ -373,7 +523,6 @@
 <a href="/gyeonggi/suwon/곡반정동/">경기 곡반정동</a>
 <a href="/gyeonggi/suwon/권선동/">경기 권선동</a>
 <a href="/gyeonggi/suwon/세류동/">경기 세류동</a>
-<a href="/gyeonggi/suwon/고등동/">경기 고등동</a>
 <a href="/gyeonggi/suwon/화서동/">경기 화서동</a>
 <a href="/gyeonggi/suwon/정자동/">경기 정자동</a>
 <a href="/gyeonggi/suwon/조원동/">경기 조원동</a>
@@ -394,7 +543,6 @@
 <a href="/gyeonggi/seongnam/신흥동/">경기 신흥동</a>
 <a href="/gyeonggi/seongnam/태평동/">경기 태평동</a>
 <a href="/gyeonggi/seongnam/상대원동/">경기 상대원동</a>
-<a href="/gyeonggi/seongnam/중원동/">경기 중원동</a>
 <a href="/gyeonggi/goyang/일산동/">경기 일산동</a>
 <a href="/gyeonggi/goyang/주엽동/">경기 주엽동</a>
 <a href="/gyeonggi/goyang/탄현동/">경기 탄현동</a>
@@ -416,6 +564,34 @@
 <a href="/gyeonggi/hwaseong/봉담읍/">경기 봉담읍</a>
 <a href="/gyeonggi/hwaseong/향남읍/">경기 향남읍</a>
 <a href="/gyeonggi/hwaseong/남양읍/">경기 남양읍</a>
+<a href="/gyeonggi/yongin/풍덕천동/">경기 풍덕천동</a>
+<a href="/gyeonggi/yongin/신봉동/">경기 신봉동</a>
+<a href="/gyeonggi/yongin/죽전동/">경기 죽전동</a>
+<a href="/gyeonggi/yongin/동천동/">경기 동천동</a>
+<a href="/gyeonggi/yongin/상현동/">경기 상현동</a>
+<a href="/gyeonggi/yongin/성복동/">경기 성복동</a>
+<a href="/gyeonggi/yongin/기흥동/">경기 기흥동</a>
+<a href="/gyeonggi/yongin/신갈동/">경기 신갈동</a>
+<a href="/gyeonggi/yongin/구갈동/">경기 구갈동</a>
+<a href="/gyeonggi/yongin/보정동/">경기 보정동</a>
+<a href="/gyeonggi/yongin/동백동/">경기 동백동</a>
+<a href="/gyeonggi/yongin/처인동/">경기 처인동</a>
+<a href="/gyeonggi/bucheon/중동/">경기 중동</a>
+<a href="/gyeonggi/bucheon/상동/">경기 상동</a>
+<a href="/gyeonggi/bucheon/심곡동/">경기 심곡동</a>
+<a href="/gyeonggi/bucheon/원미동/">경기 원미동</a>
+<a href="/gyeonggi/bucheon/소사동/">경기 소사동</a>
+<a href="/gyeonggi/bucheon/오정동/">경기 오정동</a>
+<a href="/gyeonggi/bucheon/송내동/">경기 송내동</a>
+<a href="/gyeonggi/bucheon/괴안동/">경기 괴안동</a>
+<a href="/gyeonggi/anyang/안양동/">경기 안양동</a>
+<a href="/gyeonggi/anyang/석수동/">경기 석수동</a>
+<a href="/gyeonggi/anyang/박달동/">경기 박달동</a>
+<a href="/gyeonggi/anyang/비산동/">경기 비산동</a>
+<a href="/gyeonggi/anyang/관양동/">경기 관양동</a>
+<a href="/gyeonggi/anyang/평촌동/">경기 평촌동</a>
+<a href="/gyeonggi/anyang/호계동/">경기 호계동</a>
+<a href="/gyeonggi/anyang/범계동/">경기 범계동</a>
 <a href="/incheon/yeonsu/송도동/">인천 송도동</a>
 <a href="/incheon/yeonsu/연수동/">인천 연수동</a>
 <a href="/incheon/yeonsu/청학동/">인천 청학동</a>
@@ -435,6 +611,7 @@
 <a href="/incheon/seogu/원당동/">인천 원당동</a>
 <a href="/incheon/seogu/오류동/">인천 오류동</a>
 <a href="/incheon/seogu/왕길동/">인천 왕길동</a>
+<a href="/incheon/seogu/루원시티/">인천 루원시티</a>
 <a href="/incheon/bupyeong/부평동/">인천 부평동</a>
 <a href="/incheon/bupyeong/십정동/">인천 십정동</a>
 <a href="/incheon/bupyeong/산곡동/">인천 산곡동</a>
@@ -448,151 +625,22 @@
 <a href="/incheon/namdong/만수동/">인천 만수동</a>
 <a href="/incheon/namdong/논현동/">인천 논현동</a>
 <a href="/incheon/namdong/서창동/">인천 서창동</a>
+<a href="/incheon/namdong/도림동/">인천 도림동</a>
+<a href="/incheon/michuhol/주안동/">인천 주안동</a>
+<a href="/incheon/michuhol/도화동/">인천 도화동</a>
+<a href="/incheon/michuhol/학익동/">인천 학익동</a>
+<a href="/incheon/michuhol/용현동/">인천 용현동</a>
+<a href="/incheon/michuhol/숭의동/">인천 숭의동</a>
+<a href="/incheon/michuhol/관교동/">인천 관교동</a>
+<a href="/incheon/michuhol/문학동/">인천 문학동</a>
+<a href="/incheon/junggu/영종동/">인천 영종동</a>
+<a href="/incheon/junggu/운서동/">인천 운서동</a>
+<a href="/incheon/junggu/중산동/">인천 중산동</a>
+<a href="/incheon/junggu/신흥동/">인천 신흥동</a>
+<a href="/incheon/junggu/답동/">인천 답동</a>
+<a href="/incheon/junggu/북성동/">인천 북성동</a>
+<a href="/incheon/junggu/신포동/">인천 신포동</a>
         </div>
-      </div>
-    </section>
-
-    <section class="voice-section">
-      <div class="voice-number">01</div>
-      <p>서울·경기·인천에서 밖으로 다시 나갈 힘보다 조용한 방문이 먼저인 밤. 계신 곳의 위치와 희망 시간을 듣고 최적의 힐링 코스를 제안합니다.</p>
-      <aside><span>OUR MANNER</span><b>짧게 묻고,<br>분명하게 안내합니다.</b></aside>
-    </section>
-
-    <!-- 코스 & 요금 섹션 -->
-    <section class="course-section" id="course">
-      <div class="section-shell">
-        <div class="section-intro">
-          <span>COURSE &amp; PRICE</span>
-          <h2>코스 및 이용 요금</h2>
-          <p>선입금 없는 100% 후불제 안심 케어</p>
-        </div>
-        <div class="course-grid">
-          
-          <article class="course-card">
-            <div class="course-top"><span>01</span><small>DRY</small></div>
-            <h3>건식 힐링 코스</h3>
-            <p>오일 없이 건식 지압과 스트레칭으로 굳은 전신 근육을 시원하게 풀어가는 코스.</p>
-            <dl>
-              <div><dt>60분</dt><dd>60,000원</dd></div>
-              <div><dt>90분</dt><dd>80,000원</dd></div>
-              <div><dt>120분</dt><dd>100,000원</dd></div>
-            </dl>
-          </article>
-
-          <article class="course-card">
-            <div class="course-top"><span>02</span><small>AROMA</small></div>
-            <h3>아로마 힐링 코스</h3>
-            <p>고급 아로마 오일을 사용하여 뭉친 피로를 부드럽게 이완시키는 릴렉싱 케어.</p>
-            <dl>
-              <div><dt>60분</dt><dd>70,000원</dd></div>
-              <div><dt>90분</dt><dd>80,000원</dd></div>
-              <div><dt>120분</dt><dd>100,000원</dd></div>
-            </dl>
-          </article>
-
-          <article class="course-card">
-            <div class="course-top"><span>03</span><small>SWEDISH</small></div>
-            <h3>힐링스웨디시 코스</h3>
-            <p>따뜻한 오일과 부드러운 압으로 림프 순환과 깊은 휴식을 이끄는 감성 테라피.</p>
-            <dl>
-              <div><dt>60분</dt><dd>80,000원</dd></div>
-              <div><dt>90분</dt><dd>100,000원</dd></div>
-              <div><dt>120분</dt><dd>120,000원</dd></div>
-            </dl>
-          </article>
-
-          <article class="course-card course-card--highlight">
-            <div class="course-top"><span>04</span><small>VIP SPECIAL</small></div>
-            <h3>VIP 스페셜 코스</h3>
-            <p>건식의 시원함과 스웨디시의 부드러움을 한 번에 누리는 퀸즈 시그니처 코스.</p>
-            <dl>
-              <div><dt>60분</dt><dd>100,000원</dd></div>
-              <div><dt>90분</dt><dd>120,000원</dd></div>
-              <div><dt>120분</dt><dd>150,000원</dd></div>
-            </dl>
-          </article>
-
-          <article class="course-card course-card--highlight">
-            <div class="course-top"><span>05</span><small>KOREAN CARE</small></div>
-            <h3>한국 관리사 코스</h3>
-            <p>전문적인 실력과 정성을 겸비한 20~30대 한국인 전문 관리사의 프리미엄 케어.</p>
-            <dl>
-              <div><dt>60분</dt><dd>150,000원</dd></div>
-              <div><dt>90분</dt><dd>180,000원</dd></div>
-            </dl>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 고객 이용 후기 -->
-    <section class="section-shell" id="review">
-      <div class="section-intro">
-        <span>REAL REVIEWS</span>
-        <h2>실제 고객 이용 후기</h2>
-        <p>퀸즈홈테라피를 직접 이용해 주신 분들의 솔직한 후기입니다.</p>
-      </div>
-      <div class="review-grid">
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p>"야근 끝나고 늦은 새벽에 예약했는데 25분 만에 오셨네요. 선입금 요구도 전혀 없고 관리사분도 너무 친절하게 뭉친 어깨를 다 풀어주셔서 대만족입니다."</p>
-          </div>
-          <div class="review-meta"><span>강남구 직장인 김*우 고객님</span><span>VIP 스페셜 코스</span></div>
-        </div>
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p>"출장 와서 호텔에서 처음 이용해봤는데 대기 시간도 짧고 시설 밖으로 안 나가도 되니 너무 편합니다. 스웨디시 코스 진짜 부드럽고 힐링 제대로 했어요."</p>
-          </div>
-          <div class="review-meta"><span>수원 호텔 이용 이*현 고객님</span><span>스웨디시 코스</span></div>
-        </div>
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p>"한국 관리사 코스로 받았는데 대화도 잘 통하고 원하는 압 세기에 맞춰 세심하게 케어해주시네요. 내 집에서 편하게 받을 수 있어서 단골 될 것 같습니다."</p>
-          </div>
-          <div class="review-meta"><span>송도 거주 박*준 고객님</span><span>한국 관리사 코스</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ 4개 -->
-    <section class="section-shell" id="faq">
-      <div class="section-intro">
-        <span>FAQ</span>
-        <h2>자주 묻는 질문</h2>
-        <p>상담 전 가장 많이 여쭤보시는 질문 4가지입니다.</p>
-      </div>
-      <div class="faq-list">
-        <details open>
-          <summary>01. 선입금이나 예약금이 전혀 없나요?</summary>
-          <p>네, 맞습니다. 퀸즈홈테라피는 선입금이나 예약금을 1원도 요구하지 않는 100% 후불제 시스템입니다. 관리사가 계신 곳에 도착한 후 결제하시면 되므로 안심하고 이용하실 수 있습니다.</p>
-        </details>
-        <details>
-          <summary>02. 호텔, 모텔, 오피스텔에서도 이용이 가능한가요?</summary>
-          <p>네, 가능합니다. 자택(아파트·빌라·주택)은 물론 출장지 호텔, 모텔, 오피스텔 등 머무시는 장소의 위치와 방 번호만 말씀해 주시면 신속하게 배정해 드립니다.</p>
-        </details>
-        <details>
-          <summary>03. 예약 후 도착까지 얼마나 걸리나요?</summary>
-          <p>서울·경기·인천 각 거점별로 관리사가 상시 대기하고 있어, 통화 후 평균 25분~35분 내에 빠르게 도착합니다. (도로 사정 및 기상 상황에 따라 약간의 차이가 있을 수 있습니다.)</p>
-        </details>
-        <details>
-          <summary>04. 어떤 코스를 골라야 할지 고민되는데 추천해 주시나요?</summary>
-          <p>강한 압과 스트레칭으로 뭉친 근육을 풀고 싶다면 '건식 힐링', 부드러운 릴렉싱과 스트레스 완화를 원하시면 '아로마'나 '스웨디시', 둘 다 원하시면 'VIP 스페셜'을 추천합니다. 전화 주시면 컨디션에 맞춰 추천해 드립니다.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- 구글 맵 영역 -->
-    <section class="map-container">
-      <div class="section-intro" style="margin-bottom: 20px;">
-        <span>SERVICE AREA MAP</span>
-        <h2>방문 서비스 지역 안내</h2>
-      </div>
-      <div class="map-frame">
-        <iframe src="https://maps.google.com/maps?q=서울,경기,인천&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
       </div>
     </section>
 

@@ -86,7 +86,28 @@
     .course-card dl div dd { font-weight: 700; color: var(--accent); }
     .course-card--highlight { border-color: rgba(255, 122, 24, 0.4); background: linear-gradient(145deg, #132f45, #0e2333); }
 
-    /* 지역 이동 박스 및 태그 */
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .review-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .review-stars { color: #ffb703; font-size: 0.95rem; margin-bottom: 10px; }
+    .review-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
+    .review-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; }
+
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-list details { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px 20px; }
+    .faq-list summary { cursor: pointer; font-weight: 700; }
+    .faq-list details p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-sub); font-size: 0.9rem; }
+
+    .map-container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .map-frame {
+      width: 100%; height: 340px; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
+
+    /* 하단 다른 지역 이동 박스 및 태그 */
     .area-nav-box {
       background: var(--bg-card); border: 1px solid var(--border-color);
       border-radius: 16px; padding: 30px 20px; text-align: center; margin-top: 20px;
@@ -112,30 +133,6 @@
     .quick-dong-tags a:hover {
       background: var(--accent-gradient); color: #fff; border-color: transparent;
     }
-
-    /* 이용 후기 */
-    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .review-card {
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .review-stars { color: #ffb703; font-size: 0.95rem; margin-bottom: 10px; }
-    .review-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
-    .review-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; }
-
-    /* FAQ */
-    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    .faq-list details { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px 20px; }
-    .faq-list summary { cursor: pointer; font-weight: 700; }
-    .faq-list details p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-sub); font-size: 0.9rem; }
-
-    /* 지도 */
-    .map-container { max-width: var(--max-w); margin: 0 auto 60px; padding: 0 20px; }
-    .map-frame {
-      width: 100%; height: 340px; border-radius: 16px; overflow: hidden;
-      border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
     .site-footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.85rem; }
     .contact-dock {
@@ -194,7 +191,7 @@
       </div>
     </section>
 
-    <!-- 코스 & 요금 섹션 -->
+    <!-- 1. 코스 & 요금 섹션 -->
     <section class="course-section">
       <div class="section-shell">
         <div class="section-intro">
@@ -256,27 +253,7 @@
       </div>
     </section>
 
-    <!-- [핵심] 다른 지역 이동 네비게이션 섹션 -->
-    <section class="section-shell">
-      <div class="section-intro">
-        <span>OTHER AREAS</span>
-        <h2>수도권 다른 지역 이동하기</h2>
-        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
-      </div>
-      <div class="area-nav-box">
-        <div class="area-nav-btns">
-          <a href="/seoul/">🏙️ 서울 전체보기</a>
-          <a href="/gyeonggi/">🌳 경기 전체보기</a>
-          <a href="/incheon/">🌊 인천 전체보기</a>
-        </div>
-        <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
-        <div class="quick-dong-tags">
-          {{REGION_LINKS}}
-        </div>
-      </div>
-    </section>
-
-    <!-- 지역 맞춤 이용 후기 -->
+    <!-- 2. 지역 맞춤 이용 후기 -->
     <section class="section-shell">
       <div class="section-intro">
         <span>{{REGION_NAME}} REVIEWS</span>
@@ -300,7 +277,7 @@
       </div>
     </section>
 
-    <!-- 지역 맞춤 FAQ -->
+    <!-- 3. 지역 맞춤 FAQ -->
     <section class="section-shell">
       <div class="section-intro">
         <span>FAQ</span>
@@ -326,7 +303,7 @@
       </div>
     </section>
 
-    <!-- 동적 지역 구글 지도 영역 -->
+    <!-- 4. 동적 지역 구글 지도 영역 -->
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>LOCATION MAP</span>
@@ -334,6 +311,26 @@
       </div>
       <div class="map-frame">
         <iframe src="https://maps.google.com/maps?q={{REGION_NAME}}&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- 5. [맨 아래로 이동 완료] 다른 지역 이동 네비게이션 섹션 -->
+    <section class="section-shell" style="padding-top: 40px;">
+      <div class="section-intro">
+        <span>OTHER AREAS</span>
+        <h2>수도권 다른 지역 이동하기</h2>
+        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
+      </div>
+      <div class="area-nav-box">
+        <div class="area-nav-btns">
+          <a href="/seoul/">🏙️ 서울 전체보기</a>
+          <a href="/gyeonggi/">🌳 경기 전체보기</a>
+          <a href="/incheon/">🌊 인천 전체보기</a>
+        </div>
+        <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
+        <div class="quick-dong-tags">
+          {{REGION_LINKS}}
+        </div>
       </div>
     </section>
 
