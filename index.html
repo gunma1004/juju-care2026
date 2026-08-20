@@ -100,6 +100,30 @@
     .voice-section aside { border-left: 2px solid var(--accent); padding-left: 16px; min-width: 150px; }
     .voice-section aside span { font-size: 0.75rem; color: var(--accent); font-weight: 700; display: block; }
     
+    /* 지역 바로가기 카드 & 태그 버튼 */
+    .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .region-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 16px;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .region-card:hover { transform: translateY(-4px); background: var(--bg-card-hover); border-color: var(--accent); }
+    .region-card span { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
+    .region-card b { display: block; font-size: 1.15rem; margin-bottom: 2px; }
+    .region-card small { color: var(--text-sub); font-size: 0.85rem; }
+
+    .quick-dong-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 24px;
+    }
+    .quick-dong-tags a {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+    .quick-dong-tags a:hover {
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
+    }
+
     .course-section { background: #050e14; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
     .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .course-card {
@@ -115,7 +139,6 @@
     .course-card dl div dd { font-weight: 700; color: var(--accent); }
     .course-card--highlight { border-color: rgba(255, 122, 24, 0.4); background: linear-gradient(145deg, #132f45, #0e2333); }
 
-    /* 이용 후기 섹션 스타일 */
     .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .review-card {
       background: var(--bg-card); border: 1px solid var(--border-color);
@@ -125,17 +148,13 @@
     .review-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
     .review-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; }
 
-    /* 구글 맵 섹션 스타일 */
-    .map-container {
-      max-width: var(--max-w); margin: 0 auto 60px; padding: 0 20px;
-    }
+    .map-container { max-width: var(--max-w); margin: 0 auto 60px; padding: 0 20px; }
     .map-frame {
       width: 100%; height: 360px; border-radius: 16px; overflow: hidden;
       border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
-    /* FAQ 섹션 */
     .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
     .faq-list details { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px 20px; }
     .faq-list summary { cursor: pointer; font-weight: 700; }
@@ -176,6 +195,7 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <nav class="site-nav">
+      <a href="#areas">지역선택</a>
       <a href="#course">코스·요금</a>
       <a href="#review">이용후기</a>
       <a href="#faq">FAQ</a>
@@ -191,7 +211,7 @@
         <p class="hero-lead">서울·경기·인천. 위치와 시간을 먼저 듣고<br>오늘 필요한 힐링 코스를 차분히 맞춥니다.</p>
         <div class="hero-actions">
           <a class="button button--signal" href="tel:0507-1280-3296">전화로 시간 맞추기 <i>↗</i></a>
-          <a class="button button--line" href="#course">코스·요금 보기</a>
+          <a class="button button--line" href="#areas">지역 바로가기</a>
         </div>
         <div class="hero-facts">
           <span><b>24H</b> 상담 창구</span>
@@ -212,6 +232,51 @@
           <p>선입금·예약금 일체 없음! 도착 후 결제로 편안하게 이용하세요.</p>
         </div>
         <a href="tel:0507-1280-3296" class="promo-banner__btn">지금 예약 문의 ↗</a>
+      </div>
+    </section>
+
+    <!-- [핵심] 서비스 가능 지역 선택 섹션 (누르는 곳) -->
+    <section class="section-shell" id="areas">
+      <div class="section-intro">
+        <span>AREA DIRECTORY</span>
+        <h2>서비스 가능 지역</h2>
+        <p>원하시는 시·도 또는 주요 동네를 선택하시면 세부 안내로 이동합니다.</p>
+      </div>
+      
+      <!-- 광역 3대 지역 카드 -->
+      <div class="region-grid">
+        <a class="region-card" href="/seoul/">
+          <span>01</span>
+          <div><b>서울 지역</b><small>강남·서초·송파·마포 등 25개 구 전역</small></div>
+        </a>
+        <a class="region-card" href="/gyeonggi/">
+          <span>02</span>
+          <div><b>경기 지역</b><small>수원·성남·용인·고양·화성 등 31개 시·군</small></div>
+        </a>
+        <a class="region-card" href="/incheon/">
+          <span>03</span>
+          <div><b>인천 지역</b><small>송도·청라·부평·구월·미추홀 등 전지역</small></div>
+        </a>
+      </div>
+
+      <!-- 주요 핫플레이스 동네 빠른 바로가기 버튼들 -->
+      <div style="margin-top: 30px; text-align: center;">
+        <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 12px;">주요 빠른 배정 핫플레이스 동네</p>
+        <div class="quick-dong-tags">
+          <a href="/seoul/gangnam/역삼동/">강남 역삼동</a>
+          <a href="/seoul/gangnam/논현동/">강남 논현동</a>
+          <a href="/seoul/seocho/서초동/">서초 서초동</a>
+          <a href="/seoul/songpa/잠실동/">송파 잠실동</a>
+          <a href="/seoul/mapo/서교동/">마포 서교동</a>
+          <a href="/seoul/yongsan/이태원동/">용산 이태원동</a>
+          <a href="/gyeonggi/suwon/인계동/">수원 인계동</a>
+          <a href="/gyeonggi/seongnam/분당동/">성남 분당동</a>
+          <a href="/gyeonggi/goyang/일산동/">고양 일산동</a>
+          <a href="/gyeonggi/hwaseong/동탄동/">화성 동탄동</a>
+          <a href="/incheon/yeonsu/송도동/">인천 송도동</a>
+          <a href="/incheon/seogu/청라동/">인천 청라동</a>
+          <a href="/incheon/bupyeong/부평동/">인천 부평동</a>
+        </div>
       </div>
     </section>
 
@@ -289,7 +354,7 @@
       </div>
     </section>
 
-    <!-- 고객 생생 이용 후기 -->
+    <!-- 고객 이용 후기 -->
     <section class="section-shell" id="review">
       <div class="section-intro">
         <span>REAL REVIEWS</span>
@@ -321,7 +386,7 @@
       </div>
     </section>
 
-    <!-- FAQ 4개 -->
+    <!-- FAQ -->
     <section class="section-shell" id="faq">
       <div class="section-intro">
         <span>FAQ</span>
@@ -348,7 +413,7 @@
       </div>
     </section>
 
-    <!-- 구글 맵 영역 (메인: 수도권 전역) -->
+    <!-- 구글 맵 -->
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>SERVICE AREA MAP</span>
