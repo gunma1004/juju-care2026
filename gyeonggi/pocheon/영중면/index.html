@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>포천시 영중면출장마사지 | 24H 연중무휴 안심출장</title>
-  <meta name="description" content="영중면 인근 어디든 빠르게 방문하는 프리미엄 홈타이 케어. 정통 타이, 고급 아로마, 스페셜 힐링 코스까지 취향에 맞춰 선택 가능합니다. 원하는 시간과 장소만 말씀해 주시면 차분하고 빠른 일정으로 맞춰드립니다.">
+  <title>경기 영중면 출장마사지 | 퀸즈홈테라피 24시</title>
+  <meta name="description" content="경기 포천시 영중면 24시간 출장마사지 퀸즈홈테라피.">
   <style>
     :root {
       --bg-main: #08151f;
@@ -40,8 +40,16 @@
     .section-intro h2 { font-size: 1.8rem; font-weight: 800; margin: 8px 0; }
     .section-intro p { color: var(--text-sub); }
     
+    /* 빵부스러기(Breadcrumb) 경로 네비게이션 */
+    .breadcrumbs {
+      max-width: var(--max-w); margin: 16px auto 0; padding: 0 20px;
+      display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-sub);
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .breadcrumbs span { color: rgba(255,255,255,0.3); }
+
     .home-hero {
-      max-width: var(--max-w); margin: 0 auto; padding: 60px 20px 40px;
+      max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 40px;
       display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px;
     }
     .hero-kicker { color: var(--accent); font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
@@ -86,31 +94,6 @@
     .course-card dl div dd { font-weight: 700; color: var(--accent); }
     .course-card--highlight { border-color: rgba(255, 122, 24, 0.4); background: linear-gradient(145deg, #132f45, #0e2333); }
 
-    /* 지역 이동 박스 및 태그 */
-    .area-nav-box {
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 16px; padding: 30px 20px; text-align: center; margin-top: 20px;
-    }
-    .area-nav-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .area-nav-btns a {
-      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);
-      padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
-    }
-    .area-nav-btns a:hover { background: var(--accent-gradient); color: #fff; }
-
-    .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-    }
-    .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-sub);
-      transition: all 0.2s ease;
-    }
-    .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent;
-    }
-
-    /* 이용 후기 */
     .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .review-card {
       background: var(--bg-card); border: 1px solid var(--border-color);
@@ -120,19 +103,35 @@
     .review-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
     .review-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; }
 
-    /* FAQ */
     .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
     .faq-list details { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px 20px; }
     .faq-list summary { cursor: pointer; font-weight: 700; }
     .faq-list details p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-sub); font-size: 0.9rem; }
 
-    /* 지도 */
-    .map-container { max-width: var(--max-w); margin: 0 auto 60px; padding: 0 20px; }
+    .map-container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
     .map-frame {
       width: 100%; height: 340px; border-radius: 16px; overflow: hidden;
       border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
+
+    /* 단계별 동네 선택 영역 (스크롤 없이 깔끔하게 배치) */
+    .area-nav-box {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 16px; padding: 30px 24px; text-align: center; margin-top: 20px;
+    }
+    .area-nav-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: #fff; }
+    .quick-dong-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    .quick-dong-tags a {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+    .quick-dong-tags a:hover {
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
+    }
 
     .site-footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.85rem; }
     .contact-dock {
@@ -150,7 +149,7 @@
     .contact-dock__btn--sms { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
     
     @media (max-width: 768px) {
-      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; }
       .promo-banner__inner { flex-direction: column; text-align: center; }
     }
   </style>
@@ -162,17 +161,22 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <div class="header-links">
-      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 홈으로</a>
+      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 메인 홈으로</a>
       <a class="button" style="padding: 6px 14px; font-size: 0.85rem;" href="tel:0507-1280-3296">전화상담</a>
     </div>
   </header>
+
+  <!-- 빵부스러기 경로 안내 -->
+  <nav class="breadcrumbs">
+    <a href="/">홈</a> <span>&gt;</span> <a href="/gyeonggi/">경기</a> <span>&gt;</span> <a href="/gyeonggi/pocheon/">포천시</a> <span>&gt;</span> 영중면
+  </nav>
 
   <main>
     <section class="home-hero">
       <div class="hero-copy">
         <p class="hero-kicker">포천시 영중면 출장마사지 · 퀸즈홈테라피</p>
         <h1><span>포천시 영중면에서</span><br><span><em>머무는 곳까지</em></span></h1>
-        <p class="hero-lead">영중면 전지역 자택, 호텔, 오피스텔 어디든 30분 내 신속 방문을 약속드립니다.</p>
+        <p class="hero-lead">영중면 어디서나 머무시는 곳으로 25~35분 내에 빠르게 방문합니다.</p>
         <a class="button" href="tel:0507-1280-3296">전화로 시간 맞추기 <i>↗</i></a>
       </div>
       <div class="hero-media">
@@ -253,35 +257,6 @@
       </div>
     </section>
 
-    <!-- [핵심 추가] 다른 지역 바로가기 네비게이션 섹션 (누르는 곳) -->
-    <section class="section-shell">
-      <div class="section-intro">
-        <span>OTHER AREAS</span>
-        <h2>수도권 다른 지역 이동하기</h2>
-        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
-      </div>
-      <div class="area-nav-box">
-        <div class="area-nav-btns">
-          <a href="/seoul/">🏙️ 서울 전체보기</a>
-          <a href="/gyeonggi/">🌳 경기 전체보기</a>
-          <a href="/incheon/">🌊 인천 전체보기</a>
-        </div>
-        <div class="quick-dong-tags">
-          <a href="/seoul/gangnam/역삼동/">강남 역삼동</a>
-          <a href="/seoul/gangnam/논현동/">강남 논현동</a>
-          <a href="/seoul/seocho/서초동/">서초 서초동</a>
-          <a href="/seoul/songpa/잠실동/">송파 잠실동</a>
-          <a href="/seoul/mapo/서교동/">마포 서교동</a>
-          <a href="/gyeonggi/suwon/인계동/">수원 인계동</a>
-          <a href="/gyeonggi/seongnam/분당동/">성남 분당동</a>
-          <a href="/gyeonggi/goyang/일산동/">고양 일산동</a>
-          <a href="/gyeonggi/hwaseong/동탄동/">화성 동탄동</a>
-          <a href="/incheon/yeonsu/송도동/">인천 송도동</a>
-          <a href="/incheon/seogu/청라동/">인천 청라동</a>
-        </div>
-      </div>
-    </section>
-
     <!-- 지역 맞춤 이용 후기 -->
     <section class="section-shell">
       <div class="section-intro">
@@ -340,6 +315,33 @@
       </div>
       <div class="map-frame">
         <iframe src="https://maps.google.com/maps?q=포천시 영중면&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- [핵심] 해당 구/지역 맞춤 동네 네비게이션 -->
+    <section class="section-shell" style="padding-top: 40px;">
+      <div class="area-nav-box">
+        <div class="area-nav-title">📍 포천시 인근 동네 둘러보기</div>
+        <div class="quick-dong-tags">
+          <a href="/gyeonggi/pocheon/신읍동/">신읍동</a>
+<a href="/gyeonggi/pocheon/어룡동/">어룡동</a>
+<a href="/gyeonggi/pocheon/소흘읍/">소흘읍</a>
+<a href="/gyeonggi/pocheon/군내면/">군내면</a>
+<a href="/gyeonggi/pocheon/내촌면/">내촌면</a>
+<a href="/gyeonggi/pocheon/가산면/">가산면</a>
+<a href="/gyeonggi/pocheon/신북면/">신북면</a>
+<a href="/gyeonggi/pocheon/창수면/">창수면</a>
+<a href="/gyeonggi/pocheon/영중면/">영중면</a>
+<a href="/gyeonggi/pocheon/일동면/">일동면</a>
+<a href="/gyeonggi/pocheon/이동면/">이동면</a>
+<a href="/gyeonggi/pocheon/영북면/">영북면</a>
+<a href="/gyeonggi/pocheon/관인면/">관인면</a>
+<a href="/gyeonggi/pocheon/화현면/">화현면</a>
+<a href="/gyeonggi/pocheon/선단동/">선단동</a>
+<a href="/gyeonggi/pocheon/설운동/">설운동</a>
+<a href="/gyeonggi/pocheon/동교동/">동교동</a>
+<a href="/gyeonggi/pocheon/자작동/">자작동</a>
+        </div>
       </div>
     </section>
 
