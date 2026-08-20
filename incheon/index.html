@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>인천 출장마사지 | 퀸즈홈테라피 24시 프리미엄 방문 케어</title>
-  <meta name="description" content="인천 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제, 빠른 배정 안심 힐링 케어.">
+  <title>인천 출장마사지 | 퀸즈홈테라피 24시 프리미엄 케어</title>
+  <meta name="description" content="인천 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제 안심 힐링 케어.">
   <style>
     :root {
       --bg-main: #08151f;
@@ -40,8 +40,16 @@
     .section-intro h2 { font-size: 1.8rem; font-weight: 800; margin: 8px 0; }
     .section-intro p { color: var(--text-sub); }
     
+    /* 빵부스러기(Breadcrumb) 경로 네비게이션 */
+    .breadcrumbs {
+      max-width: var(--max-w); margin: 16px auto 0; padding: 0 20px;
+      display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-sub);
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .breadcrumbs span { color: rgba(255,255,255,0.3); }
+
     .home-hero {
-      max-width: var(--max-w); margin: 0 auto; padding: 60px 20px 40px;
+      max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 40px;
       display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px;
     }
     .hero-kicker { color: var(--accent); font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
@@ -107,31 +115,22 @@
     }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
-    /* 하단 다른 지역 이동 박스 및 태그 */
+    /* 단계별 동네 선택 영역 (스크롤 없이 깔끔하게 배치) */
     .area-nav-box {
       background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 16px; padding: 30px 20px; text-align: center; margin-top: 20px;
+      border-radius: 16px; padding: 30px 24px; text-align: center; margin-top: 20px;
     }
-    .area-nav-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .area-nav-btns a {
-      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);
-      padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
-    }
-    .area-nav-btns a:hover { background: var(--accent-gradient); color: #fff; }
-
+    .area-nav-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: #fff; }
     .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-      max-height: 280px; overflow-y: auto; padding: 12px 8px;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
     }
-    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
-    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
     .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main);
       transition: all 0.2s ease;
     }
     .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent;
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
     }
 
     .site-footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.85rem; }
@@ -150,7 +149,7 @@
     .contact-dock__btn--sms { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
     
     @media (max-width: 768px) {
-      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; }
       .promo-banner__inner { flex-direction: column; text-align: center; }
     }
   </style>
@@ -162,10 +161,15 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <div class="header-links">
-      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 홈으로</a>
+      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 메인 홈으로</a>
       <a class="button" style="padding: 6px 14px; font-size: 0.85rem;" href="tel:0507-1280-3296">전화상담</a>
     </div>
   </header>
+
+  <!-- 빵부스러기 경로 안내 -->
+  <nav class="breadcrumbs">
+    <a href="/">홈</a> <span>&gt;</span> 인천
+  </nav>
 
   <main>
     <section class="home-hero">
@@ -191,7 +195,7 @@
       </div>
     </section>
 
-    <!-- 1. 코스 & 요금 섹션 -->
+    <!-- 코스 & 요금 섹션 -->
     <section class="course-section">
       <div class="section-shell">
         <div class="section-intro">
@@ -253,7 +257,7 @@
       </div>
     </section>
 
-    <!-- 2. 지역 맞춤 이용 후기 -->
+    <!-- 지역 맞춤 이용 후기 -->
     <section class="section-shell">
       <div class="section-intro">
         <span>인천 전지역 REVIEWS</span>
@@ -277,7 +281,7 @@
       </div>
     </section>
 
-    <!-- 3. 지역 맞춤 FAQ -->
+    <!-- 지역 맞춤 FAQ -->
     <section class="section-shell">
       <div class="section-intro">
         <span>FAQ</span>
@@ -303,7 +307,7 @@
       </div>
     </section>
 
-    <!-- 4. 동적 지역 구글 지도 영역 -->
+    <!-- 동적 지역 구글 지도 영역 -->
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>LOCATION MAP</span>
@@ -314,69 +318,17 @@
       </div>
     </section>
 
-    <!-- 5. [맨 아래로 이동 완료] 다른 지역 이동 네비게이션 섹션 -->
+    <!-- [핵심] 해당 구/지역 맞춤 동네 네비게이션 -->
     <section class="section-shell" style="padding-top: 40px;">
-      <div class="section-intro">
-        <span>OTHER AREAS</span>
-        <h2>수도권 다른 지역 이동하기</h2>
-        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
-      </div>
       <div class="area-nav-box">
-        <div class="area-nav-btns">
-          <a href="/seoul/">🏙️ 서울 전체보기</a>
-          <a href="/gyeonggi/">🌳 경기 전체보기</a>
-          <a href="/incheon/">🌊 인천 전체보기</a>
-        </div>
-        <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
+        <div class="area-nav-title">📍 인천 시·군·구 선택</div>
         <div class="quick-dong-tags">
-          <a href="/incheon/yeonsu/송도동/">인천 송도동</a>
-<a href="/incheon/yeonsu/연수동/">인천 연수동</a>
-<a href="/incheon/yeonsu/청학동/">인천 청학동</a>
-<a href="/incheon/yeonsu/동춘동/">인천 동춘동</a>
-<a href="/incheon/yeonsu/옥련동/">인천 옥련동</a>
-<a href="/incheon/yeonsu/선학동/">인천 선학동</a>
-<a href="/incheon/seogu/청라동/">인천 청라동</a>
-<a href="/incheon/seogu/검암동/">인천 검암동</a>
-<a href="/incheon/seogu/경서동/">인천 경서동</a>
-<a href="/incheon/seogu/연희동/">인천 연희동</a>
-<a href="/incheon/seogu/가정동/">인천 가정동</a>
-<a href="/incheon/seogu/신현동/">인천 신현동</a>
-<a href="/incheon/seogu/석남동/">인천 석남동</a>
-<a href="/incheon/seogu/가좌동/">인천 가좌동</a>
-<a href="/incheon/seogu/마전동/">인천 마전동</a>
-<a href="/incheon/seogu/당하동/">인천 당하동</a>
-<a href="/incheon/seogu/원당동/">인천 원당동</a>
-<a href="/incheon/seogu/오류동/">인천 오류동</a>
-<a href="/incheon/seogu/왕길동/">인천 왕길동</a>
-<a href="/incheon/seogu/루원시티/">인천 루원시티</a>
-<a href="/incheon/bupyeong/부평동/">인천 부평동</a>
-<a href="/incheon/bupyeong/십정동/">인천 십정동</a>
-<a href="/incheon/bupyeong/산곡동/">인천 산곡동</a>
-<a href="/incheon/bupyeong/청천동/">인천 청천동</a>
-<a href="/incheon/bupyeong/삼산동/">인천 삼산동</a>
-<a href="/incheon/bupyeong/갈산동/">인천 갈산동</a>
-<a href="/incheon/bupyeong/부개동/">인천 부개동</a>
-<a href="/incheon/bupyeong/일신동/">인천 일신동</a>
-<a href="/incheon/namdong/구월동/">인천 구월동</a>
-<a href="/incheon/namdong/간석동/">인천 간석동</a>
-<a href="/incheon/namdong/만수동/">인천 만수동</a>
-<a href="/incheon/namdong/논현동/">인천 논현동</a>
-<a href="/incheon/namdong/서창동/">인천 서창동</a>
-<a href="/incheon/namdong/도림동/">인천 도림동</a>
-<a href="/incheon/michuhol/주안동/">인천 주안동</a>
-<a href="/incheon/michuhol/도화동/">인천 도화동</a>
-<a href="/incheon/michuhol/학익동/">인천 학익동</a>
-<a href="/incheon/michuhol/용현동/">인천 용현동</a>
-<a href="/incheon/michuhol/숭의동/">인천 숭의동</a>
-<a href="/incheon/michuhol/관교동/">인천 관교동</a>
-<a href="/incheon/michuhol/문학동/">인천 문학동</a>
-<a href="/incheon/junggu/영종동/">인천 영종동</a>
-<a href="/incheon/junggu/운서동/">인천 운서동</a>
-<a href="/incheon/junggu/중산동/">인천 중산동</a>
-<a href="/incheon/junggu/신흥동/">인천 신흥동</a>
-<a href="/incheon/junggu/답동/">인천 답동</a>
-<a href="/incheon/junggu/북성동/">인천 북성동</a>
-<a href="/incheon/junggu/신포동/">인천 신포동</a>
+          <a href="/incheon/yeonsu/">연수구 바로가기 ➔</a>
+<a href="/incheon/seogu/">서구 바로가기 ➔</a>
+<a href="/incheon/bupyeong/">부평구 바로가기 ➔</a>
+<a href="/incheon/namdong/">남동구 바로가기 ➔</a>
+<a href="/incheon/michuhol/">미추홀구 바로가기 ➔</a>
+<a href="/incheon/junggu/">중구 바로가기 ➔</a>
         </div>
       </div>
     </section>

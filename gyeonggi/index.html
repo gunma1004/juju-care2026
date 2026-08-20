@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>경기 출장마사지 | 퀸즈홈테라피 24시 프리미엄 방문 케어</title>
-  <meta name="description" content="경기 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제, 빠른 배정 안심 힐링 케어.">
+  <title>경기 출장마사지 | 퀸즈홈테라피 24시 프리미엄 케어</title>
+  <meta name="description" content="경기 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제 안심 힐링 케어.">
   <style>
     :root {
       --bg-main: #08151f;
@@ -40,8 +40,16 @@
     .section-intro h2 { font-size: 1.8rem; font-weight: 800; margin: 8px 0; }
     .section-intro p { color: var(--text-sub); }
     
+    /* 빵부스러기(Breadcrumb) 경로 네비게이션 */
+    .breadcrumbs {
+      max-width: var(--max-w); margin: 16px auto 0; padding: 0 20px;
+      display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-sub);
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .breadcrumbs span { color: rgba(255,255,255,0.3); }
+
     .home-hero {
-      max-width: var(--max-w); margin: 0 auto; padding: 60px 20px 40px;
+      max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 40px;
       display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px;
     }
     .hero-kicker { color: var(--accent); font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
@@ -107,31 +115,22 @@
     }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
-    /* 하단 다른 지역 이동 박스 및 태그 */
+    /* 단계별 동네 선택 영역 (스크롤 없이 깔끔하게 배치) */
     .area-nav-box {
       background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 16px; padding: 30px 20px; text-align: center; margin-top: 20px;
+      border-radius: 16px; padding: 30px 24px; text-align: center; margin-top: 20px;
     }
-    .area-nav-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .area-nav-btns a {
-      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);
-      padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
-    }
-    .area-nav-btns a:hover { background: var(--accent-gradient); color: #fff; }
-
+    .area-nav-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: #fff; }
     .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-      max-height: 280px; overflow-y: auto; padding: 12px 8px;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
     }
-    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
-    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
     .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main);
       transition: all 0.2s ease;
     }
     .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent;
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
     }
 
     .site-footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.85rem; }
@@ -150,7 +149,7 @@
     .contact-dock__btn--sms { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
     
     @media (max-width: 768px) {
-      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; }
       .promo-banner__inner { flex-direction: column; text-align: center; }
     }
   </style>
@@ -162,10 +161,15 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <div class="header-links">
-      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 홈으로</a>
+      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 메인 홈으로</a>
       <a class="button" style="padding: 6px 14px; font-size: 0.85rem;" href="tel:0507-1280-3296">전화상담</a>
     </div>
   </header>
+
+  <!-- 빵부스러기 경로 안내 -->
+  <nav class="breadcrumbs">
+    <a href="/">홈</a> <span>&gt;</span> 경기
+  </nav>
 
   <main>
     <section class="home-hero">
@@ -191,7 +195,7 @@
       </div>
     </section>
 
-    <!-- 1. 코스 & 요금 섹션 -->
+    <!-- 코스 & 요금 섹션 -->
     <section class="course-section">
       <div class="section-shell">
         <div class="section-intro">
@@ -253,7 +257,7 @@
       </div>
     </section>
 
-    <!-- 2. 지역 맞춤 이용 후기 -->
+    <!-- 지역 맞춤 이용 후기 -->
     <section class="section-shell">
       <div class="section-intro">
         <span>경기 전지역 REVIEWS</span>
@@ -277,7 +281,7 @@
       </div>
     </section>
 
-    <!-- 3. 지역 맞춤 FAQ -->
+    <!-- 지역 맞춤 FAQ -->
     <section class="section-shell">
       <div class="section-intro">
         <span>FAQ</span>
@@ -303,7 +307,7 @@
       </div>
     </section>
 
-    <!-- 4. 동적 지역 구글 지도 영역 -->
+    <!-- 동적 지역 구글 지도 영역 -->
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>LOCATION MAP</span>
@@ -314,99 +318,18 @@
       </div>
     </section>
 
-    <!-- 5. [맨 아래로 이동 완료] 다른 지역 이동 네비게이션 섹션 -->
+    <!-- [핵심] 해당 구/지역 맞춤 동네 네비게이션 -->
     <section class="section-shell" style="padding-top: 40px;">
-      <div class="section-intro">
-        <span>OTHER AREAS</span>
-        <h2>수도권 다른 지역 이동하기</h2>
-        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
-      </div>
       <div class="area-nav-box">
-        <div class="area-nav-btns">
-          <a href="/seoul/">🏙️ 서울 전체보기</a>
-          <a href="/gyeonggi/">🌳 경기 전체보기</a>
-          <a href="/incheon/">🌊 인천 전체보기</a>
-        </div>
-        <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
+        <div class="area-nav-title">📍 경기 시·군·구 선택</div>
         <div class="quick-dong-tags">
-          <a href="/gyeonggi/suwon/인계동/">경기 인계동</a>
-<a href="/gyeonggi/suwon/매탄동/">경기 매탄동</a>
-<a href="/gyeonggi/suwon/원천동/">경기 원천동</a>
-<a href="/gyeonggi/suwon/영통동/">경기 영통동</a>
-<a href="/gyeonggi/suwon/망포동/">경기 망포동</a>
-<a href="/gyeonggi/suwon/광교동/">경기 광교동</a>
-<a href="/gyeonggi/suwon/곡반정동/">경기 곡반정동</a>
-<a href="/gyeonggi/suwon/권선동/">경기 권선동</a>
-<a href="/gyeonggi/suwon/세류동/">경기 세류동</a>
-<a href="/gyeonggi/suwon/화서동/">경기 화서동</a>
-<a href="/gyeonggi/suwon/정자동/">경기 정자동</a>
-<a href="/gyeonggi/suwon/조원동/">경기 조원동</a>
-<a href="/gyeonggi/suwon/율전동/">경기 율전동</a>
-<a href="/gyeonggi/suwon/천천동/">경기 천천동</a>
-<a href="/gyeonggi/seongnam/분당동/">경기 분당동</a>
-<a href="/gyeonggi/seongnam/수내동/">경기 수내동</a>
-<a href="/gyeonggi/seongnam/정자동/">경기 정자동</a>
-<a href="/gyeonggi/seongnam/서현동/">경기 서현동</a>
-<a href="/gyeonggi/seongnam/이매동/">경기 이매동</a>
-<a href="/gyeonggi/seongnam/야탑동/">경기 야탑동</a>
-<a href="/gyeonggi/seongnam/판교동/">경기 판교동</a>
-<a href="/gyeonggi/seongnam/삼평동/">경기 삼평동</a>
-<a href="/gyeonggi/seongnam/백현동/">경기 백현동</a>
-<a href="/gyeonggi/seongnam/운중동/">경기 운중동</a>
-<a href="/gyeonggi/seongnam/금곡동/">경기 금곡동</a>
-<a href="/gyeonggi/seongnam/구미동/">경기 구미동</a>
-<a href="/gyeonggi/seongnam/신흥동/">경기 신흥동</a>
-<a href="/gyeonggi/seongnam/태평동/">경기 태평동</a>
-<a href="/gyeonggi/seongnam/상대원동/">경기 상대원동</a>
-<a href="/gyeonggi/goyang/일산동/">경기 일산동</a>
-<a href="/gyeonggi/goyang/주엽동/">경기 주엽동</a>
-<a href="/gyeonggi/goyang/탄현동/">경기 탄현동</a>
-<a href="/gyeonggi/goyang/대화동/">경기 대화동</a>
-<a href="/gyeonggi/goyang/마두동/">경기 마두동</a>
-<a href="/gyeonggi/goyang/백석동/">경기 백석동</a>
-<a href="/gyeonggi/goyang/식사동/">경기 식사동</a>
-<a href="/gyeonggi/goyang/풍동/">경기 풍동</a>
-<a href="/gyeonggi/goyang/화정동/">경기 화정동</a>
-<a href="/gyeonggi/goyang/행신동/">경기 행신동</a>
-<a href="/gyeonggi/goyang/원흥동/">경기 원흥동</a>
-<a href="/gyeonggi/goyang/삼송동/">경기 삼송동</a>
-<a href="/gyeonggi/goyang/지축동/">경기 지축동</a>
-<a href="/gyeonggi/hwaseong/동탄동/">경기 동탄동</a>
-<a href="/gyeonggi/hwaseong/병점동/">경기 병점동</a>
-<a href="/gyeonggi/hwaseong/진안동/">경기 진안동</a>
-<a href="/gyeonggi/hwaseong/반월동/">경기 반월동</a>
-<a href="/gyeonggi/hwaseong/기안동/">경기 기안동</a>
-<a href="/gyeonggi/hwaseong/봉담읍/">경기 봉담읍</a>
-<a href="/gyeonggi/hwaseong/향남읍/">경기 향남읍</a>
-<a href="/gyeonggi/hwaseong/남양읍/">경기 남양읍</a>
-<a href="/gyeonggi/yongin/풍덕천동/">경기 풍덕천동</a>
-<a href="/gyeonggi/yongin/신봉동/">경기 신봉동</a>
-<a href="/gyeonggi/yongin/죽전동/">경기 죽전동</a>
-<a href="/gyeonggi/yongin/동천동/">경기 동천동</a>
-<a href="/gyeonggi/yongin/상현동/">경기 상현동</a>
-<a href="/gyeonggi/yongin/성복동/">경기 성복동</a>
-<a href="/gyeonggi/yongin/기흥동/">경기 기흥동</a>
-<a href="/gyeonggi/yongin/신갈동/">경기 신갈동</a>
-<a href="/gyeonggi/yongin/구갈동/">경기 구갈동</a>
-<a href="/gyeonggi/yongin/보정동/">경기 보정동</a>
-<a href="/gyeonggi/yongin/동백동/">경기 동백동</a>
-<a href="/gyeonggi/yongin/처인동/">경기 처인동</a>
-<a href="/gyeonggi/bucheon/중동/">경기 중동</a>
-<a href="/gyeonggi/bucheon/상동/">경기 상동</a>
-<a href="/gyeonggi/bucheon/심곡동/">경기 심곡동</a>
-<a href="/gyeonggi/bucheon/원미동/">경기 원미동</a>
-<a href="/gyeonggi/bucheon/소사동/">경기 소사동</a>
-<a href="/gyeonggi/bucheon/오정동/">경기 오정동</a>
-<a href="/gyeonggi/bucheon/송내동/">경기 송내동</a>
-<a href="/gyeonggi/bucheon/괴안동/">경기 괴안동</a>
-<a href="/gyeonggi/anyang/안양동/">경기 안양동</a>
-<a href="/gyeonggi/anyang/석수동/">경기 석수동</a>
-<a href="/gyeonggi/anyang/박달동/">경기 박달동</a>
-<a href="/gyeonggi/anyang/비산동/">경기 비산동</a>
-<a href="/gyeonggi/anyang/관양동/">경기 관양동</a>
-<a href="/gyeonggi/anyang/평촌동/">경기 평촌동</a>
-<a href="/gyeonggi/anyang/호계동/">경기 호계동</a>
-<a href="/gyeonggi/anyang/범계동/">경기 범계동</a>
+          <a href="/gyeonggi/suwon/">수원시 바로가기 ➔</a>
+<a href="/gyeonggi/seongnam/">성남시 바로가기 ➔</a>
+<a href="/gyeonggi/goyang/">고양시 바로가기 ➔</a>
+<a href="/gyeonggi/hwaseong/">화성시 바로가기 ➔</a>
+<a href="/gyeonggi/yongin/">용인시 바로가기 ➔</a>
+<a href="/gyeonggi/bucheon/">부천시 바로가기 ➔</a>
+<a href="/gyeonggi/anyang/">안양시 바로가기 ➔</a>
         </div>
       </div>
     </section>

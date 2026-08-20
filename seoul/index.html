@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>서울 출장마사지 | 퀸즈홈테라피 24시 프리미엄 방문 케어</title>
-  <meta name="description" content="서울 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제, 빠른 배정 안심 힐링 케어.">
+  <title>서울 출장마사지 | 퀸즈홈테라피 24시 프리미엄 케어</title>
+  <meta name="description" content="서울 전지역 24시간 출장마사지 퀸즈홈테라피. 100% 후불제 안심 힐링 케어.">
   <style>
     :root {
       --bg-main: #08151f;
@@ -40,8 +40,16 @@
     .section-intro h2 { font-size: 1.8rem; font-weight: 800; margin: 8px 0; }
     .section-intro p { color: var(--text-sub); }
     
+    /* 빵부스러기(Breadcrumb) 경로 네비게이션 */
+    .breadcrumbs {
+      max-width: var(--max-w); margin: 16px auto 0; padding: 0 20px;
+      display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-sub);
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .breadcrumbs span { color: rgba(255,255,255,0.3); }
+
     .home-hero {
-      max-width: var(--max-w); margin: 0 auto; padding: 60px 20px 40px;
+      max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 40px;
       display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px;
     }
     .hero-kicker { color: var(--accent); font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
@@ -107,31 +115,22 @@
     }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
-    /* 하단 다른 지역 이동 박스 및 태그 */
+    /* 단계별 동네 선택 영역 (스크롤 없이 깔끔하게 배치) */
     .area-nav-box {
       background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 16px; padding: 30px 20px; text-align: center; margin-top: 20px;
+      border-radius: 16px; padding: 30px 24px; text-align: center; margin-top: 20px;
     }
-    .area-nav-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .area-nav-btns a {
-      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);
-      padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
-    }
-    .area-nav-btns a:hover { background: var(--accent-gradient); color: #fff; }
-
+    .area-nav-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: #fff; }
     .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-      max-height: 280px; overflow-y: auto; padding: 12px 8px;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
     }
-    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
-    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
     .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main);
       transition: all 0.2s ease;
     }
     .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent;
+      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
     }
 
     .site-footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.85rem; }
@@ -150,7 +149,7 @@
     .contact-dock__btn--sms { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
     
     @media (max-width: 768px) {
-      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; }
       .promo-banner__inner { flex-direction: column; text-align: center; }
     }
   </style>
@@ -162,10 +161,15 @@
       <small>QUEENS HOME THERAPY</small>
     </a>
     <div class="header-links">
-      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 홈으로</a>
+      <a style="font-size: 0.85rem; color: var(--text-sub); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px;" href="/">🏠 메인 홈으로</a>
       <a class="button" style="padding: 6px 14px; font-size: 0.85rem;" href="tel:0507-1280-3296">전화상담</a>
     </div>
   </header>
+
+  <!-- 빵부스러기 경로 안내 -->
+  <nav class="breadcrumbs">
+    <a href="/">홈</a> <span>&gt;</span> 서울
+  </nav>
 
   <main>
     <section class="home-hero">
@@ -191,7 +195,7 @@
       </div>
     </section>
 
-    <!-- 1. 코스 & 요금 섹션 -->
+    <!-- 코스 & 요금 섹션 -->
     <section class="course-section">
       <div class="section-shell">
         <div class="section-intro">
@@ -253,7 +257,7 @@
       </div>
     </section>
 
-    <!-- 2. 지역 맞춤 이용 후기 -->
+    <!-- 지역 맞춤 이용 후기 -->
     <section class="section-shell">
       <div class="section-intro">
         <span>서울 전지역 REVIEWS</span>
@@ -277,7 +281,7 @@
       </div>
     </section>
 
-    <!-- 3. 지역 맞춤 FAQ -->
+    <!-- 지역 맞춤 FAQ -->
     <section class="section-shell">
       <div class="section-intro">
         <span>FAQ</span>
@@ -303,7 +307,7 @@
       </div>
     </section>
 
-    <!-- 4. 동적 지역 구글 지도 영역 -->
+    <!-- 동적 지역 구글 지도 영역 -->
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>LOCATION MAP</span>
@@ -314,118 +318,21 @@
       </div>
     </section>
 
-    <!-- 5. [맨 아래로 이동 완료] 다른 지역 이동 네비게이션 섹션 -->
+    <!-- [핵심] 해당 구/지역 맞춤 동네 네비게이션 -->
     <section class="section-shell" style="padding-top: 40px;">
-      <div class="section-intro">
-        <span>OTHER AREAS</span>
-        <h2>수도권 다른 지역 이동하기</h2>
-        <p>원하시는 광역 시·도 또는 인근 주요 지역을 바로 선택하세요.</p>
-      </div>
       <div class="area-nav-box">
-        <div class="area-nav-btns">
-          <a href="/seoul/">🏙️ 서울 전체보기</a>
-          <a href="/gyeonggi/">🌳 경기 전체보기</a>
-          <a href="/incheon/">🌊 인천 전체보기</a>
-        </div>
-        <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
+        <div class="area-nav-title">📍 서울 시·군·구 선택</div>
         <div class="quick-dong-tags">
-          <a href="/seoul/gangnam/역삼동/">서울 역삼동</a>
-<a href="/seoul/gangnam/개포동/">서울 개포동</a>
-<a href="/seoul/gangnam/청담동/">서울 청담동</a>
-<a href="/seoul/gangnam/삼성동/">서울 삼성동</a>
-<a href="/seoul/gangnam/대치동/">서울 대치동</a>
-<a href="/seoul/gangnam/신사동/">서울 신사동</a>
-<a href="/seoul/gangnam/논현동/">서울 논현동</a>
-<a href="/seoul/gangnam/압구정동/">서울 압구정동</a>
-<a href="/seoul/gangnam/세곡동/">서울 세곡동</a>
-<a href="/seoul/gangnam/자곡동/">서울 자곡동</a>
-<a href="/seoul/gangnam/율현동/">서울 율현동</a>
-<a href="/seoul/gangnam/일원동/">서울 일원동</a>
-<a href="/seoul/gangnam/수서동/">서울 수서동</a>
-<a href="/seoul/gangnam/도곡동/">서울 도곡동</a>
-<a href="/seoul/gangdong/강일동/">서울 강일동</a>
-<a href="/seoul/gangdong/상일동/">서울 상일동</a>
-<a href="/seoul/gangdong/명일동/">서울 명일동</a>
-<a href="/seoul/gangdong/고덕동/">서울 고덕동</a>
-<a href="/seoul/gangdong/암사동/">서울 암사동</a>
-<a href="/seoul/gangdong/천호동/">서울 천호동</a>
-<a href="/seoul/gangdong/성내동/">서울 성내동</a>
-<a href="/seoul/gangdong/길동/">서울 길동</a>
-<a href="/seoul/gangdong/둔촌동/">서울 둔촌동</a>
-<a href="/seoul/gangbuk/미아동/">서울 미아동</a>
-<a href="/seoul/gangbuk/번동/">서울 번동</a>
-<a href="/seoul/gangbuk/수유동/">서울 수유동</a>
-<a href="/seoul/gangbuk/우이동/">서울 우이동</a>
-<a href="/seoul/gangseo/염창동/">서울 염창동</a>
-<a href="/seoul/gangseo/등촌동/">서울 등촌동</a>
-<a href="/seoul/gangseo/화곡동/">서울 화곡동</a>
-<a href="/seoul/gangseo/가양동/">서울 가양동</a>
-<a href="/seoul/gangseo/마곡동/">서울 마곡동</a>
-<a href="/seoul/gangseo/내발산동/">서울 내발산동</a>
-<a href="/seoul/gangseo/외발산동/">서울 외발산동</a>
-<a href="/seoul/gangseo/공항동/">서울 공항동</a>
-<a href="/seoul/gangseo/방화동/">서울 방화동</a>
-<a href="/seoul/gangseo/개화동/">서울 개화동</a>
-<a href="/seoul/seocho/서초동/">서울 서초동</a>
-<a href="/seoul/seocho/잠원동/">서울 잠원동</a>
-<a href="/seoul/seocho/반포동/">서울 반포동</a>
-<a href="/seoul/seocho/방배동/">서울 방배동</a>
-<a href="/seoul/seocho/양재동/">서울 양재동</a>
-<a href="/seoul/seocho/우면동/">서울 우면동</a>
-<a href="/seoul/seocho/원지동/">서울 원지동</a>
-<a href="/seoul/seocho/내곡동/">서울 내곡동</a>
-<a href="/seoul/seocho/염곡동/">서울 염곡동</a>
-<a href="/seoul/seocho/신원동/">서울 신원동</a>
-<a href="/seoul/songpa/잠실동/">서울 잠실동</a>
-<a href="/seoul/songpa/신천동/">서울 신천동</a>
-<a href="/seoul/songpa/풍납동/">서울 풍납동</a>
-<a href="/seoul/songpa/송파동/">서울 송파동</a>
-<a href="/seoul/songpa/석촌동/">서울 석촌동</a>
-<a href="/seoul/songpa/삼전동/">서울 삼전동</a>
-<a href="/seoul/songpa/가락동/">서울 가락동</a>
-<a href="/seoul/songpa/문정동/">서울 문정동</a>
-<a href="/seoul/songpa/장지동/">서울 장지동</a>
-<a href="/seoul/songpa/방이동/">서울 방이동</a>
-<a href="/seoul/songpa/오금동/">서울 오금동</a>
-<a href="/seoul/songpa/거여동/">서울 거여동</a>
-<a href="/seoul/songpa/마천동/">서울 마천동</a>
-<a href="/seoul/mapo/공덕동/">서울 공덕동</a>
-<a href="/seoul/mapo/아현동/">서울 아현동</a>
-<a href="/seoul/mapo/도화동/">서울 도화동</a>
-<a href="/seoul/mapo/용강동/">서울 용강동</a>
-<a href="/seoul/mapo/대흥동/">서울 대흥동</a>
-<a href="/seoul/mapo/염리동/">서울 염리동</a>
-<a href="/seoul/mapo/신수동/">서울 신수동</a>
-<a href="/seoul/mapo/상수동/">서울 상수동</a>
-<a href="/seoul/mapo/서교동/">서울 서교동</a>
-<a href="/seoul/mapo/동교동/">서울 동교동</a>
-<a href="/seoul/mapo/합정동/">서울 합정동</a>
-<a href="/seoul/mapo/망원동/">서울 망원동</a>
-<a href="/seoul/mapo/연남동/">서울 연남동</a>
-<a href="/seoul/mapo/성산동/">서울 성산동</a>
-<a href="/seoul/mapo/상암동/">서울 상암동</a>
-<a href="/seoul/yeongdeungpo/영등포동/">서울 영등포동</a>
-<a href="/seoul/yeongdeungpo/여의도동/">서울 여의도동</a>
-<a href="/seoul/yeongdeungpo/당산동/">서울 당산동</a>
-<a href="/seoul/yeongdeungpo/도림동/">서울 도림동</a>
-<a href="/seoul/yeongdeungpo/문래동/">서울 문래동</a>
-<a href="/seoul/yeongdeungpo/양평동/">서울 양평동</a>
-<a href="/seoul/yeongdeungpo/신길동/">서울 신길동</a>
-<a href="/seoul/yeongdeungpo/대림동/">서울 대림동</a>
-<a href="/seoul/yongsan/이태원동/">서울 이태원동</a>
-<a href="/seoul/yongsan/한남동/">서울 한남동</a>
-<a href="/seoul/yongsan/한강로동/">서울 한강로동</a>
-<a href="/seoul/yongsan/용산동/">서울 용산동</a>
-<a href="/seoul/yongsan/후암동/">서울 후암동</a>
-<a href="/seoul/yongsan/원효로동/">서울 원효로동</a>
-<a href="/seoul/junggu/명동/">서울 명동</a>
-<a href="/seoul/junggu/을지로동/">서울 을지로동</a>
-<a href="/seoul/junggu/신당동/">서울 신당동</a>
-<a href="/seoul/junggu/다산동/">서울 다산동</a>
-<a href="/seoul/junggu/약수동/">서울 약수동</a>
-<a href="/seoul/junggu/청구동/">서울 청구동</a>
-<a href="/seoul/junggu/황학동/">서울 황학동</a>
-<a href="/seoul/junggu/중림동/">서울 중림동</a>
+          <a href="/seoul/gangnam/">강남구 바로가기 ➔</a>
+<a href="/seoul/gangdong/">강동구 바로가기 ➔</a>
+<a href="/seoul/gangbuk/">강북구 바로가기 ➔</a>
+<a href="/seoul/gangseo/">강서구 바로가기 ➔</a>
+<a href="/seoul/seocho/">서초구 바로가기 ➔</a>
+<a href="/seoul/songpa/">송파구 바로가기 ➔</a>
+<a href="/seoul/mapo/">마포구 바로가기 ➔</a>
+<a href="/seoul/yeongdeungpo/">영등포구 바로가기 ➔</a>
+<a href="/seoul/yongsan/">용산구 바로가기 ➔</a>
+<a href="/seoul/junggu/">중구 바로가기 ➔</a>
         </div>
       </div>
     </section>

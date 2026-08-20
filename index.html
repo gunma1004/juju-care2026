@@ -136,7 +136,7 @@
     .faq-list summary { cursor: pointer; font-weight: 700; }
     .faq-list details p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-sub); font-size: 0.9rem; }
     
-    /* 하단 지역 섹션 스타일 */
+    /* 하단 깔끔한 3대 광역 지역 카드 */
     .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .region-card {
       background: var(--bg-card); border: 1px solid var(--border-color);
@@ -147,28 +147,6 @@
     .region-card span { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
     .region-card b { display: block; font-size: 1.15rem; margin-bottom: 2px; }
     .region-card small { color: var(--text-sub); font-size: 0.85rem; }
-
-    .quick-dong-wrapper {
-      margin-top: 30px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 24px;
-    }
-    .quick-dong-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-      max-height: 280px; overflow-y: auto; padding: 12px 8px;
-    }
-    .quick-dong-tags::-webkit-scrollbar { width: 6px; }
-    .quick-dong-tags::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
-    .quick-dong-tags a {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
-      padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--text-sub);
-      transition: all 0.2s ease;
-    }
-    .quick-dong-tags a:hover {
-      background: var(--accent-gradient); color: #fff; border-color: transparent; transform: translateY(-2px);
-    }
 
     .final-cta { text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, transparent, #050e14); }
     .final-cta h2 { font-size: 2rem; margin: 12px 0; }
@@ -382,265 +360,34 @@
     <section class="map-container">
       <div class="section-intro" style="margin-bottom: 20px;">
         <span>SERVICE AREA MAP</span>
-        <h2>방문 서비스 지역 지도</h2>
+        <h2>방문 서비스 지역 안내</h2>
       </div>
       <div class="map-frame">
         <iframe src="https://maps.google.com/maps?q=서울,경기,인천&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
       </div>
     </section>
 
-    <!-- 5. [맨 아래로 이동 완료] 서비스 가능 지역 선택 섹션 -->
+    <!-- 5. 서비스 가능 광역 지역 선택 섹션 (구/동 목록 없이 3대 지역 카드만 깔끔하게 노출) -->
     <section class="section-shell" id="areas" style="padding-top: 40px;">
       <div class="section-intro">
         <span>AREA DIRECTORY</span>
         <h2>서비스 가능 지역 둘러보기</h2>
-        <p>광역 시·도 또는 원하시는 세부 동네를 선택하시면 상세 페이지로 이동합니다.</p>
+        <p>원하시는 시·도 광역 지역을 선택하시면 상세 구·동 목록으로 이동합니다.</p>
       </div>
       
-      <!-- 광역 3대 지역 카드 -->
       <div class="region-grid">
         <a class="region-card" href="/seoul/">
           <span>01</span>
-          <div><b>서울 지역</b><small>강남·서초·송파·마포 등 25개 구 전역</small></div>
+          <div><b>서울 지역</b><small>강남·서초·송파·마포 등 25개 구 전체보기 ➔</small></div>
         </a>
         <a class="region-card" href="/gyeonggi/">
           <span>02</span>
-          <div><b>경기 지역</b><small>수원·성남·용인·고양·화성 등 31개 시·군</small></div>
+          <div><b>경기 지역</b><small>수원·성남·용인·고양 등 31개 시·군 전체보기 ➔</small></div>
         </a>
         <a class="region-card" href="/incheon/">
           <span>03</span>
-          <div><b>인천 지역</b><small>송도·청라·부평·구월·미추홀 등 전지역</small></div>
+          <div><b>인천 지역</b><small>송도·청라·부평·구월 등 전지역 전체보기 ➔</small></div>
         </a>
-      </div>
-
-      <!-- 파이썬 자동 생성 전체 동네 스크롤 영역 -->
-      <div class="quick-dong-wrapper">
-        <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 12px; text-align: center;">전체 세부 동네 바로가기 (스크롤하여 선택)</p>
-        <div class="quick-dong-tags">
-          <a href="/seoul/gangnam/역삼동/">서울 역삼동</a>
-<a href="/seoul/gangnam/개포동/">서울 개포동</a>
-<a href="/seoul/gangnam/청담동/">서울 청담동</a>
-<a href="/seoul/gangnam/삼성동/">서울 삼성동</a>
-<a href="/seoul/gangnam/대치동/">서울 대치동</a>
-<a href="/seoul/gangnam/신사동/">서울 신사동</a>
-<a href="/seoul/gangnam/논현동/">서울 논현동</a>
-<a href="/seoul/gangnam/압구정동/">서울 압구정동</a>
-<a href="/seoul/gangnam/세곡동/">서울 세곡동</a>
-<a href="/seoul/gangnam/자곡동/">서울 자곡동</a>
-<a href="/seoul/gangnam/율현동/">서울 율현동</a>
-<a href="/seoul/gangnam/일원동/">서울 일원동</a>
-<a href="/seoul/gangnam/수서동/">서울 수서동</a>
-<a href="/seoul/gangnam/도곡동/">서울 도곡동</a>
-<a href="/seoul/gangdong/강일동/">서울 강일동</a>
-<a href="/seoul/gangdong/상일동/">서울 상일동</a>
-<a href="/seoul/gangdong/명일동/">서울 명일동</a>
-<a href="/seoul/gangdong/고덕동/">서울 고덕동</a>
-<a href="/seoul/gangdong/암사동/">서울 암사동</a>
-<a href="/seoul/gangdong/천호동/">서울 천호동</a>
-<a href="/seoul/gangdong/성내동/">서울 성내동</a>
-<a href="/seoul/gangdong/길동/">서울 길동</a>
-<a href="/seoul/gangdong/둔촌동/">서울 둔촌동</a>
-<a href="/seoul/gangbuk/미아동/">서울 미아동</a>
-<a href="/seoul/gangbuk/번동/">서울 번동</a>
-<a href="/seoul/gangbuk/수유동/">서울 수유동</a>
-<a href="/seoul/gangbuk/우이동/">서울 우이동</a>
-<a href="/seoul/gangseo/염창동/">서울 염창동</a>
-<a href="/seoul/gangseo/등촌동/">서울 등촌동</a>
-<a href="/seoul/gangseo/화곡동/">서울 화곡동</a>
-<a href="/seoul/gangseo/가양동/">서울 가양동</a>
-<a href="/seoul/gangseo/마곡동/">서울 마곡동</a>
-<a href="/seoul/gangseo/내발산동/">서울 내발산동</a>
-<a href="/seoul/gangseo/외발산동/">서울 외발산동</a>
-<a href="/seoul/gangseo/공항동/">서울 공항동</a>
-<a href="/seoul/gangseo/방화동/">서울 방화동</a>
-<a href="/seoul/gangseo/개화동/">서울 개화동</a>
-<a href="/seoul/seocho/서초동/">서울 서초동</a>
-<a href="/seoul/seocho/잠원동/">서울 잠원동</a>
-<a href="/seoul/seocho/반포동/">서울 반포동</a>
-<a href="/seoul/seocho/방배동/">서울 방배동</a>
-<a href="/seoul/seocho/양재동/">서울 양재동</a>
-<a href="/seoul/seocho/우면동/">서울 우면동</a>
-<a href="/seoul/seocho/원지동/">서울 원지동</a>
-<a href="/seoul/seocho/내곡동/">서울 내곡동</a>
-<a href="/seoul/seocho/염곡동/">서울 염곡동</a>
-<a href="/seoul/seocho/신원동/">서울 신원동</a>
-<a href="/seoul/songpa/잠실동/">서울 잠실동</a>
-<a href="/seoul/songpa/신천동/">서울 신천동</a>
-<a href="/seoul/songpa/풍납동/">서울 풍납동</a>
-<a href="/seoul/songpa/송파동/">서울 송파동</a>
-<a href="/seoul/songpa/석촌동/">서울 석촌동</a>
-<a href="/seoul/songpa/삼전동/">서울 삼전동</a>
-<a href="/seoul/songpa/가락동/">서울 가락동</a>
-<a href="/seoul/songpa/문정동/">서울 문정동</a>
-<a href="/seoul/songpa/장지동/">서울 장지동</a>
-<a href="/seoul/songpa/방이동/">서울 방이동</a>
-<a href="/seoul/songpa/오금동/">서울 오금동</a>
-<a href="/seoul/songpa/거여동/">서울 거여동</a>
-<a href="/seoul/songpa/마천동/">서울 마천동</a>
-<a href="/seoul/mapo/공덕동/">서울 공덕동</a>
-<a href="/seoul/mapo/아현동/">서울 아현동</a>
-<a href="/seoul/mapo/도화동/">서울 도화동</a>
-<a href="/seoul/mapo/용강동/">서울 용강동</a>
-<a href="/seoul/mapo/대흥동/">서울 대흥동</a>
-<a href="/seoul/mapo/염리동/">서울 염리동</a>
-<a href="/seoul/mapo/신수동/">서울 신수동</a>
-<a href="/seoul/mapo/상수동/">서울 상수동</a>
-<a href="/seoul/mapo/서교동/">서울 서교동</a>
-<a href="/seoul/mapo/동교동/">서울 동교동</a>
-<a href="/seoul/mapo/합정동/">서울 합정동</a>
-<a href="/seoul/mapo/망원동/">서울 망원동</a>
-<a href="/seoul/mapo/연남동/">서울 연남동</a>
-<a href="/seoul/mapo/성산동/">서울 성산동</a>
-<a href="/seoul/mapo/상암동/">서울 상암동</a>
-<a href="/seoul/yeongdeungpo/영등포동/">서울 영등포동</a>
-<a href="/seoul/yeongdeungpo/여의도동/">서울 여의도동</a>
-<a href="/seoul/yeongdeungpo/당산동/">서울 당산동</a>
-<a href="/seoul/yeongdeungpo/도림동/">서울 도림동</a>
-<a href="/seoul/yeongdeungpo/문래동/">서울 문래동</a>
-<a href="/seoul/yeongdeungpo/양평동/">서울 양평동</a>
-<a href="/seoul/yeongdeungpo/신길동/">서울 신길동</a>
-<a href="/seoul/yeongdeungpo/대림동/">서울 대림동</a>
-<a href="/seoul/yongsan/이태원동/">서울 이태원동</a>
-<a href="/seoul/yongsan/한남동/">서울 한남동</a>
-<a href="/seoul/yongsan/한강로동/">서울 한강로동</a>
-<a href="/seoul/yongsan/용산동/">서울 용산동</a>
-<a href="/seoul/yongsan/후암동/">서울 후암동</a>
-<a href="/seoul/yongsan/원효로동/">서울 원효로동</a>
-<a href="/seoul/junggu/명동/">서울 명동</a>
-<a href="/seoul/junggu/을지로동/">서울 을지로동</a>
-<a href="/seoul/junggu/신당동/">서울 신당동</a>
-<a href="/seoul/junggu/다산동/">서울 다산동</a>
-<a href="/seoul/junggu/약수동/">서울 약수동</a>
-<a href="/seoul/junggu/청구동/">서울 청구동</a>
-<a href="/seoul/junggu/황학동/">서울 황학동</a>
-<a href="/seoul/junggu/중림동/">서울 중림동</a>
-<a href="/gyeonggi/suwon/인계동/">경기 인계동</a>
-<a href="/gyeonggi/suwon/매탄동/">경기 매탄동</a>
-<a href="/gyeonggi/suwon/원천동/">경기 원천동</a>
-<a href="/gyeonggi/suwon/영통동/">경기 영통동</a>
-<a href="/gyeonggi/suwon/망포동/">경기 망포동</a>
-<a href="/gyeonggi/suwon/광교동/">경기 광교동</a>
-<a href="/gyeonggi/suwon/곡반정동/">경기 곡반정동</a>
-<a href="/gyeonggi/suwon/권선동/">경기 권선동</a>
-<a href="/gyeonggi/suwon/세류동/">경기 세류동</a>
-<a href="/gyeonggi/suwon/화서동/">경기 화서동</a>
-<a href="/gyeonggi/suwon/정자동/">경기 정자동</a>
-<a href="/gyeonggi/suwon/조원동/">경기 조원동</a>
-<a href="/gyeonggi/suwon/율전동/">경기 율전동</a>
-<a href="/gyeonggi/suwon/천천동/">경기 천천동</a>
-<a href="/gyeonggi/seongnam/분당동/">경기 분당동</a>
-<a href="/gyeonggi/seongnam/수내동/">경기 수내동</a>
-<a href="/gyeonggi/seongnam/정자동/">경기 정자동</a>
-<a href="/gyeonggi/seongnam/서현동/">경기 서현동</a>
-<a href="/gyeonggi/seongnam/이매동/">경기 이매동</a>
-<a href="/gyeonggi/seongnam/야탑동/">경기 야탑동</a>
-<a href="/gyeonggi/seongnam/판교동/">경기 판교동</a>
-<a href="/gyeonggi/seongnam/삼평동/">경기 삼평동</a>
-<a href="/gyeonggi/seongnam/백현동/">경기 백현동</a>
-<a href="/gyeonggi/seongnam/운중동/">경기 운중동</a>
-<a href="/gyeonggi/seongnam/금곡동/">경기 금곡동</a>
-<a href="/gyeonggi/seongnam/구미동/">경기 구미동</a>
-<a href="/gyeonggi/seongnam/신흥동/">경기 신흥동</a>
-<a href="/gyeonggi/seongnam/태평동/">경기 태평동</a>
-<a href="/gyeonggi/seongnam/상대원동/">경기 상대원동</a>
-<a href="/gyeonggi/goyang/일산동/">경기 일산동</a>
-<a href="/gyeonggi/goyang/주엽동/">경기 주엽동</a>
-<a href="/gyeonggi/goyang/탄현동/">경기 탄현동</a>
-<a href="/gyeonggi/goyang/대화동/">경기 대화동</a>
-<a href="/gyeonggi/goyang/마두동/">경기 마두동</a>
-<a href="/gyeonggi/goyang/백석동/">경기 백석동</a>
-<a href="/gyeonggi/goyang/식사동/">경기 식사동</a>
-<a href="/gyeonggi/goyang/풍동/">경기 풍동</a>
-<a href="/gyeonggi/goyang/화정동/">경기 화정동</a>
-<a href="/gyeonggi/goyang/행신동/">경기 행신동</a>
-<a href="/gyeonggi/goyang/원흥동/">경기 원흥동</a>
-<a href="/gyeonggi/goyang/삼송동/">경기 삼송동</a>
-<a href="/gyeonggi/goyang/지축동/">경기 지축동</a>
-<a href="/gyeonggi/hwaseong/동탄동/">경기 동탄동</a>
-<a href="/gyeonggi/hwaseong/병점동/">경기 병점동</a>
-<a href="/gyeonggi/hwaseong/진안동/">경기 진안동</a>
-<a href="/gyeonggi/hwaseong/반월동/">경기 반월동</a>
-<a href="/gyeonggi/hwaseong/기안동/">경기 기안동</a>
-<a href="/gyeonggi/hwaseong/봉담읍/">경기 봉담읍</a>
-<a href="/gyeonggi/hwaseong/향남읍/">경기 향남읍</a>
-<a href="/gyeonggi/hwaseong/남양읍/">경기 남양읍</a>
-<a href="/gyeonggi/yongin/풍덕천동/">경기 풍덕천동</a>
-<a href="/gyeonggi/yongin/신봉동/">경기 신봉동</a>
-<a href="/gyeonggi/yongin/죽전동/">경기 죽전동</a>
-<a href="/gyeonggi/yongin/동천동/">경기 동천동</a>
-<a href="/gyeonggi/yongin/상현동/">경기 상현동</a>
-<a href="/gyeonggi/yongin/성복동/">경기 성복동</a>
-<a href="/gyeonggi/yongin/기흥동/">경기 기흥동</a>
-<a href="/gyeonggi/yongin/신갈동/">경기 신갈동</a>
-<a href="/gyeonggi/yongin/구갈동/">경기 구갈동</a>
-<a href="/gyeonggi/yongin/보정동/">경기 보정동</a>
-<a href="/gyeonggi/yongin/동백동/">경기 동백동</a>
-<a href="/gyeonggi/yongin/처인동/">경기 처인동</a>
-<a href="/gyeonggi/bucheon/중동/">경기 중동</a>
-<a href="/gyeonggi/bucheon/상동/">경기 상동</a>
-<a href="/gyeonggi/bucheon/심곡동/">경기 심곡동</a>
-<a href="/gyeonggi/bucheon/원미동/">경기 원미동</a>
-<a href="/gyeonggi/bucheon/소사동/">경기 소사동</a>
-<a href="/gyeonggi/bucheon/오정동/">경기 오정동</a>
-<a href="/gyeonggi/bucheon/송내동/">경기 송내동</a>
-<a href="/gyeonggi/bucheon/괴안동/">경기 괴안동</a>
-<a href="/gyeonggi/anyang/안양동/">경기 안양동</a>
-<a href="/gyeonggi/anyang/석수동/">경기 석수동</a>
-<a href="/gyeonggi/anyang/박달동/">경기 박달동</a>
-<a href="/gyeonggi/anyang/비산동/">경기 비산동</a>
-<a href="/gyeonggi/anyang/관양동/">경기 관양동</a>
-<a href="/gyeonggi/anyang/평촌동/">경기 평촌동</a>
-<a href="/gyeonggi/anyang/호계동/">경기 호계동</a>
-<a href="/gyeonggi/anyang/범계동/">경기 범계동</a>
-<a href="/incheon/yeonsu/송도동/">인천 송도동</a>
-<a href="/incheon/yeonsu/연수동/">인천 연수동</a>
-<a href="/incheon/yeonsu/청학동/">인천 청학동</a>
-<a href="/incheon/yeonsu/동춘동/">인천 동춘동</a>
-<a href="/incheon/yeonsu/옥련동/">인천 옥련동</a>
-<a href="/incheon/yeonsu/선학동/">인천 선학동</a>
-<a href="/incheon/seogu/청라동/">인천 청라동</a>
-<a href="/incheon/seogu/검암동/">인천 검암동</a>
-<a href="/incheon/seogu/경서동/">인천 경서동</a>
-<a href="/incheon/seogu/연희동/">인천 연희동</a>
-<a href="/incheon/seogu/가정동/">인천 가정동</a>
-<a href="/incheon/seogu/신현동/">인천 신현동</a>
-<a href="/incheon/seogu/석남동/">인천 석남동</a>
-<a href="/incheon/seogu/가좌동/">인천 가좌동</a>
-<a href="/incheon/seogu/마전동/">인천 마전동</a>
-<a href="/incheon/seogu/당하동/">인천 당하동</a>
-<a href="/incheon/seogu/원당동/">인천 원당동</a>
-<a href="/incheon/seogu/오류동/">인천 오류동</a>
-<a href="/incheon/seogu/왕길동/">인천 왕길동</a>
-<a href="/incheon/seogu/루원시티/">인천 루원시티</a>
-<a href="/incheon/bupyeong/부평동/">인천 부평동</a>
-<a href="/incheon/bupyeong/십정동/">인천 십정동</a>
-<a href="/incheon/bupyeong/산곡동/">인천 산곡동</a>
-<a href="/incheon/bupyeong/청천동/">인천 청천동</a>
-<a href="/incheon/bupyeong/삼산동/">인천 삼산동</a>
-<a href="/incheon/bupyeong/갈산동/">인천 갈산동</a>
-<a href="/incheon/bupyeong/부개동/">인천 부개동</a>
-<a href="/incheon/bupyeong/일신동/">인천 일신동</a>
-<a href="/incheon/namdong/구월동/">인천 구월동</a>
-<a href="/incheon/namdong/간석동/">인천 간석동</a>
-<a href="/incheon/namdong/만수동/">인천 만수동</a>
-<a href="/incheon/namdong/논현동/">인천 논현동</a>
-<a href="/incheon/namdong/서창동/">인천 서창동</a>
-<a href="/incheon/namdong/도림동/">인천 도림동</a>
-<a href="/incheon/michuhol/주안동/">인천 주안동</a>
-<a href="/incheon/michuhol/도화동/">인천 도화동</a>
-<a href="/incheon/michuhol/학익동/">인천 학익동</a>
-<a href="/incheon/michuhol/용현동/">인천 용현동</a>
-<a href="/incheon/michuhol/숭의동/">인천 숭의동</a>
-<a href="/incheon/michuhol/관교동/">인천 관교동</a>
-<a href="/incheon/michuhol/문학동/">인천 문학동</a>
-<a href="/incheon/junggu/영종동/">인천 영종동</a>
-<a href="/incheon/junggu/운서동/">인천 운서동</a>
-<a href="/incheon/junggu/중산동/">인천 중산동</a>
-<a href="/incheon/junggu/신흥동/">인천 신흥동</a>
-<a href="/incheon/junggu/답동/">인천 답동</a>
-<a href="/incheon/junggu/북성동/">인천 북성동</a>
-<a href="/incheon/junggu/신포동/">인천 신포동</a>
-        </div>
       </div>
     </section>
 
