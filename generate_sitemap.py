@@ -1,13 +1,15 @@
 import os
 import datetime
+import urllib.parse
 
-# 실제 도메인 주소로 변경하여 사용하세요 (끝에 슬래시 제외)
-BASE_URL = "https://ssoulhomethai365.netlify.app"
+# 실제 도메인 주소 (끝에 슬래시 제외)
+BASE_URL = "https://oneulbam-therapy.shop"
 
-# sitemap.xml 파일 저장 경로
+# 파일 저장 경로
 SITEMAP_FILE = "sitemap.xml"
+ROBOTS_FILE = "robots.txt"
 
-# generate_pages.py와 동일한 완벽 보강 지역 데이터
+# generate_pages.py와 100% 동일한 완벽 보강 지역 데이터
 regions_data = {
     "seoul": {
         "gus": {
@@ -41,7 +43,7 @@ regions_data = {
     "gyeonggi": {
         "gus": {
             "suwon": ["인계동", "매탄동", "원천동", "영통동", "망포동", "광교동", "곡반정동", "권선동", "세류동", "화서동", "정자동", "조원동", "율전동", "천천동", "고등동", "우만동", "지동", "구운동", "호매실동", "금곡동", "행궁동", "파장동"],
-            "seongnam": ["분당동", "수내동", "정자동", "서현동", "이매동", "야탑동", "판교동", "삼평동", "백현동", "운중동", "금곡동", "구미동", "신흥동", "태评동", "상대원동", "중원구", "수정구", "단대동", "산성동", "복정동", "위례동"],
+            "seongnam": ["분당동", "수내동", "정자동", "서현동", "이매동", "야탑동", "판교동", "삼평동", "백현동", "운중동", "금곡동", "구미동", "신흥동", "태평동", "상대원동", "중원구", "수정구", "단대동", "산성동", "복정동", "위례동"],
             "goyang": ["일산동", "주엽동", "탄현동", "대화동", "마두동", "백석동", "식사동", "풍동", "화정동", "행신동", "원흥동", "삼송동", "지축동", "향동동", "덕은동", "토당동", "관산동", "고양동", "킨텍스", "라페스타"],
             "yongin": ["풍덕천동", "신봉동", "죽전동", "동천동", "상현동", "성복동", "기흥동", "신갈동", "구갈동", "보정동", "동백동", "마북동", "서천동", "영덕동", "처인구", "역북동", "김량장동", "유방동", "고림동", "포곡읍", "수지"],
             "bucheon": ["중동", "상동", "심곡동", "원미동", "소사동", "오정동", "송내동", "괴안동", "역곡동", "삼정동", "도당동", "고강동", "원종동", "여월동", "작동", "부천역", "신중동"],
@@ -95,28 +97,27 @@ regions_data = {
     }
 }
 
-def generate_sitemap():
-    # 현재 날짜 가져오기 (YYYY-MM-DD 형식)
+def generate_sitemap_and_robots():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
-    
     urls = []
     
-    # 1. 메인 홈페이지 추가
+    # 1. 메인 홈페이지
     urls.append((f"{BASE_URL}/", today, "daily", "1.0"))
     
     for sido_key, sido_val in regions_data.items():
-        # 2. 광역 페이지 추가 (예: /seoul/)
+        # 2. 광역 페이지 (예: /seoul/)
         urls.append((f"{BASE_URL}/{sido_key}/", today, "weekly", "0.9"))
         
         for gu_key, dongs in sido_val["gus"].items():
-            # 3. 구/시 단위 페이지 추가 (예: /seoul/gangnam/)
+            # 3. 구/시 단위 페이지 (예: /seoul/gangnam/)
             urls.append((f"{BASE_URL}/{sido_key}/{gu_key}/", today, "weekly", "0.8"))
             
             for dong in dongs:
-                # 4. 세부 동 단위 페이지 추가 (예: /seoul/gangnam/역삼동/)
-                urls.append((f"{BASE_URL}/{sido_key}/{gu_key}/{dong}/", today, "monthly", "0.6"))
+                # 4. 세부 동/상권 페이지 (URL 인코딩 처리 적용)
+                encoded_dong = urllib.parse.quote(dong)
+                urls.append((f"{BASE_URL}/{sido_key}/{gu_key}/{encoded_dong}/", today, "monthly", "0.6"))
 
-    # XML 스트링 빌드
+    # XML 라인 구성
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
@@ -126,17 +127,26 @@ def generate_sitemap():
         xml_lines.append('  <url>')
         xml_lines.append(f'    <loc>{loc}</loc>')
         xml_lines.append(f'    <lastmod>{date}</lastmod>')
-        xml_lines.append(f'    <changefreq>{freq}</freq>')
+        xml_lines.append(f'    <changefreq>{freq}</changefreq>')
         xml_lines.append(f'    <priority>{pri}</priority>')
         xml_lines.append('  </url>')
         
     xml_lines.append('</urlset>')
     
-    # sitemap.xml 파일 쓰기
+    # sitemap.xml 저장
     with open(SITEMAP_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(xml_lines))
-        
-    print(f">> 완료! 총 {len(urls)}개의 페이지 URL이 포함된 {SITEMAP_FILE} 파일이 생성되었습니다.")
+    print(f"✅ sitemap.xml 생성 완료: 총 {len(urls)}개 URL 등록 ({BASE_URL})")
+
+    # robots.txt 저장
+    robots_content = f"""User-agent: *
+Allow: /
+
+Sitemap: {BASE_URL}/{SITEMAP_FILE}
+"""
+    with open(ROBOTS_FILE, "w", encoding="utf-8") as f:
+        f.write(robots_content)
+    print(f"✅ robots.txt 생성 완료 ({BASE_URL})")
 
 if __name__ == "__main__":
-    generate_sitemap()
+    generate_sitemap_and_robots()

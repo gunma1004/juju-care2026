@@ -9,9 +9,9 @@ with open("template.html", "r", encoding="utf-8") as f:
     template_content = f.read()
 
 # ==============================================================================
-# 1. 80가지 이상 다이나믹 SEO 문구 엔진 (출장마사지 포함, 브랜드 맨 뒤 배치)
+# 1. SEO 엔진: 하위 구/동 페이지 전용 문구 (출장마사지 키워드 집중)
 # ==============================================================================
-TITLE_PREFIXES = [
+LOCAL_TITLE_PREFIXES = [
     "{loc} 24시 프리미엄 출장마사지",
     "{loc} 출장마사지 홈타이 스웨디시",
     "{loc} 100% 후불 안심 출장마사지",
@@ -24,11 +24,11 @@ TITLE_PREFIXES = [
     "{loc} VIP 림프케어 출장마사지"
 ]
 
-TITLE_FEATURES = [
+LOCAL_TITLE_FEATURES = [
     "선입금 없는 안심케어",
     "24시간 연중무휴",
-    "아로디시·센슈얼 코스 완비",
-    "지정 장소 30분 도착",
+    "전신혼합VVIP·센슈얼 코스 완비",
+    "지정 장소 25분 도착",
     "전신 힐링 릴렉싱",
     "후불제 맞춤 서비스",
     "내 방에서 받는 호텔식 스파",
@@ -37,24 +37,24 @@ TITLE_FEATURES = [
     "상시대기 빠른방문"
 ]
 
-DESC_TEMPLATES = [
-    "{loc} 전지역 24시간 100% 후불제 출장마사지 전문점. 건식·아로디시·센슈얼 스웨디시 코스 완비. 통화 후 25~35분 내 신속 방문합니다 | 서울 한국미인테라피",
-    "{loc} 자택, 호텔, 오피스텔 어디든 찾아가는 프라이빗 힐링 출장마사지. 예약금·선입금 요구 일절 없는 안전 후불 시스템 | 서울 한국미인테라피",
-    "지친 하루의 피로를 풀어드리는 {loc} 출장마사지. 맞춤형 스웨디시와 림프 케어로 깊은 휴식을 선사합니다. 24시 상시대기 | 서울 한국미인테라피",
-    "선입금 사기 걱정 없는 {loc} 100% 후불 안심 출장마사지 서비스. 계신 곳에서 전화 한 통으로 신속 배정받아 보세요 | 서울 한국미인테라피",
-    "{loc} 어디서나 전화 한 통으로 이용하는 프리미엄 방문 홈케어 출장마사지. 검증된 관리사의 수준 높은 맞춤형 테라피 | 서울 한국미인테라피",
-    "{loc} 전지역 25분 내외 총알 도착 출장마사지! 정통 건식부터 감성 스웨디시까지 투명한 정가제로 모십니다 | 서울 한국미인테라피",
-    "내 방에서 누리는 VIP 스파 케어, {loc} 출장마사지 전문 서울 한국미인테라피. 100% 후불 결제로 안전하게 이용하세요.",
-    "{loc} 출장마사지 예약 센터. 늦은 밤 야근 후, 출장 중 호텔 객실에서 편안하게 즐기는 힐링 테라피 | 서울 한국미인테라피",
-    "숙련된 테라피스트의 정성 가득한 손길! {loc} 전지역 24시간 방문 출장마사지. 전화/문자로 편하게 문의주세요 | 서울 한국미인테라피",
-    "{loc} 100% 후불 출장마사지 & 스웨디시. 예약금 없이 관리사 도착 후 직접 결제하는 믿을 수 있는 안심 힐링 | 서울 한국미인테라피"
+LOCAL_DESC_TEMPLATES = [
+    "{loc} 전지역 24시간 100% 후불제 출장마사지 전문점. 건식·센슈얼·전신혼합VVIP·한국인 스웨디시 코스 완비. 통화 후 25분 내 신속 방문합니다 | 오늘밤테라피",
+    "{loc} 자택, 호텔, 오피스텔 어디든 찾아가는 프라이빗 힐링 출장마사지. 예약금·선입금 요구 일절 없는 안전 후불 시스템 | 오늘밤테라피",
+    "지친 하루의 피로를 풀어드리는 {loc} 출장마사지. 맞춤형 스웨디시와 림프 케어로 깊은 휴식을 선사합니다. 24시 상시대기 | 오늘밤테라피",
+    "선입금 사기 걱정 없는 {loc} 100% 후불 안심 출장마사지 서비스. 계신 곳에서 전화 한 통으로 신속 배정받아 보세요 | 오늘밤테라피",
+    "{loc} 어디서나 전화 한 통으로 이용하는 프리미엄 방문 홈케어 출장마사지. 검증된 관리사의 수준 높은 맞춤형 테라피 | 오늘밤테라피",
+    "{loc} 전지역 25분 내외 총알 도착 출장마사지! 정통 건식부터 감성 스웨디시까지 투명한 정가제로 모십니다 | 오늘밤테라피",
+    "내 방에서 누리는 VIP 스파 케어, {loc} 출장마사지 전문 오늘밤테라피. 100% 후불 결제로 안전하게 이용하세요.",
+    "{loc} 출장마사지 예약 센터. 늦은 밤 야근 후, 출장 중 호텔 객실에서 편안하게 즐기는 힐링 테라피 | 오늘밤테라피",
+    "숙련된 테라피스트의 정성 가득한 손길! {loc} 전지역 24시간 방문 출장마사지. 전화/문자로 편하게 문의주세요 | 오늘밤테라피",
+    "{loc} 100% 후불 출장마사지 & 스웨디시. 예약금 없이 관리사 도착 후 직접 결제하는 믿을 수 있는 안심 힐링 | 오늘밤테라피"
 ]
 
-def generate_random_seo(loc_name):
-    prefix = random.choice(TITLE_PREFIXES).format(loc=loc_name)
-    feature = random.choice(TITLE_FEATURES)
-    title = f"{prefix} {feature} | 서울 한국미인테라피"
-    desc = random.choice(DESC_TEMPLATES).format(loc=loc_name)
+def generate_local_seo(loc_name):
+    prefix = random.choice(LOCAL_TITLE_PREFIXES).format(loc=loc_name)
+    feature = random.choice(LOCAL_TITLE_FEATURES)
+    title = f"{prefix} {feature} | 오늘밤테라피"
+    desc = random.choice(LOCAL_DESC_TEMPLATES).format(loc=loc_name)
     return {"title": title, "desc": desc}
 
 # ==============================================================================
@@ -167,7 +167,36 @@ regions_data = {
 
 count = 0
 
-# 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/, /cheonan/)
+# ==============================================================================
+# 0) 루트 메인 페이지 (index.html) -> '출장마사지' 키워드 절대 배제
+# ==============================================================================
+root_gu_links = []
+for sido_k, sido_v in regions_data.items():
+    root_gu_links.append(f'<a class="neighbor-card" href="/{sido_k}/"><b>{sido_v["name"]} 전지역</b> 바로가기 ➔</a>')
+
+root_breadcrumbs = '<span>오늘밤테라피 공식 홈</span>'
+
+# 메인 전용 클린 SEO (출장마사지 단어 ZERO)
+root_seo_title = "오늘밤테라피 | 서울·경기·인천·천안 24시 방문 홈케어 스웨디시 100% 후불제"
+root_seo_desc = "오늘밤테라피 공식 홈페이지. 건식·센슈얼·전신혼합VVIP·한국인 스웨디시 100% 안심 후불제 프리미엄 방문 홈케어. 서울, 경기, 인천, 천안 전지역 25분 내 신속 방문."
+
+root_page = template_content
+root_page = root_page.replace("{{BREADCRUMBS}}", root_breadcrumbs)
+root_page = root_page.replace("{{PAGE_TITLE}}", root_seo_title)
+root_page = root_page.replace("{{PAGE_DESC}}", root_seo_desc)
+root_page = root_page.replace("{{REGION_NAME}}", "수도권 및 천안 전지역")
+root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
+root_page = root_page.replace("{{region_slug}}", "")
+root_page = root_page.replace("{{neighborhood_links}}", "\n".join(root_gu_links))
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(root_page)
+count += 1
+print("✅ 메인 루트 index.html 생성 완료 (출장마사지 키워드 제외 클린 버전)")
+
+# ==============================================================================
+# 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/, /cheonan/) -> 출장마사지 포함
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     sido_dir = sido_key
     os.makedirs(sido_dir, exist_ok=True)
@@ -177,7 +206,7 @@ for sido_key, sido_val in regions_data.items():
         gu_links.append(f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/">{gu_info["name"]} 바로가기 ➔</a>')
     
     breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> {sido_val["name"]}'
-    seo = generate_random_seo(f"{sido_val['name']} 전지역")
+    seo = generate_local_seo(f"{sido_val['name']} 전지역")
     
     page = template_content
     page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
@@ -192,7 +221,9 @@ for sido_key, sido_val in regions_data.items():
         f.write(page)
     count += 1
 
-# 2) 구/시 단위 페이지 (/seoul/gangnam/, /cheonan/seobuk/ 등)
+# ==============================================================================
+# 2) 구/시 단위 페이지 (/seoul/gangnam/, /cheonan/seobuk/ 등) -> 출장마사지 포함
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
         gu_dir = f"{sido_key}/{gu_key}"
@@ -203,7 +234,7 @@ for sido_key, sido_val in regions_data.items():
             dong_links.append(f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{dong}/">{dong}</a>')
         
         breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> {gu_info["name"]}'
-        seo = generate_random_seo(f"{sido_val['name']} {gu_info['name']}")
+        seo = generate_local_seo(f"{sido_val['name']} {gu_info['name']}")
 
         page = template_content
         page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
@@ -218,7 +249,9 @@ for sido_key, sido_val in regions_data.items():
             f.write(page)
         count += 1
 
-# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/, /cheonan/seobuk/신불당/ 등)
+# ==============================================================================
+# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/, /cheonan/seobuk/신불당/ 등) -> 출장마사지 포함
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
         neighbor_links = []
@@ -230,7 +263,7 @@ for sido_key, sido_val in regions_data.items():
             os.makedirs(target_dir, exist_ok=True)
             
             breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> <a href="/{sido_key}/{gu_key}/">{gu_info["name"]}</a> <span>&gt;</span> {dong}'
-            seo = generate_random_seo(f"{gu_info['name']} {dong}")
+            seo = generate_local_seo(f"{gu_info['name']} {dong}")
             
             page = template_content
             page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
@@ -245,4 +278,4 @@ for sido_key, sido_val in regions_data.items():
                 f.write(page)
             count += 1
 
-print(f">> 완료! 서울, 경기, 인천, 천안 전체(상권/핫플 포함) 총 {count}개의 완벽한 지역 페이지가 제작되었습니다.")
+print(f"\n>> [오늘밤테라피] 완료! 총 {count}개의 지역별 맞춤 SEO 페이지가 빌드되었습니다.")

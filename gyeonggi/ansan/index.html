@@ -1,286 +1,652 @@
 <!doctype html>
-<html lang="ko" class="no-js">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>경기 안산시 호텔·자택 프라이빗 출장마사지 상시대기 빠른방문 | 서울 한국미인테라피</title>
-  <meta name="description" content="경기 안산시 자택, 호텔, 오피스텔 어디든 찾아가는 프라이빗 힐링 출장마사지. 예약금·선입금 요구 일절 없는 안전 후불 시스템 | 서울 한국미인테라피">
-  <link rel="canonical" href="https://seoul-beautytherapy.shop/gyeonggi/ansan/">
-  <meta name="theme-color" content="#0d0814">
+  <title>경기 안산시 VIP 림프케어 출장마사지 후불제 맞춤 서비스 | 오늘밤테라피</title>
+  <meta name="description" content="내 방에서 누리는 VIP 스파 케어, 경기 안산시 출장마사지 전문 오늘밤테라피. 100% 후불 결제로 안전하게 이용하세요.">
+  <link rel="canonical" href="https://oneulbam-therapy.shop/gyeonggi/ansan/">
+  <meta name="theme-color" content="#06040a">
   
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
     :root {
-      --bg-main: #0d0814;
-      --bg-surface: rgba(26, 16, 38, 0.7);
-      --bg-surface-hover: rgba(38, 23, 56, 0.85);
-      --text-main: #f8f6fc;
-      --text-sub: #b3a5c4;
+      --bg-deep: #06040a;
+      --bg-surface: rgba(20, 14, 32, 0.65);
+      --bg-surface-elevated: rgba(30, 21, 48, 0.85);
+      --text-main: #faf8fc;
+      --text-sub: #a89bb8;
+      --text-muted: #756885;
+      
+      /* Luxury Palette */
+      --gold-light: #fff0c2;
       --gold-primary: #ffd166;
-      --gold-gradient: linear-gradient(135deg, #ffe082 0%, #ffb300 50%, #e65100 100%);
-      --pink-neon: #ff2a7a;
-      --purple-neon: #9d4edd;
-      --glow-gradient: linear-gradient(135deg, #ff2a7a, #9d4edd, #ffb300);
-      --border-glow: rgba(255, 209, 102, 0.2);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --max-w: 1140px;
-      --font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+      --gold-gradient: linear-gradient(135deg, #fff3d1 0%, #ffd166 40%, #c99326 100%);
+      
+      --neon-magenta: #ff2a85;
+      --neon-purple: #9d4edd;
+      --brand-gradient: linear-gradient(135deg, #ff2a85 0%, #9d4edd 50%, #ffd166 100%);
+      
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(255, 209, 102, 0.3);
+      
+      --max-w: 1200px;
+      --font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: var(--bg-main); color: var(--text-main); font-family: var(--font-family);
-      line-height: 1.65; letter-spacing: -0.02em; word-break: keep-all; padding-bottom: 120px;
+      background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font);
+      line-height: 1.65; letter-spacing: -0.025em; word-break: keep-all; padding-bottom: 120px;
       position: relative; overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
 
-    .ambient-glow {
-      position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 1000px; height: 600px;
-      background: radial-gradient(circle, rgba(157, 78, 221, 0.23) 0%, rgba(255, 42, 122, 0.13) 40%, rgba(13, 8, 20, 0) 70%);
-      filter: blur(80px); z-index: -1; pointer-events: none;
+    /* Animated Aurora Background Mesh */
+    .aurora-bg {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; overflow: hidden;
     }
+    .aurora-glow-1 {
+      position: absolute; top: -10%; left: 20%; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(157, 78, 221, 0.22) 0%, rgba(6, 4, 10, 0) 70%);
+      filter: blur(90px); animation: float1 14s ease-in-out infinite alternate;
+    }
+    .aurora-glow-2 {
+      position: absolute; top: 35%; right: -10%; width: 650px; height: 650px;
+      background: radial-gradient(circle, rgba(255, 42, 133, 0.18) 0%, rgba(6, 4, 10, 0) 70%);
+      filter: blur(100px); animation: float2 18s ease-in-out infinite alternate;
+    }
+    .aurora-glow-3 {
+      position: absolute; bottom: 5%; left: -5%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255, 209, 102, 0.14) 0%, rgba(6, 4, 10, 0) 70%);
+      filter: blur(80px); animation: float1 12s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes float1 { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(80px) scale(1.15); } }
+    @keyframes float2 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(-70px, -50px) scale(1.1); } }
 
+    /* Header */
     .site-header {
-      position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 28px; background: rgba(13, 8, 20, 0.85); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-subtle); z-index: 1000;
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      background: rgba(6, 4, 10, 0.82); border-bottom: 1px solid var(--border-glass);
+      padding: 18px 24px; transition: all 0.3s;
     }
-    .brand {
-      display: flex; flex-direction: column; font-size: 1.25rem; font-weight: 900;
+    .header-inner {
+      max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: var(--brand-gradient); display: flex; align-items: center; justify-content: center;
+      font-size: 20px; box-shadow: 0 0 20px rgba(255, 42, 133, 0.45);
+    }
+    .brand-text b {
+      font-size: 1.25rem; font-weight: 900; letter-spacing: -0.03em;
       background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: block; line-height: 1.2;
     }
-    .brand small { font-size: 0.65rem; color: var(--text-sub); -webkit-text-fill-color: var(--text-sub); letter-spacing: 0.15em; font-weight: 600; text-transform: lowercase; }
-    .site-nav { display: flex; align-items: center; gap: 24px; }
-    .site-nav a { font-size: 0.95rem; color: var(--text-sub); transition: color 0.2s; }
-    .site-nav a:hover { color: #fff; }
-    .site-nav .nav-call { background: var(--glow-gradient); color: #fff; padding: 8px 20px; border-radius: 30px; font-weight: 800; }
+    .brand-text span { font-size: 0.65rem; color: var(--text-sub); letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; }
 
-    .breadcrumb { max-width: var(--max-w); margin: 30px auto 0; padding: 0 20px; font-size: 0.85rem; color: var(--text-sub); }
-    .breadcrumb a { color: inherit; }
-    .breadcrumb a:hover { color: #fff; }
-    .breadcrumb span { margin: 0 4px; color: rgba(255,255,255,0.2); }
-
-    .section-shell { max-width: var(--max-w); margin: 0 auto; padding: 50px 20px; }
-    .section-intro { text-align: center; margin-bottom: 45px; }
-    .section-intro span {
-      display: inline-block; font-size: 0.8rem; font-weight: 800; color: var(--gold-primary); letter-spacing: 0.2em;
-      text-transform: uppercase; background: rgba(255, 209, 102, 0.1); padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; border: 1px solid var(--border-glow);
+    .site-nav { display: flex; align-items: center; gap: 20px; }
+    .site-nav a { font-size: 0.92rem; color: var(--text-sub); font-weight: 600; transition: 0.2s; }
+    .site-nav a:hover { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    .nav-btn {
+      background: var(--brand-gradient); color: #fff; padding: 9px 22px; border-radius: 99px;
+      font-size: 0.9rem; font-weight: 900; box-shadow: 0 4px 20px rgba(255, 42, 133, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .section-intro h2 { font-size: 2.1rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .nav-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 25px rgba(255, 42, 133, 0.6); }
 
-    .home-hero {
-      max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 50px;
-      display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 50px;
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: var(--max-w); margin: 20px auto 0; padding: 0 24px;
+      font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
     }
-    .hero-kicker { color: var(--gold-primary); font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; }
-    .home-hero h1 { font-size: 2.8rem; line-height: 1.25; font-weight: 900; margin-bottom: 24px; }
-    .home-hero h1 em {
-      font-style: normal; background: linear-gradient(135deg, #fff 20%, var(--gold-primary) 60%, var(--pink-neon) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-lead { color: var(--text-sub); font-size: 1.15rem; margin-bottom: 36px; }
-    .hero-actions { display: flex; gap: 14px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 12px; font-weight: 800; font-size: 1rem; transition: all 0.25s ease; }
-    .button--signal { background: var(--glow-gradient); color: #fff; box-shadow: 0 8px 25px rgba(255, 42, 122, 0.4); }
-    .button--signal:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 42, 122, 0.6); }
-    .button--line { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: var(--text-main); }
+    .breadcrumbs a { color: var(--gold-primary); opacity: 0.85; transition: 0.2s; }
+    .breadcrumbs a:hover { opacity: 1; text-decoration: underline; }
+    .breadcrumbs span { opacity: 0.4; }
 
-    .hero-media { background: var(--bg-surface); border-radius: 24px; overflow: hidden; border: 1px solid var(--border-glow); box-shadow: 0 25px 50px rgba(0,0,0,0.7); aspect-ratio: 4 / 3; }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .promo-banner { max-width: var(--max-w); margin: 10px auto 30px; padding: 0 20px; }
-    .promo-banner__inner {
-      background: linear-gradient(135deg, rgba(45, 18, 66, 0.9) 0%, rgba(20, 10, 35, 0.95) 100%);
-      border: 1px solid rgba(255, 209, 102, 0.35); border-radius: 20px; padding: 26px 32px;
-      display: flex; justify-content: space-between; align-items: center; gap: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden;
+    /* Hero Section with Grid Banner */
+    .hero { max-width: var(--max-w); margin: 0 auto; padding: 24px 24px 30px; }
+    .hero-layout {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 40px;
+      background: linear-gradient(135deg, rgba(32, 20, 52, 0.7) 0%, rgba(14, 10, 24, 0.9) 100%);
+      border: 1px solid var(--border-gold); border-radius: 32px; padding: 50px;
+      position: relative; overflow: hidden; backdrop-filter: blur(16px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
-    .promo-banner__text h3 { font-size: 1.35rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
-    .promo-banner__text em { font-style: normal; color: var(--gold-primary); }
-    .promo-banner__text p { color: var(--text-sub); font-size: 0.95rem; }
-    .promo-banner__btn { background: var(--gold-gradient); color: #1a0a2a; padding: 12px 26px; border-radius: 30px; font-weight: 900; font-size: 0.95rem; white-space: nowrap; }
-
-    .course-section { background: linear-gradient(180deg, #0d0814 0%, #150d21 50%, #0d0814 100%); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
-    .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-    .course-card {
-      background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 28px;
-      display: flex; flex-direction: column; backdrop-filter: blur(10px); transition: all 0.3s ease; position: relative; overflow: hidden;
+    .hero-layout::before {
+      content: ""; position: absolute; top: -40%; right: -20%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255, 42, 133, 0.25) 0%, transparent 70%);
+      pointer-events: none; filter: blur(50px);
     }
-    .course-card:hover { transform: translateY(-6px); border-color: rgba(255, 209, 102, 0.4); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); }
-    .course-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-    .course-top span { font-size: 1.3rem; font-weight: 900; color: var(--gold-primary); }
-    .course-top small { background: rgba(255, 255, 255, 0.08); color: var(--text-sub); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
-    .course-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; font-weight: 800; }
-    .course-card p { color: var(--text-sub); font-size: 0.9rem; margin-bottom: 24px; flex-grow: 1; line-height: 1.5; }
-    .course-card dl div { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-size: 0.95rem; }
-    .course-card dl div:last-child { border-bottom: none; }
-    .course-card dl div dd { font-weight: 800; color: var(--gold-primary); font-size: 1.05rem; }
-    .price-original { font-size: 0.8rem; color: #73648a; text-decoration: line-through; margin-right: 6px; font-weight: 500; }
-    .discount-tag { font-size: 0.75rem; background: rgba(255, 42, 122, 0.15); color: var(--pink-neon); border: 1px solid rgba(255, 42, 122, 0.3); padding: 2px 6px; border-radius: 4px; font-weight: 900; margin-right: 4px; }
+
+    .live-status-pill {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.1);
+      border: 1px solid rgba(0, 230, 118, 0.35); padding: 5px 14px; border-radius: 30px;
+      font-size: 0.8rem; font-weight: 800; color: #69f0ae; margin-bottom: 18px;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; background-color: #00e676; border-radius: 50%;
+      box-shadow: 0 0 10px #00e676; animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.4); } 100% { opacity: 1; transform: scale(1); } }
+
+    .hero-title { font-size: 2.9rem; font-weight: 900; line-height: 1.22; margin-bottom: 20px; }
+    .hero-title em { font-style: normal; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-desc { font-size: 1.05rem; color: var(--text-sub); margin-bottom: 34px; line-height: 1.7; }
     
-    .course-card--highlight { border-color: rgba(255, 209, 102, 0.45); background: linear-gradient(160deg, rgba(46, 20, 69, 0.85), rgba(20, 10, 35, 0.95)); }
-    .course-card--highlight::before { content: "POPULAR"; position: absolute; top: 16px; right: -30px; background: var(--pink-neon); color: #fff; font-size: 0.65rem; font-weight: 900; padding: 4px 30px; transform: rotate(45deg); }
+    .hero-cta-wrap { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+    .btn-lux-primary {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--brand-gradient);
+      color: #fff; font-weight: 900; font-size: 1.02rem; padding: 15px 32px; border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(255, 42, 133, 0.45); transition: all 0.25s ease;
+    }
+    .btn-lux-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255, 42, 133, 0.65); }
+    .btn-lux-outline {
+      display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-gold); color: var(--gold-light); font-weight: 800; font-size: 0.98rem;
+      padding: 15px 26px; border-radius: 16px; backdrop-filter: blur(10px); transition: all 0.25s ease;
+    }
+    .btn-lux-outline:hover { background: rgba(255, 209, 102, 0.12); border-color: var(--gold-primary); color: #fff; }
 
-    .neighbor-section { background: rgba(13, 8, 20, 0.5); }
-    .neighbor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+    .hero-key-points {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      border-top: 1px solid var(--border-glass); padding-top: 24px;
+    }
+    .point-box b { font-size: 1.2rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+    .point-box span { font-size: 0.82rem; color: var(--text-sub); }
+
+    /* Visual Main Image Banner */
+    .hero-banner-frame {
+      position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(157, 78, 221, 0.25);
+      aspect-ratio: 4 / 3; width: 100%;
+    }
+    .hero-banner-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .banner-overlay-badge {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(12, 8, 20, 0.85); backdrop-filter: blur(12px); border: 1px solid var(--border-glass);
+      padding: 12px 18px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .banner-overlay-badge span { font-size: 0.82rem; color: var(--text-sub); }
+    .banner-overlay-badge b { font-size: 0.95rem; color: var(--gold-primary); font-weight: 900; }
+
+    /* Animated Promo Banner Strip */
+    .promo-strip-wrap { max-width: var(--max-w); margin: 10px auto 40px; padding: 0 24px; }
+    .promo-strip {
+      background: linear-gradient(135deg, rgba(45, 18, 66, 0.9) 0%, rgba(20, 10, 35, 0.95) 100%);
+      border: 1px solid var(--border-gold); border-radius: 20px; padding: 22px 30px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden;
+    }
+    .promo-strip::before {
+      content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      animation: shimmer 4s infinite;
+    }
+    @keyframes shimmer { 100% { left: 200%; } }
+    .promo-strip-text h3 { font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 3px; }
+    .promo-strip-text h3 em { font-style: normal; color: var(--gold-primary); }
+    .promo-strip-text p { color: var(--text-sub); font-size: 0.92rem; }
+    .promo-strip-btn {
+      background: var(--gold-gradient); color: #150921; padding: 12px 24px; border-radius: 30px;
+      font-weight: 900; font-size: 0.92rem; white-space: nowrap; box-shadow: 0 4px 18px rgba(255, 209, 102, 0.4);
+      transition: transform 0.2s;
+    }
+    .promo-strip-btn:hover { transform: scale(1.05); }
+
+    /* Shell & Headings */
+    .shell { max-width: var(--max-w); margin: 0 auto; padding: 75px 24px; }
+    .section-head { text-align: center; margin-bottom: 54px; }
+    .section-tag {
+      display: inline-block; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.2em;
+      color: var(--gold-primary); background: rgba(255, 209, 102, 0.08); border: 1px solid var(--border-gold);
+      padding: 5px 16px; border-radius: 30px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .section-head h2 { font-size: 2.35rem; font-weight: 900; color: #fff; margin-bottom: 10px; letter-spacing: -0.03em; }
+    .section-head p { color: var(--text-sub); font-size: 1.02rem; }
+
+    /* Luxury Course Cards */
+    .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .course-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 24px;
+      padding: 36px; display: flex; flex-direction: column; justify-content: space-between;
+      backdrop-filter: blur(14px); position: relative; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .course-card:hover {
+      transform: translateY(-6px); background: var(--bg-surface-elevated);
+      border-color: var(--border-gold); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(157, 78, 221, 0.25);
+    }
+    .course-card.highlight {
+      border-color: rgba(255, 42, 133, 0.45);
+      background: linear-gradient(165deg, rgba(45, 22, 65, 0.8) 0%, rgba(18, 12, 30, 0.95) 100%);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(255, 42, 133, 0.1);
+    }
+    .course-card.highlight::before {
+      content: "SIGNATURE"; position: absolute; top: 18px; right: -34px;
+      background: var(--neon-magenta); color: #fff; font-size: 0.65rem; font-weight: 900;
+      letter-spacing: 0.08em; padding: 4px 38px; transform: rotate(45deg);
+      box-shadow: 0 3px 12px rgba(255, 42, 133, 0.5);
+    }
+    .course-top-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .course-num { font-size: 1.2rem; font-weight: 900; color: var(--gold-primary); }
+    .course-tag {
+      font-size: 0.72rem; font-weight: 800; background: rgba(255, 255, 255, 0.06);
+      color: var(--gold-light); padding: 4px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .course-card h3 { font-size: 1.45rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .course-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 28px; line-height: 1.6; min-height: 48px; }
+    
+    .course-prices { list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+    .course-prices li {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-size: 1rem;
+    }
+    .course-prices li:last-child { border-bottom: none; }
+    .course-prices li span { color: var(--text-sub); font-weight: 600; }
+    .course-prices li b { font-size: 1.18rem; font-weight: 900; color: var(--gold-primary); }
+
+    /* Step Section */
+    .step-section {
+      background: linear-gradient(180deg, rgba(12, 8, 20, 0.8) 0%, rgba(20, 14, 32, 0.9) 50%, rgba(12, 8, 20, 0.8) 100%);
+      border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);
+    }
+    .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .step-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 24px;
+      padding: 36px 30px; text-align: center; backdrop-filter: blur(12px);
+      transition: transform 0.25s ease;
+    }
+    .step-card:hover { transform: translateY(-4px); border-color: var(--border-gold); }
+    .step-icon-badge {
+      width: 60px; height: 60px; border-radius: 20px; margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(255, 209, 102, 0.15) 0%, rgba(255, 42, 133, 0.15) 100%);
+      border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; color: var(--gold-primary);
+    }
+    .step-card h4 { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .step-card p { font-size: 0.93rem; color: var(--text-sub); line-height: 1.6; }
+
+    /* Customer Reviews Grid */
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 20px;
+      padding: 30px 26px; display: flex; flex-direction: column; justify-content: space-between;
+      backdrop-filter: blur(12px); transition: all 0.25s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-4px); background: var(--bg-surface-elevated); border-color: var(--border-gold);
+    }
+    .review-stars { color: #ffb300; font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .review-card p { color: var(--text-main); font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px; }
+    .review-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 14px; font-size: 0.85rem; color: var(--text-sub);
+    }
+    .review-meta span:last-child { color: var(--gold-primary); font-weight: 700; }
+
+    /* Service Coverage Map */
+    .map-frame-box {
+      width: 100%; height: 380px; border-radius: 24px; overflow: hidden;
+      border: 1px solid var(--border-gold); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+    .map-frame-box iframe {
+      width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(220deg);
+    }
+
+    /* FAQ Accordion List */
+    .faq-list { max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 18px;
+      padding: 22px 28px; backdrop-filter: blur(12px); transition: all 0.25s ease;
+    }
+    .faq-item[open] { border-color: var(--border-gold); background: var(--bg-surface-elevated); }
+    .faq-item summary {
+      cursor: pointer; font-weight: 800; font-size: 1.1rem; color: #fff; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "＋"; color: var(--gold-primary); font-size: 1.3rem; font-weight: 900; }
+    .faq-item[open] summary::after { content: "－"; }
+    .faq-item p {
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-sub); font-size: 0.98rem; line-height: 1.7;
+    }
+
+    /* Dynamic Sub-region Grid */
+    .neighbor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
     .neighbor-card {
-      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px;
-      padding: 12px; text-align: center; font-size: 0.9rem; color: var(--text-sub); transition: all 0.2s; display: block;
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 14px;
+      padding: 16px 18px; text-align: center; font-size: 0.92rem; font-weight: 700; color: var(--text-main);
+      backdrop-filter: blur(8px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); display: block;
     }
-    .neighbor-card:hover { background: var(--bg-surface-hover); color: var(--gold-primary); border-color: var(--gold-primary); transform: translateY(-2px); }
-
-    .contact-dock {
-      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; width: calc(100% - 32px); max-width: 440px; z-index: 9999; padding: 8px;
-      background: rgba(18, 10, 28, 0.88); backdrop-filter: blur(20px); border: 1px solid rgba(255, 209, 102, 0.3); border-radius: 999px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 42, 122, 0.3);
+    .neighbor-card:hover {
+      background: var(--bg-surface-elevated); border-color: var(--gold-primary); color: var(--gold-primary);
+      transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 209, 102, 0.2);
     }
-    .contact-dock__btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; border-radius: 999px; font-weight: 900; font-size: 15px; }
-    .contact-dock__btn--call { background: var(--glow-gradient); color: #fff; }
-    .contact-dock__btn--sms { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
 
-    @media (max-width: 768px) {
-      .home-hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; gap: 35px; }
-      .home-hero h1 { font-size: 2.2rem; }
-      .hero-actions { justify-content: center; }
-      .promo-banner__inner { flex-direction: column; text-align: center; }
+    /* Footer CTA */
+    .footer-cta { text-align: center; padding: 90px 24px; position: relative; }
+    .footer-cta h3 { font-size: 2.5rem; font-weight: 900; margin-bottom: 14px; color: #fff; letter-spacing: -0.03em; }
+    .footer-cta p { color: var(--text-sub); font-size: 1.1rem; margin-bottom: 36px; }
+
+    /* Footer */
+    .site-footer {
+      text-align: center; padding: 34px 24px; border-top: 1px solid var(--border-glass);
+      color: var(--text-muted); font-size: 0.88rem;
+    }
+
+    /* Mobile Floating Dock */
+    .quick-dock {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 32px); max-width: 440px; z-index: 9999;
+      background: rgba(16, 10, 26, 0.92); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-gold); border-radius: 999px;
+      padding: 7px; display: flex; gap: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 42, 133, 0.35);
+    }
+    .dock-btn {
+      flex: 1; height: 52px; border-radius: 999px; font-weight: 900; font-size: 1rem;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s;
+    }
+    .dock-btn:active { transform: scale(0.96); }
+    .dock-btn-call { background: var(--brand-gradient); color: #fff; box-shadow: 0 4px 15px rgba(255, 42, 133, 0.4); }
+    .dock-btn-sms { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; padding: 32px 20px; text-align: center; gap: 30px; }
+      .hero-cta-wrap, .hero-key-points { justify-content: center; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-key-points { grid-template-columns: 1fr; gap: 14px; }
+      .promo-strip { flex-direction: column; text-align: center; }
+      .course-grid, .step-grid, .review-grid { grid-template-columns: 1fr; }
+      .site-nav a { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="ambient-glow"></div>
-
-  <header class="site-header">
-    <a class="brand" href="/">
-      <span>서울 한국미인테라피</span>
-      <small>seoul korea beauty therapy</small>
-    </a>
-    <nav class="site-nav">
-      <a href="#course">코스·요금</a>
-      <a href="#neighborhoods">주변지역</a>
-      <a class="nav-call" href="tel:0507-1280-3201">전화 상담</a>
-    </nav>
-  </header>
-
-  <div class="breadcrumb">
-    <a href="/">홈</a> <span>&gt;</span> <a href="/gyeonggi/">경기</a> <span>&gt;</span> 안산시
+  <!-- Ambient Glowing Aura -->
+  <div class="aurora-bg">
+    <div class="aurora-glow-1"></div>
+    <div class="aurora-glow-2"></div>
+    <div class="aurora-glow-3"></div>
   </div>
 
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <div class="brand-icon">🌙</div>
+        <div class="brand-text">
+          <b>오늘밤테라피</b>
+          <span>Oneulbam Luxury Therapy</span>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="#course">코스·요금</a>
+        <a href="#process">이용안내</a>
+        <a href="#review">고객후기</a>
+        <a href="#faq">FAQ</a>
+        <a href="#areas">지역안내</a>
+        <a class="nav-btn" href="tel:0507-1280-3199">📞 0507-1280-3199</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <a href="/">홈</a> <span>&gt;</span> <a href="/gyeonggi/">경기</a> <span>&gt;</span> 안산시
+  </nav>
+
   <main>
-    <section class="home-hero">
-      <div class="hero-copy">
-        <div class="hero-kicker">✨ 경기 안산시 프리미엄 안심 후불 홈케어</div>
-        <h1><span>경기 안산시</span><br><span><em>30분 홈타이 스웨디시</em></span></h1>
-        <p class="hero-lead">지친 하루 끝에 복잡한 외출 필요 없이, 경기 안산시 내 머무시는 안방, 호텔, 모텔 객실 어디든 서울 한국미인테라피가 직접 찾아갑니다. 선입금 없는 100% 후불제로 안심 예약하세요.</p>
-        <div class="hero-actions">
-          <a class="button button--signal" href="tel:0507-1280-3201">지정 관리사 부르기 <i>↗</i></a>
-          <a class="button button--line" href="#course">코스 안내</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <img src="/assets/images/main-banner.jpg" alt="경기 안산시 서울 한국미인테라피">
-      </div>
-    </section>
-
-    <section class="promo-banner">
-      <div class="promo-banner__inner">
-        <div class="promo-banner__text">
-          <h3>👑 100% 후불제 안심 원칙 (경기 안산시)</h3>
-          <p>예약금 사기 원천 차단! 도착 후 결제 시스템으로 걱정 없이 편안하게 서비스를 받아보세요.</p>
-        </div>
-        <a href="tel:0507-1280-3201" class="promo-banner__btn">바로 통화하기 ➔</a>
-      </div>
-    </section>
-
-    <section class="course-section" id="course">
-      <div class="section-shell">
-        <div class="section-intro">
-          <span>MENU & PRICE</span>
-          <h2>경기 안산시 서비스 요금표</h2>
-          <p>출장/이동 비용 일체 포함 정직한 정가 요금 안내</p>
-        </div>
-        <div class="course-grid">
+    <!-- Hero Section with Visual Media Frame -->
+    <section class="hero">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="live-status-pill">
+            <div class="pulse-dot"></div>
+            <span>실시간 예약 접수중 · 경기 안산시 25분 도착</span>
+          </div>
           
-          <article class="course-card">
-            <div class="course-top"><span>01</span><small>DRY CARE</small></div>
-            <h3>🧠 건식 테라피 코스</h3>
-            <p>오일 없이 건식 지압과 스트레칭으로 굳은 전신 근육을 시원하게 풀어내는 정통 테라피 코스입니다.</p>
-            <dl>
-              <div><dt>60분</dt><dd>60,000원</dd></div>
-              <div><dt>90분</dt><dd>80,000원</dd></div>
-              <div><dt>120분</dt><dd>90,000원</dd></div>
-            </dl>
-          </article>
+          <h1 class="hero-title">
+            오늘 밤의 깊은 피로를<br>
+            <em>가장 편안한 공간에서</em>
+          </h1>
+          <p class="hero-desc">내 방에서 누리는 VIP 스파 케어, 경기 안산시 출장마사지 전문 오늘밤테라피. 100% 후불 결제로 안전하게 이용하세요.</p>
+          
+          <div class="hero-cta-wrap">
+            <a class="btn-lux-primary" href="tel:0507-1280-3199">⚡ 빠른 전화 예약 ➔</a>
+            <a class="btn-lux-outline" href="#course">코스 및 정찰제 요금표</a>
+          </div>
 
-          <article class="course-card">
-            <div class="course-top"><span>02</span><small>SENSUAL</small></div>
-            <h3>🧠 센슈얼스웨디시</h3>
-            <p>감각적인 테라피와 부드러운 스웨디시 기법을 결합하여 전신의 긴장을 녹이고 깊은 휴식을 이끕니다.</p>
-            <dl>
-              <div><dt>60분</dt><dd>90,000원</dd></div>
-              <div><dt>90분</dt><dd>110,000원</dd></div>
-              <div><dt>120분</dt><dd>130,000원</dd></div>
-            </dl>
-          </article>
+          <div class="hero-key-points">
+            <div class="point-box">
+              <b>100% 후불제</b>
+              <span>선입금·예약금 0원</span>
+            </div>
+            <div class="point-box">
+              <b>25분 신속도착</b>
+              <span>경기 안산시 상시대기</span>
+            </div>
+            <div class="point-box">
+              <b>24H 연중무휴</b>
+              <span>늦은 밤·새벽 방문</span>
+            </div>
+          </div>
+        </div>
 
-          <article class="course-card course-card--highlight">
-            <div class="course-top"><span>03</span><small>SPECIAL</small></div>
-            <h3>🔮 아로디시 안내</h3>
-            <p>고급 아로마 오일의 부드러움과 림프 이완 스웨디시를 함께 경험하는 프리미엄 복합 코스입니다.</p>
-            <dl>
-              <div>
-                <dt>아로디시관리 90분</dt>
-                <dd>
-                  <span class="discount-tag">16% OFF</span>
-                  <span class="price-original">120,000원</span>
-                  100,000원
-                </dd>
-              </div>
-              <div>
-                <dt>아로디시관리 120분</dt>
-                <dd>
-                  <span class="discount-tag">18% OFF</span>
-                  <span class="price-original">160,000원</span>
-                  130,000원
-                </dd>
-              </div>
-            </dl>
-          </article>
-
-          <article class="course-card course-card--highlight">
-            <div class="course-top"><span>04</span><small>SIGNATURE</small></div>
-            <h3>🔮 스웨디시 안내</h3>
-            <p>섬세하고 정성 가득한 터치로 지친 일상의 피로와 스트레스를 부드럽게 케어하는 시그니처 코스입니다.</p>
-            <dl>
-              <div>
-                <dt>스웨디시관리 60분</dt>
-                <dd>
-                  <span class="discount-tag">12% OFF</span>
-                  <span class="price-original">160,000원</span>
-                  140,000원
-                </dd>
-              </div>
-              <div>
-                <dt>스웨디시관리 90분</dt>
-                <dd>
-                  <span class="discount-tag">18% OFF</span>
-                  <span class="price-original">220,000원</span>
-                  180,000원
-                </dd>
-              </div>
-            </dl>
-          </article>
-
+        <!-- 🖼️ Visual Image Banner Frame -->
+        <div class="hero-banner-frame">
+          <img src="/assets/images/main-banner.jpg" alt="오늘밤테라피 프리미엄 배너" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'">
+          <div class="banner-overlay-badge">
+            <span>프리미엄 1:1 맞춤 힐링</span>
+            <b>100% 안심 후불제</b>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-shell neighbor-section" id="neighborhoods">
-      <div class="section-intro">
-        <span>📍 안산시 세부 상권·동네</span>
-        <h2>행정 구역 및 하위 행정동 안내</h2>
-        <p>원하시는 세부 지역 버튼을 선택하시면 해당 지역 전용 상세 페이지로 바로 이동합니다.</p>
+    <!-- 🌟 Shimmering Promo Banner Strip -->
+    <section class="promo-strip-wrap">
+      <div class="promo-strip">
+        <div class="promo-strip-text">
+          <h3>👑 오늘밤테라피 <em>100% 후불 안심 케어</em></h3>
+          <p>선입금·예약금 일체 없음! 전문 관리사 대면 후 결제로 안심하고 이용하세요.</p>
+        </div>
+        <a href="tel:0507-1280-3199" class="promo-strip-btn">지금 빠른 예약 문의 ➔</a>
       </div>
+    </section>
+
+    <!-- Course & Price Section -->
+    <section class="shell" id="course">
+      <div class="section-head">
+        <span class="section-tag">PREMIUM MENU</span>
+        <h2>코스 및 정찰제 요금표</h2>
+        <p>선입금 없는 100% 안전 후불제 · 투명하고 정직한 정찰 요금</p>
+      </div>
+
+      <div class="course-grid">
+        <!-- 01 건식 테라피 -->
+        <article class="course-card">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">01</span>
+              <span class="course-tag">DRY CARE</span>
+            </div>
+            <h3>🧠 건식 테라피 코스</h3>
+            <p>오일 없이 정통 건식 지압과 스트레칭으로 굳은 전신 근육과 피로를 시원하게 해소합니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>60,000원</b></li>
+            <li><span>90분 코스</span><b>80,000원</b></li>
+            <li><span>120분 코스</span><b>90,000원</b></li>
+          </ul>
+        </article>
+
+        <!-- 02 센슈얼스웨디시 -->
+        <article class="course-card">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">02</span>
+              <span class="course-tag">SENSUAL</span>
+            </div>
+            <h3>🧠 센슈얼스웨디시 코스</h3>
+            <p>감각적이고 섬세한 터치와 부드러운 스웨디시 기법으로 깊은 이완과 힐링을 선사합니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>90,000원</b></li>
+            <li><span>90분 코스</span><b>110,000원</b></li>
+            <li><span>120분 코스</span><b>130,000원</b></li>
+          </ul>
+        </article>
+
+        <!-- 03 전신혼합VVIP -->
+        <article class="course-card highlight">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">03</span>
+              <span class="course-tag">BEST VVIP</span>
+            </div>
+            <h3>🧠 전신혼합VVIP 코스</h3>
+            <p>건식 지압의 개운함과 아로마/스웨디시의 부드러움을 동시에 누리는 최고 인기 종합 코스입니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>100,000원</b></li>
+            <li><span>90분 코스</span><b>120,000원</b></li>
+            <li><span>120분 코스</span><b>140,000원</b></li>
+            <li><span>150분 코스</span><b>180,000원</b></li>
+          </ul>
+        </article>
+
+        <!-- 04 한국인 스웨디시 -->
+        <article class="course-card highlight">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">04</span>
+              <span class="course-tag">SIGNATURE</span>
+            </div>
+            <h3>🧠 한국인 스웨디시 코스</h3>
+            <p>전문 한국인 테라피스트의 정성 가득한 감성 힐링으로 차원이 다른 만족감을 완성합니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>140,000원</b></li>
+            <li><span>90분 코스</span><b>180,000원</b></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3-Step Process -->
+    <section class="step-section" id="process">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-tag">SAFE PROCESS</span>
+          <h2>쉽고 안전한 3단계 이용 절차</h2>
+          <p>복잡한 절차 없이 간편하고 투명하게 이용하세요</p>
+        </div>
+
+        <div class="step-grid">
+          <div class="step-card">
+            <div class="step-icon-badge">📞</div>
+            <h4>STEP 1. 간편 상담 & 예약</h4>
+            <p>원하시는 코스와 계신 위치(자택/호텔/오피스텔)를 전화 또는 문자로 알려주세요.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon-badge">🚗</div>
+            <h4>STEP 2. 신속 출발 (평균 25분)</h4>
+            <p>가장 가까운 거점의 전문 관리사가 약속된 장소로 빠르고 안전하게 이동합니다.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon-badge">💳</div>
+            <h4>STEP 3. 대면 후 안심 결제</h4>
+            <p>예약금 없는 100% 후불제로 관리사 도착 확인 후 안심하고 결제해 주시면 됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Reviews Section -->
+    <section class="shell" id="review">
+      <div class="section-head">
+        <span class="section-tag">GUEST REVIEWS</span>
+        <h2>실제 고객 솔직 이용 후기</h2>
+        <p>오늘밤테라피를 직접 이용해주신 고객님들의 생생한 후기입니다</p>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"새벽에 예약했는데 25분 만에 딱 오셨네요. 선입금 요구가 없어서 안심했고 전신혼합VVIP 코스로 어깨 뭉친 곳을 완벽하게 풀어주셨습니다."</p>
+          </div>
+          <div class="review-meta"><span>강남구 직장인 김*우 고객님</span><span>전신혼합VVIP 코스</span></div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"천안 출장와서 호텔 객실로 불렀는데 대기 시간도 짧고 객실에서 편안하게 받으니 최고네요. 한국인 스웨디시 코스 완전히 추천합니다."</p>
+          </div>
+          <div class="review-meta"><span>천안 호텔 이용 신*민 고객님</span><span>한국인 스웨디시 코스</span></div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p>"집에서 홈케어 자주 받는데 요근래 받은 센슈얼스웨디시 중에 실력이 탑이네요. 시간 꽉 채워서 정성껏 힐링해 주셔서 단골 됐습니다."</p>
+          </div>
+          <div class="review-meta"><span>수원 거주 이*현 고객님</span><span>센슈얼스웨디시 코스</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Service Map Section -->
+    <section class="shell" style="padding-top: 0;">
+      <div class="section-head">
+        <span class="section-tag">SERVICE MAP</span>
+        <h2>방문 서비스 커버리지</h2>
+        <p>서울 · 경기 · 인천 · 천안 전지역 24시간 실시간 신속 방문</p>
+      </div>
+
+      <div class="map-frame-box">
+        <iframe src="https://maps.google.com/maps?q=서울,경기,인천,천안&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="shell" id="faq" style="padding-top: 20px;">
+      <div class="section-head">
+        <span class="section-tag">FAQ</span>
+        <h2>자주 묻는 질문</h2>
+        <p>이용 전 궁금한 점을 쉽고 빠르게 확인하세요</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>01. 선입금이나 예약금이 전혀 없나요?</summary>
+          <p>네, 오늘밤테라피는 선입금이나 예약금을 단 1원도 요구하지 않는 100% 안전 후불제 시스템입니다. 관리사가 계신 곳에 도착한 후 대면하여 결제해 주시면 됩니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>02. 호텔, 모텔, 오피스텔 객실도 이용 가능한가요?</summary>
+          <p>네, 일반 자택(아파트, 빌라, 원룸)은 물론 출장이나 여행으로 머무시는 호텔, 모텔, 오피스텔 등 정확한 주소와 호수만 알려주시면 신속하게 방문합니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>03. 예약 후 도착까지 얼마나 걸리나요?</summary>
+          <p>서울, 경기, 인천, 천안 주요 거점마다 전문 테라피스트가 상시 대기 중이므로 통화 종료 후 평균 25분~35분 내외로 빠르게 도착합니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Dynamic Sub-regions Navigation Grid -->
+    <section class="shell" id="areas" style="padding-top: 20px;">
+      <div class="section-head">
+        <span class="section-tag">SERVICE COVERAGE</span>
+        <h2>📍 안산시 세부 상권·동네</h2>
+        <p>원하시는 세부 지역을 클릭하시면 해당 지역 맞춤 페이지로 연결됩니다</p>
+      </div>
+
       <div class="neighbor-grid">
         <a class="neighbor-card" href="/gyeonggi/ansan/고잔동/">고잔동</a>
 <a class="neighbor-card" href="/gyeonggi/ansan/중앙동/">중앙동</a>
@@ -300,17 +666,26 @@
 <a class="neighbor-card" href="/gyeonggi/ansan/한양대에리카/">한양대에리카</a>
       </div>
     </section>
+
+    <!-- Final CTA -->
+    <section class="footer-cta">
+      <h3>오늘 밤, 나만을 위한 고품격 힐링 휴식</h3>
+      <p>지금 문의주시면 계신 곳에서 가장 가까운 베테랑 테라피스트를 신속하게 배정해 드립니다.</p>
+      <a class="btn-lux-primary" href="tel:0507-1280-3199">📞 0507-1280-3199 전화 상담 및 예약</a>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>© 서울 한국미인테라피 (seoul-beautytherapy.shop) | 수도권 및 천안 24시간 연중무휴 안심 케어: 0507-1280-3201</p>
+    <p>© 오늘밤테라피 (Oneulbam Therapy) | 경기 안산시 24시 안심 방문 홈케어 · 예약문의: 0507-1280-3199</p>
   </footer>
 
-  <aside class="contact-dock">
-    <a href="tel:0507-1280-3201" class="contact-dock__btn contact-dock__btn--call">
+  <!-- Mobile Floating Dock -->
+  <aside class="quick-dock">
+    <a href="tel:0507-1280-3199" class="dock-btn dock-btn-call">
       <span>📞 전화 상담</span>
     </a>
-    <a href="sms:0507-1280-3201" class="contact-dock__btn contact-dock__btn--sms">
+    <a href="sms:0507-1280-3199" class="dock-btn dock-btn-sms">
       <span>💬 문자 문의</span>
     </a>
   </aside>
