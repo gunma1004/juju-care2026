@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>평택시 오성면 감성 케어 출장 스웨디시 마사지 지정 장소 25분 도착 | 오늘밤테라피</title>
-  <meta name="description" content="{{META_DESCRIPTION}}">
-  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <title>평택시 오성면 호텔·자택 프라이빗 출장 홈케어 마사지 선입금 없는 안심케어 | 오늘밤테라피</title>
+  <meta name="description" content="평택시 오성면 전지역 24시간 100% 후불제 출장 힐링 마사지 전문. 건식·센슈얼·전신혼합VVIP·한국인 코스 완비. 통화 후 25분 내 신속 방문 | 오늘밤테라피">
+  <link rel="canonical" href="https://oneulbam2.netlify.app/gyeonggi/pyeongtaek/%EC%98%A4%EC%84%B1%EB%A9%B4/">
   <meta name="theme-color" content="#06040a">
   
   <style>
@@ -49,18 +49,25 @@
     .aurora-glow-1 {
       position: absolute; top: -10%; left: 20%; width: 700px; height: 700px;
       background: radial-gradient(circle, rgba(157, 78, 221, 0.22) 0%, rgba(6, 4, 10, 0) 70%);
-      filter: blur(90px);
+      filter: blur(90px); animation: float1 14s ease-in-out infinite alternate;
     }
     .aurora-glow-2 {
       position: absolute; top: 35%; right: -10%; width: 650px; height: 650px;
       background: radial-gradient(circle, rgba(255, 42, 133, 0.18) 0%, rgba(6, 4, 10, 0) 70%);
-      filter: blur(100px);
+      filter: blur(100px); animation: float2 18s ease-in-out infinite alternate;
     }
+    .aurora-glow-3 {
+      position: absolute; bottom: 5%; left: -5%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255, 209, 102, 0.14) 0%, rgba(6, 4, 10, 0) 70%);
+      filter: blur(80px); animation: float1 12s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes float1 { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(80px) scale(1.15); } }
+    @keyframes float2 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(-70px, -50px) scale(1.1); } }
 
     .site-header {
-      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(24px);
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       background: rgba(6, 4, 10, 0.82); border-bottom: 1px solid var(--border-glass);
-      padding: 18px 24px;
+      padding: 18px 24px; transition: all 0.3s;
     }
     .header-inner {
       max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center;
@@ -72,73 +79,224 @@
       font-size: 20px; box-shadow: 0 0 20px rgba(255, 42, 133, 0.45);
     }
     .brand-text b {
-      font-size: 1.25rem; font-weight: 900;
+      font-size: 1.25rem; font-weight: 900; letter-spacing: -0.03em;
       background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       display: block; line-height: 1.2;
     }
     .brand-text span { font-size: 0.65rem; color: var(--text-sub); letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; }
 
     .site-nav { display: flex; align-items: center; gap: 20px; }
-    .site-nav a { font-size: 0.92rem; color: var(--text-sub); font-weight: 600; }
-    .site-nav a:hover { color: #fff; }
+    .site-nav a { font-size: 0.92rem; color: var(--text-sub); font-weight: 600; transition: 0.2s; }
+    .site-nav a:hover { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
     .nav-btn {
       background: var(--brand-gradient); color: #fff; padding: 9px 22px; border-radius: 99px;
-      font-size: 0.9rem; font-weight: 900;
+      font-size: 0.9rem; font-weight: 900; box-shadow: 0 4px 20px rgba(255, 42, 133, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .nav-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 25px rgba(255, 42, 133, 0.6); }
 
     .breadcrumbs {
       max-width: var(--max-w); margin: 20px auto 0; padding: 0 24px;
       font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
     }
-    .breadcrumbs a { color: var(--gold-primary); }
+    .breadcrumbs a { color: var(--gold-primary); opacity: 0.85; transition: 0.2s; }
+    .breadcrumbs a:hover { opacity: 1; text-decoration: underline; }
 
-    .shell { max-width: var(--max-w); margin: 0 auto; padding: 50px 24px; }
-    .page-hero {
+    .hero { max-width: var(--max-w); margin: 0 auto; padding: 24px 24px 30px; }
+    .hero-layout {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 40px;
       background: linear-gradient(135deg, rgba(32, 20, 52, 0.7) 0%, rgba(14, 10, 24, 0.9) 100%);
-      border: 1px solid var(--border-gold); border-radius: 28px; padding: 40px; margin-bottom: 40px; text-align: center;
+      border: 1px solid var(--border-gold); border-radius: 32px; padding: 50px;
+      position: relative; overflow: hidden; backdrop-filter: blur(16px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
-    .page-hero h1 { font-size: 2.3rem; font-weight: 900; margin-bottom: 12px; color: #fff; }
-    .page-hero h1 em { font-style: normal; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .page-hero p { color: var(--text-sub); font-size: 1.05rem; max-width: 800px; margin: 0 auto 24px; }
+    .hero-layout::before {
+      content: ""; position: absolute; top: -40%; right: -20%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255, 42, 133, 0.25) 0%, transparent 70%);
+      pointer-events: none; filter: blur(50px);
+    }
+
+    .live-status-pill {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.1);
+      border: 1px solid rgba(0, 230, 118, 0.35); padding: 5px 14px; border-radius: 30px;
+      font-size: 0.8rem; font-weight: 800; color: #69f0ae; margin-bottom: 18px;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; background-color: #00e676; border-radius: 50%;
+      box-shadow: 0 0 10px #00e676; animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.4); } 100% { opacity: 1; transform: scale(1); } }
+
+    .hero-title { font-size: 2.7rem; font-weight: 900; line-height: 1.25; margin-bottom: 20px; }
+    .hero-title em { font-style: normal; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-desc { font-size: 1.02rem; color: var(--text-sub); margin-bottom: 34px; line-height: 1.7; }
     
-    .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 50px; }
-    .course-card {
-      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 20px; padding: 30px;
+    .hero-cta-wrap { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+    .btn-lux-primary {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--brand-gradient);
+      color: #fff; font-weight: 900; font-size: 1.02rem; padding: 15px 32px; border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(255, 42, 133, 0.45); transition: all 0.25s ease;
     }
-    .course-card h3 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
-    .course-card p { font-size: 0.92rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.6; }
+    .btn-lux-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255, 42, 133, 0.65); }
+    .btn-lux-outline {
+      display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-gold); color: var(--gold-light); font-weight: 800; font-size: 0.98rem;
+      padding: 15px 26px; border-radius: 16px; backdrop-filter: blur(10px); transition: all 0.25s ease;
+    }
+    .btn-lux-outline:hover { background: rgba(255, 209, 102, 0.12); border-color: var(--gold-primary); color: #fff; }
+
+    .hero-key-points {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      border-top: 1px solid var(--border-glass); padding-top: 24px;
+    }
+    .point-box b { font-size: 1.2rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+    .point-box span { font-size: 0.82rem; color: var(--text-sub); }
+
+    .hero-banner-frame {
+      position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(157, 78, 221, 0.25);
+      aspect-ratio: 4 / 3; width: 100%;
+    }
+    .hero-banner-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .banner-overlay-badge {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(12, 8, 20, 0.85); backdrop-filter: blur(12px); border: 1px solid var(--border-glass);
+      padding: 12px 18px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .banner-overlay-badge span { font-size: 0.82rem; color: var(--text-sub); }
+    .banner-overlay-badge b { font-size: 0.95rem; color: var(--gold-primary); font-weight: 900; }
+
+    .promo-strip-wrap { max-width: var(--max-w); margin: 10px auto 40px; padding: 0 24px; }
+    .promo-strip {
+      background: linear-gradient(135deg, rgba(45, 18, 66, 0.9) 0%, rgba(20, 10, 35, 0.95) 100%);
+      border: 1px solid var(--border-gold); border-radius: 20px; padding: 22px 30px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden;
+    }
+    .promo-strip::before {
+      content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      animation: shimmer 4s infinite;
+    }
+    @keyframes shimmer { 100% { left: 200%; } }
+    .promo-strip-text h3 { font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 3px; }
+    .promo-strip-text h3 em { font-style: normal; color: var(--gold-primary); }
+    .promo-strip-text p { color: var(--text-sub); font-size: 0.92rem; }
+    .promo-strip-btn {
+      background: var(--gold-gradient); color: #150921; padding: 12px 24px; border-radius: 30px;
+      font-weight: 900; font-size: 0.92rem; white-space: nowrap; box-shadow: 0 4px 18px rgba(255, 209, 102, 0.4);
+      transition: transform 0.2s;
+    }
+    .promo-strip-btn:hover { transform: scale(1.05); }
+
+    .shell { max-width: var(--max-w); margin: 0 auto; padding: 75px 24px; }
+    .section-head { text-align: center; margin-bottom: 54px; }
+    .section-tag {
+      display: inline-block; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.2em;
+      color: var(--gold-primary); background: rgba(255, 209, 102, 0.08); border: 1px solid var(--border-gold);
+      padding: 5px 16px; border-radius: 30px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .section-head h2 { font-size: 2.35rem; font-weight: 900; color: #fff; margin-bottom: 10px; letter-spacing: -0.03em; }
+    .section-head p { color: var(--text-sub); font-size: 1.02rem; }
+
+    .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .course-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 24px;
+      padding: 36px; display: flex; flex-direction: column; justify-content: space-between;
+      backdrop-filter: blur(14px); position: relative; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .course-card:hover {
+      transform: translateY(-6px); background: var(--bg-surface-elevated);
+      border-color: var(--border-gold); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(157, 78, 221, 0.25);
+    }
+    .course-card.highlight {
+      border-color: rgba(255, 42, 133, 0.45);
+      background: linear-gradient(165deg, rgba(45, 22, 65, 0.8) 0%, rgba(18, 12, 30, 0.95) 100%);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(255, 42, 133, 0.1);
+    }
+    .course-card.highlight::before {
+      content: "SIGNATURE"; position: absolute; top: 18px; right: -34px;
+      background: var(--neon-magenta); color: #fff; font-size: 0.65rem; font-weight: 900;
+      letter-spacing: 0.08em; padding: 4px 38px; transform: rotate(45deg);
+      box-shadow: 0 3px 12px rgba(255, 42, 133, 0.5);
+    }
+    .course-top-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .course-num { font-size: 1.2rem; font-weight: 900; color: var(--gold-primary); }
+    .course-tag {
+      font-size: 0.72rem; font-weight: 800; background: rgba(255, 255, 255, 0.06);
+      color: var(--gold-light); padding: 4px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .course-card h3 { font-size: 1.45rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .course-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 28px; line-height: 1.6; min-height: 48px; }
+    
     .course-prices { list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.07); }
     .course-prices li {
-      display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-size: 1rem;
     }
-    .course-prices li b { color: var(--gold-primary); font-weight: 900; }
+    .course-prices li:last-child { border-bottom: none; }
+    .course-prices li span { color: var(--text-sub); font-weight: 600; }
+    .course-prices li b { font-size: 1.18rem; font-weight: 900; color: var(--gold-primary); }
 
-    .neighbor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-    .neighbor-card {
-      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 12px;
-      padding: 14px; text-align: center; font-size: 0.9rem; font-weight: 700; color: var(--text-main);
+    .step-section {
+      background: linear-gradient(180deg, rgba(12, 8, 20, 0.8) 0%, rgba(20, 14, 32, 0.9) 50%, rgba(12, 8, 20, 0.8) 100%);
+      border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);
     }
-    .neighbor-card:hover { border-color: var(--gold-primary); color: var(--gold-primary); }
+    .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .step-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 24px;
+      padding: 36px 30px; text-align: center; backdrop-filter: blur(12px);
+      transition: transform 0.25s ease;
+    }
+    .step-card:hover { transform: translateY(-4px); border-color: var(--border-gold); }
+    .step-icon-badge {
+      width: 60px; height: 60px; border-radius: 20px; margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(255, 209, 102, 0.15) 0%, rgba(255, 42, 133, 0.15) 100%);
+      border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; color: var(--gold-primary);
+    }
+    .step-card h4 { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .step-card p { font-size: 0.93rem; color: var(--text-sub); line-height: 1.6; }
+
+    .neighbor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .neighbor-card {
+      background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: 14px;
+      padding: 18px 16px; text-align: center; font-size: 0.95rem; font-weight: 700; color: var(--text-main);
+      backdrop-filter: blur(8px); transition: all 0.25s ease; display: block;
+    }
+    .neighbor-card:hover {
+      background: var(--bg-surface-elevated); border-color: var(--gold-primary); color: var(--gold-primary);
+      transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
 
     .site-footer {
       text-align: center; padding: 34px 24px; border-top: 1px solid var(--border-glass);
       color: var(--text-muted); font-size: 0.88rem;
     }
+
     .quick-dock {
       position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
       width: calc(100% - 32px); max-width: 440px; z-index: 9999;
       background: rgba(16, 10, 26, 0.92); backdrop-filter: blur(24px);
-      border: 1px solid var(--border-gold); border-radius: 999px; padding: 7px; display: flex; gap: 8px;
+      border: 1px solid var(--border-gold); border-radius: 999px;
+      padding: 7px; display: flex; gap: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
     }
     .dock-btn {
       flex: 1; height: 52px; border-radius: 999px; font-weight: 900; font-size: 1rem;
-      display: inline-flex; align-items: center; justify-content: center;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     }
     .dock-btn-call { background: var(--brand-gradient); color: #fff; }
     .dock-btn-sms { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
 
     @media (max-width: 900px) {
-      .course-grid { grid-template-columns: 1fr; }
+      .hero-layout { grid-template-columns: 1fr; padding: 32px 20px; text-align: center; gap: 30px; }
+      .hero-cta-wrap, .hero-key-points { justify-content: center; }
+      .hero-title { font-size: 2.1rem; }
+      .hero-key-points { grid-template-columns: 1fr; gap: 14px; }
+      .promo-strip { flex-direction: column; text-align: center; }
+      .course-grid, .step-grid { grid-template-columns: 1fr; }
       .site-nav a { display: none; }
     }
   </style>
@@ -148,6 +306,7 @@
   <div class="aurora-bg">
     <div class="aurora-glow-1"></div>
     <div class="aurora-glow-2"></div>
+    <div class="aurora-glow-3"></div>
   </div>
 
   <header class="site-header">
@@ -169,68 +328,164 @@
   </header>
 
   <nav class="breadcrumbs" aria-label="breadcrumb">
-    <a href="/">홈</a> <span>&gt;</span> {{BREADCRUMB_LINKS}}
+    <a href="/">홈</a> <span>&gt;</span> <a href="/gyeonggi/">경기</a> <span>&gt;</span> <a href="/gyeonggi/pyeongtaek/">평택시</a> <span>&gt;</span> 오성면
   </nav>
 
-  <main class="shell">
-    <section class="page-hero">
-      <h1>평택시 오성면 <em>프리미엄 출장 홈케어 마사지</em></h1>
-      <p>평택시 오성면 전지역 25분 내 신속 방문. 예약금·선입금 없는 100% 안심 후불제로 <strong>출장 힐링 마사지</strong>, <strong>출장 타이 마사지</strong>, <strong>출장 스웨디시 마사지</strong>를 가장 편안한 공간에서 경험하세요.</p>
-      <div>
-        <a class="nav-btn" style="padding: 12px 30px; font-size: 1rem; display: inline-block;" href="tel:0507-1280-3199">📞 실시간 방문 예약 문의</a>
+  <main>
+    <section class="hero">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="live-status-pill">
+            <div class="pulse-dot"></div>
+            <span>실시간 예약 접수중 · 평택시 오성면 25분 신속 도착</span>
+          </div>
+          
+          <h1 class="hero-title">
+            평택시 오성면<br>
+            <em>가장 편안한 힐링 공간에서</em>
+          </h1>
+          <p class="hero-desc">평택시 오성면 전지역 24시간 100% 후불제 출장 힐링 마사지 전문. 건식·센슈얼·전신혼합VVIP·한국인 코스 완비. 통화 후 25분 내 신속 방문 | 오늘밤테라피</p>
+          
+          <div class="hero-cta-wrap">
+            <a class="btn-lux-primary" href="tel:0507-1280-3199">⚡ 빠른 전화 예약 ➔</a>
+            <a class="btn-lux-outline" href="#course">코스 및 정찰 요금표</a>
+          </div>
+
+          <div class="hero-key-points">
+            <div class="point-box">
+              <b>100% 후불제</b>
+              <span>선입금·예약금 0원</span>
+            </div>
+            <div class="point-box">
+              <b>25분 신속도착</b>
+              <span>서울·경기·인천 상시대기</span>
+            </div>
+            <div class="point-box">
+              <b>24H 연중무휴</b>
+              <span>늦은 밤·새벽 상시 방문</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-banner-frame">
+          <img src="/assets/images/main-banner.jpg" alt="오늘밤테라피 프리미엄 배너" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'">
+          <div class="banner-overlay-badge">
+            <span>평택시 오성면 프리미엄 1:1 케어</span>
+            <b>100% 안심 후불제</b>
+          </div>
+        </div>
       </div>
     </section>
 
-    <h2 style="font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 24px; text-align: center;">평택시 오성면 추천 테라피 코스</h2>
-    <div class="course-grid">
-      <article class="course-card">
-        <h3>🧠 출장 타이 마사지 (건식)</h3>
-        <p>평택시 오성면 전문 테라피스트의 손길로 정통 건식 지압과 스트레칭을 통해 굳은 근육을 풀어주는 출장 릴렉스 마사지 코스입니다.</p>
-        <ul class="course-prices">
-          <li><span>60분</span><b>60,000원</b></li>
-          <li><span>90분</span><b>80,000원</b></li>
-          <li><span>120분</span><b>90,000원</b></li>
-        </ul>
-      </article>
+    <section class="shell" id="course" style="padding-top: 20px;">
+      <div class="section-head">
+        <span class="section-tag">PREMIUM MENU</span>
+        <h2>평택시 오성면 추천 테라피 코스</h2>
+        <p>선입금 없는 100% 안전 후불제 · 투명하고 정직한 정찰 요금</p>
+      </div>
 
-      <article class="course-card">
-        <h3>🧠 출장 스웨디시 마사지 (센슈얼)</h3>
-        <p>감각적이고 섬세한 오일 터칭으로 지친 심신을 깊숙이 달래주는 감성 테라피 프로그램입니다.</p>
-        <ul class="course-prices">
-          <li><span>60분</span><b>90,000원</b></li>
-          <li><span>90분</span><b>110,000원</b></li>
-          <li><span>120분</span><b>130,000원</b></li>
-        </ul>
-      </article>
+      <div class="course-grid">
+        <article class="course-card">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">01</span>
+              <span class="course-tag">DRY CARE</span>
+            </div>
+            <h3>🧠 출장 타이 마사지 (건식)</h3>
+            <p>오일 없이 정통 건식 지압과 스트레칭으로 굳은 전신 근육과 피로를 시원하게 해소하는 출장 릴렉스 마사지 코스입니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>60,000원</b></li>
+            <li><span>90분 코스</span><b>80,000원</b></li>
+            <li><span>120분 코스</span><b>90,000원</b></li>
+          </ul>
+        </article>
 
-      <article class="course-card">
-        <h3>🧠 전신혼합VVIP 출장 아로마 마사지</h3>
-        <p>건식의 시원함과 아로마 테라피의 부드러움을 동시에 만나는 프리미엄 출장 홈타이 마사지 코스입니다.</p>
-        <ul class="course-prices">
-          <li><span>60분</span><b>100,000원</b></li>
-          <li><span>90분</span><b>120,000원</b></li>
-          <li><span>120분</span><b>140,000원</b></li>
-        </ul>
-      </article>
+        <article class="course-card">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">02</span>
+              <span class="course-tag">SENSUAL</span>
+            </div>
+            <h3>🧠 출장 스웨디시 마사지 (센슈얼)</h3>
+            <p>감각적이고 섬세한 터치와 부드러운 오일 기법으로 깊은 이완과 감성 힐링을 선사하는 코스입니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>90,000원</b></li>
+            <li><span>90분 코스</span><b>110,000원</b></li>
+            <li><span>120분 코스</span><b>130,000원</b></li>
+          </ul>
+        </article>
 
-      <article class="course-card">
-        <h3>🧠 한국인 스페셜 출장 힐링 마사지</h3>
-        <p>엄선된 한국인 매니저의 섬세한 맞춤 케어로 완성하는 프리미엄 1:1 홈케어 시그니처 코스입니다.</p>
-        <ul class="course-prices">
-          <li><span>60분</span><b>140,000원</b></li>
-          <li><span>90분</span><b>180,000원</b></li>
-        </ul>
-      </article>
-    </div>
+        <article class="course-card highlight">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">03</span>
+              <span class="course-tag">BEST VVIP</span>
+            </div>
+            <h3>🧠 전신혼합VVIP 출장 아로마 마사지</h3>
+            <p>건식 지압의 개운함과 아로마/스웨디시의 부드러움을 동시에 누리는 최고 인기 종합 출장 홈타이 마사지 프로그램입니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>100,000원</b></li>
+            <li><span>90분 코스</span><b>120,000원</b></li>
+            <li><span>120분 코스</span><b>140,000원</b></li>
+            <li><span>150분 코스</span><b>180,000원</b></li>
+          </ul>
+        </article>
 
-    <h2 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 18px;">📍 인근 세부 지역 안내</h2>
-    <div class="neighbor-grid">
-      {{SUB_REGION_CARDS}}
-    </div>
+        <article class="course-card highlight">
+          <div>
+            <div class="course-top-meta">
+              <span class="course-num">04</span>
+              <span class="course-tag">SIGNATURE</span>
+            </div>
+            <h3>🧠 한국인 스페셜 출장 힐링 마사지</h3>
+            <p>전문 한국인 테라피스트의 정성 가득한 감성 힐링으로 차원이 다른 만족감을 완성하는 시그니처 코스입니다.</p>
+          </div>
+          <ul class="course-prices">
+            <li><span>60분 코스</span><b>140,000원</b></li>
+            <li><span>90분 코스</span><b>180,000원</b></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell" id="areas" style="padding-top: 20px;">
+      <div class="section-head">
+        <span class="section-tag">SERVICE COVERAGE</span>
+        <h2>📍 평택시 인근 동네 둘러보기</h2>
+        <p>원하시는 세부 지역을 클릭하시면 해당 지역 맞춤 페이지로 연결됩니다</p>
+      </div>
+
+      <div class="neighbor-grid">
+        <a class="neighbor-card" href="/gyeonggi/pyeongtaek/%ED%8F%89%ED%83%9D%EB%8F%99/">평택동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EB%B9%84%EC%A0%84%EB%8F%99/">비전동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%86%A1%ED%83%84%EB%8F%99/">송탄동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%84%9C%EC%A0%95%EB%8F%99/">서정동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%A7%80%EC%82%B0%EB%8F%99/">지산동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%8B%A0%EC%9E%A5%EB%8F%99/">신장동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%95%88%EC%A4%91%EC%9D%8D/">안중읍</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%ED%8F%AC%EC%8A%B9%EC%9D%8D/">포승읍</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%B2%AD%EB%B6%81%EC%9D%8D/">청북읍</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EA%B3%A0%EB%8D%95%EB%8F%99/">고덕동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EA%B3%A0%EB%8D%95%EC%8B%A0%EB%8F%84%EC%8B%9C/">고덕신도시</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%84%B8%EA%B5%90%EB%8F%99/">세교동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%ED%86%B5%EB%B3%B5%EB%8F%99/">통복동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%ED%8C%BD%EC%84%B1%EC%9D%8D/">팽성읍</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%A7%84%EC%9C%84%EB%A9%B4/">진위면</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%98%A4%EC%84%B1%EB%A9%B4/">오성면</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%ED%98%84%EB%8D%95%EB%A9%B4/">현덕면</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EB%8F%99%EC%82%AD%EB%8F%99/">동삭동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%9A%A9%EC%9D%B4%EB%8F%99/">용이동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%A3%BD%EB%B0%B1%EB%8F%99/">죽백동</a>
+<a class="neighbor-card" href="/gyeonggi/pyeongtaek/%EC%86%8C%EC%82%AC%EB%B2%8C/">소사벌</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 오늘밤테라피 (Oneulbam Therapy) | 평택시 오성면 전지역 24시 안심 방문 테라피 · 예약문의: 0507-1280-3199</p>
+    <p>© 오늘밤테라피 (Oneulbam Therapy) | 평택시 오성면 24시 안심 방문 테라피 · 예약문의: 0507-1280-3199</p>
   </footer>
 
   <aside class="quick-dock">

@@ -1,5 +1,6 @@
 import os
 import random
+import urllib.parse
 
 if not os.path.exists("template.html"):
     print("오류: template.html 파일이 없습니다.")
@@ -8,9 +9,8 @@ if not os.path.exists("template.html"):
 with open("template.html", "r", encoding="utf-8") as f:
     template_content = f.read()
 
-# ==============================================================================
-# 1. SEO 엔진: 하위 구/동 페이지 전용 문구 (안전 패턴 분산 적용)
-# ==============================================================================
+BASE_URL = "https://oneulbam2.netlify.app"
+
 LOCAL_TITLE_PREFIXES = [
     "{loc} 24시 프리미엄 출장 힐링 마사지",
     "{loc} 출장 홈타이 마사지 & 스웨디시",
@@ -57,9 +57,6 @@ def generate_local_seo(loc_name):
     desc = random.choice(LOCAL_DESC_TEMPLATES).format(loc=loc_name)
     return {"title": title, "desc": desc}
 
-# ==============================================================================
-# 2. 지역 데이터 (서울 25구, 경기 31시군, 인천 10구군)
-# ==============================================================================
 regions_data = {
     "seoul": {
         "name": "서울",
@@ -112,7 +109,7 @@ regions_data = {
             "osan": {"name": "오산시", "dongs": ["오산동", "원동", "궐동", "청학동", "갈곶동", "세교동", "세교지구", "수청동", "금암동", "은계동", "가장동", "양산동", "외삼미동", "내삼미동", "부산동", "누읍동", "오산대역"]},
             "namyangju": {"name": "남양주시", "dongs": ["다산동", "다산신도시", "별내동", "별내신도시", "진접읍", "화도읍", "와부읍", "호평동", "평내동", "오남읍", "퇴계원읍", "진건읍", "수동면", "조안면", "마석"]},
             "paju": {"name": "파주시", "dongs": ["운정동", "운정신도시", "야당동", "야당역", "와동동", "목동동", "동패동", "다율동", "당하동", "교하동", "금촌동", "아동동", "문산읍", "파주읍", "조리읍", "법원읍", "탄현면", "헤이리"]},
-            "uijeongbu": {"name": "의정부시", "dongs": ["의정부동", "호원동", "장암동", "신곡동", "용현동", "민락동", "민락2지구", "낙양동", "고산동", "고산지구", "산곡동", "금오동", "가능동", "녹양동", "의정부역"]},
+            "uijeongbu": {"name": "의정부시", "dongs": ["의정부동", "호원동", "장암동", "신곡동", "용현동", "민락동", "민락2지구", "낙양동", "고산동", "고산지구", "산곡동", "금오동", "가능동", "녹양동", "자금동", "의정부역"]},
             "icheon": {"name": "이천시", "dongs": ["창전동", "중리동", "관고동", "안흥동", "갈산동", "증포동", "송정동", "부발읍", "하이닉스", "장호원읍", "대월면", "마장면", "백사면", "신둔면"]},
             "anseong": {"name": "안성시", "dongs": ["공도읍", "대덕면", "보개면", "금광면", "서운면", "미양면", "양성면", "원곡면", "고삼면", "일죽면", "죽산면", "삼죽면", "안성동", "아양동", "아양지구", "옥산동", "석정동", "당왕동"]},
             "guri": {"name": "구리시", "dongs": ["갈매동", "갈매신도시", "인창동", "교문동", "수택동", "아천동", "토평동", "사노동", "구리역"]},
@@ -146,115 +143,88 @@ regions_data = {
 
 count = 0
 
-# ==============================================================================
 # 0) 루트 메인 페이지 (index.html)
-# ==============================================================================
-root_gu_links = []
-for sido_k, sido_v in regions_data.items():
-    root_gu_links.append(f'<a class="neighbor-card" href="/{sido_k}/"><b>{sido_v["name"]} 전지역</b> 바로가기 ➔</a>')
-
-root_breadcrumbs = '<span>오늘밤테라피 공식 홈</span>'
-
-# 메인 전용 SEO
-root_seo_title = "오늘밤테라피 | 서울·경기·인천 24시 프리미엄 출장 홈케어 마사지 100% 후불제"
-root_seo_desc = "오늘밤테라피 공식 홈페이지. 건식·센슈얼·전신혼합VVIP·한국인 스웨디시 100% 안심 후불제 프리미엄 방문 테라피. 서울, 경기, 인천 전지역 25분 내 신속 방문."
-
+root_gu_links = [f'<a class="neighbor-card" href="/{k}/"><b>{v["name"]} 전지역</b> 바로가기 ➔</a>' for k, v in regions_data.items()]
 root_page = template_content
-root_page = root_page.replace("{{BREADCRUMBS}}", root_breadcrumbs)
-root_page = root_page.replace("{{PAGE_TITLE}}", root_seo_title)
-root_page = root_page.replace("{{PAGE_DESC}}", root_seo_desc)
-root_page = root_page.replace("{{CANONICAL_URL}}", "https://oneulbam2.netlify.app/")  # <-- 이 부분 추가
+root_page = root_page.replace("{{BREADCRUMBS}}", '<span>오늘밤테라피 공식 홈</span>')
+root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 프리미엄 출장 홈케어 마사지 100% 후불제")
+root_page = root_page.replace("{{PAGE_DESC}}", "오늘밤테라피 공식 홈페이지. 건식·센슈얼·전신혼합VVIP·한국인 스웨디시 100% 안심 후불제 프리미엄 방문 테라피. 서울, 경기, 인천 전지역 25분 내 신속 방문.")
+root_page = root_page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/")
 root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
-root_page = root_page.replace("{{region_slug}}", "")
 root_page = root_page.replace("{{neighborhood_links}}", "\n".join(root_gu_links))
 
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(root_page)
 count += 1
 print("✅ 메인 루트 index.html 생성 완료")
-# ==============================================================================
+
 # 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/)
-# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     sido_dir = sido_key
     os.makedirs(sido_dir, exist_ok=True)
 
-    gu_links = []
-    for gu_key, gu_info in sido_val["gus"].items():
-        gu_links.append(f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/">{gu_info["name"]} 바로가기 ➔</a>')
-    
-    breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> {sido_val["name"]}'
+    gu_links = [f'<a class="neighbor-card" href="/{sido_key}/{k}/">{v["name"]} 바로가기 ➔</a>' for k, v in sido_val["gus"].items()]
     seo = generate_local_seo(f"{sido_val['name']} 전지역")
     
     page = template_content
-    page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
+    page = page.replace("{{BREADCRUMBS}}", f'<a href="/">홈</a> <span>&gt;</span> {sido_val["name"]}')
     page = page.replace("{{PAGE_TITLE}}", seo["title"])
     page = page.replace("{{PAGE_DESC}}", seo["desc"])
+    page = page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/{sido_key}/")
     page = page.replace("{{REGION_NAME}}", f"{sido_val['name']} 전지역")
     page = page.replace("{{SUB_NAV_TITLE}}", f"📍 {sido_val['name']} 주요 행정구역")
-    page = page.replace("{{region_slug}}", sido_key)
     page = page.replace("{{neighborhood_links}}", "\n".join(gu_links))
     
     with open(f"{sido_dir}/index.html", "w", encoding="utf-8") as f:
         f.write(page)
     count += 1
 
-# ==============================================================================
-# 2) 구/시 단위 페이지 (/seoul/gangnam/, /incheon/yeonsu/ 등)
-# ==============================================================================
+# 2) 구/시 단위 페이지 (/seoul/gangnam/ 등)
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
         gu_dir = f"{sido_key}/{gu_key}"
         os.makedirs(gu_dir, exist_ok=True)
 
-        dong_links = []
-        for dong in gu_info["dongs"]:
-            dong_links.append(f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{dong}/">{dong}</a>')
-        
-        breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> {gu_info["name"]}'
+        dong_links = [f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{urllib.parse.quote(d)}/">{d}</a>' for d in gu_info["dongs"]]
         seo = generate_local_seo(f"{sido_val['name']} {gu_info['name']}")
 
         page = template_content
-        page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
+        page = page.replace("{{BREADCRUMBS}}", f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> {gu_info["name"]}')
         page = page.replace("{{PAGE_TITLE}}", seo["title"])
         page = page.replace("{{PAGE_DESC}}", seo["desc"])
+        page = page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/{sido_key}/{gu_key}/")
         page = page.replace("{{REGION_NAME}}", f"{sido_val['name']} {gu_info['name']}")
         page = page.replace("{{SUB_NAV_TITLE}}", f"📍 {gu_info['name']} 세부 상권·동네")
-        page = page.replace("{{region_slug}}", f"{sido_key}/{gu_key}")
         page = page.replace("{{neighborhood_links}}", "\n".join(dong_links))
         
         with open(f"{gu_dir}/index.html", "w", encoding="utf-8") as f:
             f.write(page)
         count += 1
 
-# ==============================================================================
-# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/, /incheon/yeonsu/송도동/ 등)
-# ==============================================================================
+# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/ 등)
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
-        neighbor_links = []
-        for dong in gu_info["dongs"]:
-            neighbor_links.append(f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{dong}/">{dong}</a>')
+        neighbor_links = [f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{urllib.parse.quote(d)}/">{d}</a>' for d in gu_info["dongs"]]
         
         for dong in gu_info["dongs"]:
             target_dir = f"{sido_key}/{gu_key}/{dong}"
             os.makedirs(target_dir, exist_ok=True)
             
-            breadcrumbs = f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> <a href="/{sido_key}/{gu_key}/">{gu_info["name"]}</a> <span>&gt;</span> {dong}'
             seo = generate_local_seo(f"{gu_info['name']} {dong}")
+            encoded_dong = urllib.parse.quote(dong)
             
             page = template_content
-            page = page.replace("{{BREADCRUMBS}}", breadcrumbs)
+            page = page.replace("{{BREADCRUMBS}}", f'<a href="/">홈</a> <span>&gt;</span> <a href="/{sido_key}/">{sido_val["name"]}</a> <span>&gt;</span> <a href="/{sido_key}/{gu_key}/">{gu_info["name"]}</a> <span>&gt;</span> {dong}')
             page = page.replace("{{PAGE_TITLE}}", seo["title"])
             page = page.replace("{{PAGE_DESC}}", seo["desc"])
+            page = page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/{sido_key}/{gu_key}/{encoded_dong}/")
             page = page.replace("{{REGION_NAME}}", f"{gu_info['name']} {dong}")
             page = page.replace("{{SUB_NAV_TITLE}}", f"📍 {gu_info['name']} 인근 동네 둘러보기")
-            page = page.replace("{{region_slug}}", f"{sido_key}/{gu_key}/{dong}")
             page = page.replace("{{neighborhood_links}}", "\n".join(neighbor_links))
             
             with open(f"{target_dir}/index.html", "w", encoding="utf-8") as f:
                 f.write(page)
             count += 1
 
-print(f"\n>> [오늘밤테라피] 완료! 서울/경기/인천 총 {count}개의 지역별 맞춤 SEO 페이지가 빌드되었습니다.")
+print(f"\n>> [오늘밤테라피] 완료! 총 {count}개의 페이지가 정상 빌드되었습니다.")
