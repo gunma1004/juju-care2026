@@ -163,6 +163,7 @@ root_page = template_content
 root_page = root_page.replace("{{BREADCRUMBS}}", root_breadcrumbs)
 root_page = root_page.replace("{{PAGE_TITLE}}", root_seo_title)
 root_page = root_page.replace("{{PAGE_DESC}}", root_seo_desc)
+root_page = root_page.replace("{{CANONICAL_URL}}", "https://oneulbam2.netlify.app/")  # <-- 이 부분 추가
 root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
 root_page = root_page.replace("{{region_slug}}", "")
@@ -172,7 +173,6 @@ with open("index.html", "w", encoding="utf-8") as f:
     f.write(root_page)
 count += 1
 print("✅ 메인 루트 index.html 생성 완료")
-
 # ==============================================================================
 # 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/)
 # ==============================================================================
