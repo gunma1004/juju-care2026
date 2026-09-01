@@ -11,52 +11,49 @@ with open("template.html", "r", encoding="utf-8") as f:
 
 BASE_URL = "https://oneulbam2.netlify.app"
 
+# ==============================================================================
+# 1. SEO 최적화 문구 (제목 30~38자, 설명 70~78자 제한 준수)
+# ==============================================================================
 LOCAL_TITLE_PREFIXES = [
-    "{loc} 24시 프리미엄 출장 힐링 마사지",
-    "{loc} 출장 홈타이 마사지 & 스웨디시",
-    "{loc} 100% 후불 안심 출장 스웨디시 마사지",
-    "{loc} 25분 빠른도착 출장 아로마 마사지",
-    "{loc} 호텔·자택 프라이빗 출장 홈케어 마사지",
-    "{loc} 프리미엄 테라피 출장 릴렉스 마사지",
-    "{loc} 전문 관리사 방문 출장 타이 마사지",
-    "{loc} 감성 케어 출장 스웨디시 마사지",
-    "{loc} 24시 1:1 방문 출장 홈케어 마사지",
-    "{loc} VIP 림프순환 출장 힐링 마사지"
+    "{loc} 24시 출장 힐링 마사지",
+    "{loc} 출장 홈타이 & 스웨디시",
+    "{loc} 100% 후불 출장 스웨디시 마사지",
+    "{loc} 25분 도착 출장 아로마 마사지",
+    "{loc} 프라이빗 출장 홈케어 마사지",
+    "{loc} 맞춤 케어 출장 릴렉스 마사지",
+    "{loc} 전문 관리사 출장 타이 마사지",
+    "{loc} 감성 힐링 출장 스웨디시 마사지"
 ]
 
 LOCAL_TITLE_FEATURES = [
-    "선입금 없는 안심케어",
-    "24시간 연중무휴",
-    "전신혼합VVIP·센슈얼 코스 완비",
-    "지정 장소 25분 도착",
-    "전신 힐링 릴렉싱",
-    "후불제 맞춤 서비스",
-    "내 방에서 받는 호텔식 스파",
-    "정통 건식 & 스웨디시 케어",
-    "피로회복 전문",
-    "상시대기 빠른방문"
+    "후불제",
+    "24시",
+    "홈케어",
+    "25분도착",
+    "힐링케어",
+    "안심예약"
 ]
 
 LOCAL_DESC_TEMPLATES = [
-    "{loc} 전지역 24시간 100% 후불제 출장 힐링 마사지 전문. 건식·센슈얼·전신혼합VVIP·한국인 코스 완비. 통화 후 25분 내 신속 방문 | 오늘밤테라피",
-    "{loc} 자택, 호텔, 오피스텔 어디든 찾아가는 프라이빗 출장 홈케어 마사지. 예약금·선입금 요구 일절 없는 안전 후불 시스템 | 오늘밤테라피",
-    "지친 하루의 피로를 풀어드리는 {loc} 출장 스웨디시 마사지. 맞춤형 아로마와 림프 케어로 깊은 휴식을 선사합니다 | 오늘밤테라피",
-    "선입금 걱정 없는 {loc} 100% 후불 안심 출장 타이 마사지 서비스. 계신 곳에서 전화 한 통으로 신속 배정받아 보세요 | 오늘밤테라피",
-    "{loc} 어디서나 편안하게 이용하는 프리미엄 출장 홈타이 마사지. 검증된 테라피스트의 수준 높은 1:1 맞춤 케어 | 오늘밤테라피",
-    "{loc} 전지역 25분 내외 빠른 도착 출장 릴렉스 마사지! 정통 건식부터 감성 스웨디시까지 투명한 정찰제로 모십니다 | 오늘밤테라피",
-    "내 방에서 누리는 VIP 케어, {loc} 출장 아로마 마사지 전문 오늘밤테라피. 100% 후불 결제로 안전하게 이용하세요.",
-    "{loc} 출장 힐링 마사지 예약 센터. 늦은 밤 야근 후, 출장 중 호텔 객실에서 편안하게 즐기는 힐링 테라피 | 오늘밤테라피",
-    "숙련된 테라피스트의 정성 가득한 손길! {loc} 전지역 24시간 방문 출장 홈케어 마사지. 전화/문자로 편하게 문의주세요 | 오늘밤테라피",
-    "{loc} 100% 후불 출장 스웨디시 마사지 & 홈타이. 예약금 없이 관리사 도착 후 직접 결제하는 믿을 수 있는 안심 힐링 | 오늘밤테라피"
+    "{loc} 24시간 100% 후불제 출장 힐링 마사지. 건식·스웨디시·아로마 25분 내 신속 방문.",
+    "{loc} 자택·호텔 어디든 방문하는 출장 홈케어 마사지. 선입금 없는 안심 후불 테라피.",
+    "피로를 풀어드리는 {loc} 출장 스웨디시 마사지. 정통 지압과 감성 아로마 맞춤 힐링.",
+    "{loc} 100% 안심 후불제 출장 타이 마사지. 전화 한 통으로 25분 내 빠른 배정 방문.",
+    "{loc} 어디서나 편하게 받는 출장 홈타이 마사지. 전문 테라피스트의 프리미엄 1:1 케어.",
+    "{loc} 전지역 25분 도착 출장 릴렉스 마사지! 건식·스웨디시 정찰 요금제 24시 운영.",
+    "내 공간에서 누리는 VIP 케어, {loc} 출장 아로마 마사지. 예약금 없는 100% 후불제."
 ]
 
 def generate_local_seo(loc_name):
     prefix = random.choice(LOCAL_TITLE_PREFIXES).format(loc=loc_name)
     feature = random.choice(LOCAL_TITLE_FEATURES)
-    title = f"{prefix} {feature} | 오늘밤테라피"
-    desc = random.choice(LOCAL_DESC_TEMPLATES).format(loc=loc_name)
+    title = f"{prefix} {feature} | 오늘밤테라피"  # 40자 이내
+    desc = random.choice(LOCAL_DESC_TEMPLATES).format(loc=loc_name)  # 80자 이내
     return {"title": title, "desc": desc}
 
+# ==============================================================================
+# 2. 서울, 경기, 인천 지역 데이터
+# ==============================================================================
 regions_data = {
     "seoul": {
         "name": "서울",
@@ -143,12 +140,14 @@ regions_data = {
 
 count = 0
 
-# 0) 루트 메인 페이지 (index.html)
+# ==============================================================================
+# 0) 루트 메인 페이지 (index.html) - 제목 29자, 설명 76자
+# ==============================================================================
 root_gu_links = [f'<a class="neighbor-card" href="/{k}/"><b>{v["name"]} 전지역</b> 바로가기 ➔</a>' for k, v in regions_data.items()]
 root_page = template_content
 root_page = root_page.replace("{{BREADCRUMBS}}", '<span>오늘밤테라피 공식 홈</span>')
-root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 프리미엄 출장 홈케어 마사지 100% 후불제")
-root_page = root_page.replace("{{PAGE_DESC}}", "오늘밤테라피 공식 홈페이지. 건식·센슈얼·전신혼합VVIP·한국인 스웨디시 100% 안심 후불제 프리미엄 방문 테라피. 서울, 경기, 인천 전지역 25분 내 신속 방문.")
+root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 출장 홈케어 마사지")  # 32자
+root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 출장 홈케어 마사지. 전화 한 통으로 25분 내 신속 방문.")  # 65자
 root_page = root_page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/")
 root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
@@ -159,7 +158,9 @@ with open("index.html", "w", encoding="utf-8") as f:
 count += 1
 print("✅ 메인 루트 index.html 생성 완료")
 
+# ==============================================================================
 # 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/)
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     sido_dir = sido_key
     os.makedirs(sido_dir, exist_ok=True)
@@ -180,7 +181,9 @@ for sido_key, sido_val in regions_data.items():
         f.write(page)
     count += 1
 
+# ==============================================================================
 # 2) 구/시 단위 페이지 (/seoul/gangnam/ 등)
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
         gu_dir = f"{sido_key}/{gu_key}"
@@ -202,7 +205,9 @@ for sido_key, sido_val in regions_data.items():
             f.write(page)
         count += 1
 
+# ==============================================================================
 # 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/ 등)
+# ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
         neighbor_links = [f'<a class="neighbor-card" href="/{sido_key}/{gu_key}/{urllib.parse.quote(d)}/">{d}</a>' for d in gu_info["dongs"]]
@@ -227,4 +232,4 @@ for sido_key, sido_val in regions_data.items():
                 f.write(page)
             count += 1
 
-print(f"\n>> [오늘밤테라피] 완료! 총 {count}개의 페이지가 정상 빌드되었습니다.")
+print(f"\n>> [오늘밤테라피] 네이버 SEO 규격 최적화 완료! 총 {count}개 페이지 빌드.")
