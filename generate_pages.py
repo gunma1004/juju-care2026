@@ -10,7 +10,7 @@ if not os.path.exists("template.html"):
 with open("template.html", "r", encoding="utf-8") as f:
     template_content = f.read()
 
-# 도메인 주소 반영
+# 신규 도메인 주소
 BASE_URL = "https://tonight-therapy.netlify.app"
 
 # ==============================================================================
@@ -63,10 +63,8 @@ LOCAL_DESC_TEMPLATES = [
 ]
 
 def generate_local_seo(loc_name):
-    # 빌드할 때마다 동일한 지역은 일관된 패턴을 유지하도록 고유 해시값 사용
+    # 재실행 시에도 동일 지역은 같은 문구를 유지하도록 고유 해시값 사용
     hash_val = int(hashlib.md5(loc_name.encode("utf-8")).hexdigest(), 16)
-    
-    # 25가지 패턴 중 선택
     keyword = MIXED_KEYWORD_PATTERNS[hash_val % len(MIXED_KEYWORD_PATTERNS)].format(loc=loc_name)
     suffix = TITLE_SUFFIXES[(hash_val // 10) % len(TITLE_SUFFIXES)]
     desc_tmpl = LOCAL_DESC_TEMPLATES[(hash_val // 100) % len(LOCAL_DESC_TEMPLATES)]
@@ -165,13 +163,13 @@ regions_data = {
 count = 0
 
 # ==============================================================================
-# 0) 루트 메인 페이지 (index.html)
+# 0) 루트 메인 페이지 (index.html) - 출장·마사지 스팸 키워드 완전 배제
 # ==============================================================================
 root_gu_links = [f'<a class="neighbor-card" href="/{k}/"><b>{v["name"]} 전지역</b> 바로가기 ➔</a>' for k, v in regions_data.items()]
 root_page = template_content
 root_page = root_page.replace("{{BREADCRUMBS}}", '<span>오늘밤테라피 공식 홈</span>')
-root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 출장 힐링 홈케어 마사지")
-root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 출장 홈케어 마사지. 전화 한 통으로 25분 내 신속 방문 안내.")
+root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 방문 홈케어 테라피")
+root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 프라이빗 힐링 테라피. 전화 한 통으로 25분 내 신속 방문 안내.")
 root_page = root_page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/")
 root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
@@ -180,7 +178,7 @@ root_page = root_page.replace("{{neighborhood_links}}", "\n".join(root_gu_links)
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(root_page)
 count += 1
-print("✅ 메인 루트 index.html 생성 완료")
+print("✅ 메인 루트 index.html 생성 완료 (출장·마사지 키워드 완전 배제)")
 
 # ==============================================================================
 # 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/)
