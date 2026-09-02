@@ -1,5 +1,4 @@
 import os
-import random
 import hashlib
 import urllib.parse
 
@@ -10,61 +9,63 @@ if not os.path.exists("template.html"):
 with open("template.html", "r", encoding="utf-8") as f:
     template_content = f.read()
 
-# 신규 도메인 주소
-BASE_URL = "https://tonight-therapy.netlify.app"
+BASE_URL = "https://juju-care2026.netlify.app"
+BRAND_NAME = "주주테라피"
 
 # ==============================================================================
-# 1. 25가지 스팸 회피형 혼합 패턴 (출장과 마사지 사이에 지역·수식어 교차 배치)
+# 1. 주주테라피 전용 3세대 스팸 회피 패턴 (이전 사이트들과 100% 분리)
 # ==============================================================================
 MIXED_KEYWORD_PATTERNS = [
-    "{loc} 출장 힐링 마사지",
-    "출장 {loc} 힐링 마사지",
-    "{loc} 출장 안심 마사지",
-    "출장 {loc} 릴렉스 마사지",
-    "{loc} 출장 스웨디시 마사지",
-    "출장 {loc} 스웨디시 마사지",
-    "출장 프리미엄 {loc} 마사지",
-    "{loc} 출장 아로마 마사지",
-    "출장 {loc} 아로마 마사지",
-    "출장 홈케어 {loc} 마사지",
-    "{loc} 출장 홈타이 마사지",
-    "출장 {loc} 홈타이 마사지",
-    "프라이빗 {loc} 출장 케어 마사지",
-    "{loc} 출장 1:1 맞춤 마사지",
-    "출장 {loc} 1:1 맞춤 마사지",
-    "출장 감성 테라피 {loc} 마사지",
-    "{loc} 출장 호텔식 힐링 마사지",
-    "출장 {loc} 야간 힐링 마사지",
-    "전신 피로회복 출장 {loc} 마사지",
-    "{loc} 출장 딥티슈 릴렉싱 마사지",
-    "출장 {loc} 바디 밸런스 마사지",
-    "24시 {loc} 출장 힐링 마사지",
-    "출장 전문 테라피스트 {loc} 마사지",
-    "{loc} 출장 감성 로드 힐링 마사지",
-    "출장 {loc} 방문 홈케어 마사지"
+    "{loc} 출장 골든 스웨디시 마사지",
+    "출장 {loc} 골든 스웨디시 마사지",
+    "{loc} 출장 프리미엄 혼혈 마사지",
+    "출장 {loc} 프리미엄 혼혈 마사지",
+    "출장 릴렉싱 케어 {loc} 마사지",
+    "{loc} 출장 힐링 테라피 마사지",
+    "출장 {loc} 바디 리셋 마사지",
+    "출장 딥 릴렉스 {loc} 마사지",
+    "{loc} 출장 한국인 스웨디시 마사지",
+    "출장 {loc} 감성 바디케어 마사지",
+    "프라이빗 힐링 {loc} 출장 마사지",
+    "{loc} 출장 1:1 호텔식 마사지",
+    "출장 {loc} 시그니처 힐링 마사지",
+    "야간 맞춤형 {loc} 출장 마사지",
+    "출장 전신 릴렉스 {loc} 마사지",
+    "{loc} 출장 스페셜 에스테틱 마사지",
+    "출장 {loc} 오일 릴렉싱 마사지",
+    "24시 {loc} 출장 힐링케어 마사지",
+    "출장 럭셔리 스웨디시 {loc} 마사지",
+    "{loc} 출장 감성 터치 힐링 마사지",
+    "출장 {loc} 안심 귀가 마사지",
+    "골든 릴렉스 {loc} 출장 마사지",
+    "{loc} 출장 퍼스널 바디 마사지",
+    "출장 {loc} VIP 프리미엄 마사지",
+    "출장 1:1 안심 방문 {loc} 마사지"
 ]
 
+# 제목 끝 수식어 (이전 사이트들과 완전히 다른 어휘 적용)
 TITLE_SUFFIXES = [
-    "24시 빠른방문 | 오늘밤테라피",
-    "100% 후불 안심예약 | 오늘밤테라피",
-    "프라이빗 힐링케어 | 오늘밤테라피",
-    "전문 테라피스트 안내 | 오늘밤테라피",
-    "코스별 힐링 안내 | 오늘밤테라피",
-    "25분 신속방문 | 오늘밤테라피"
+    f"100% 후불정찰제 | {BRAND_NAME}",
+    f"24시 신속배정 안내 | {BRAND_NAME}",
+    f"자택·호텔 1:1 방문 | {BRAND_NAME}",
+    f"골든 스웨디시 추천 | {BRAND_NAME}",
+    f"프라이빗 안심케어 | {BRAND_NAME}",
+    f"전문 관리사 상시대기 | {BRAND_NAME}"
 ]
 
+# 설명문 (새로운 문장 구조 및 톤앤매너)
 LOCAL_DESC_TEMPLATES = [
-    "{loc} 전지역 24시간 100% 안심 후불제 {keyword}. 피로를 풀어드리는 1:1 맞춤 방문 힐링 케어.",
-    "자택·호텔 어디든 25분 내 신속 방문하는 {keyword}. 선입금 없는 안전한 정찰제 예약 안내.",
-    "지친 일상에 편안한 휴식을 선사하는 {keyword}. 전문 테라피스트의 프라이빗 홈케어 프로그램.",
-    "{loc} 인근 24시 언제나 편하게 이용하는 {keyword}. 아로마·건식·스웨디시 안심 후불제 운영.",
-    "내 공간에서 안전하게 누리는 프리미엄 케어, {keyword}. 전화 한 통으로 신속 배정 및 방문.",
-    "{keyword} 추천 안내. 숙련된 관리사의 정성스러운 테라피와 철저한 위생 관리를 보장합니다."
+    "{loc} 전지역 24시간 언제 어디서나 편안하게 만나는 {keyword}. 골든 스웨디시 및 프리미엄 코스 안심 후불제 운영.",
+    "선입금 없는 신뢰의 정찰제 {keyword}. {loc} 일대 자택·호텔 전화 한 통으로 25분 이내 신속하게 찾아갑니다.",
+    "지친 하루 끝에 선사하는 깊은 휴식, {keyword}. 숙련된 관리사의 정성 어린 터치로 전신 피로를 완벽하게 해소하세요.",
+    "{loc} 1:1 맞춤형 프라이빗 힐링 {keyword}. 철저한 위생 관리와 차별화된 감성 프로그램으로 안락함을 보장합니다.",
+    "품격 있는 프라이빗 바디 리셋, {loc} {keyword} 안내. 일상 속 긴장을 풀고 활력을 되찾는 최고급 릴렉싱 케어.",
+    "{keyword} 공식 예약 센터. 합리적인 정찰제 요금과 검증된 테라피스트의 수준 높은 힐링을 {loc} 전역에서 누려보세요."
 ]
 
 def generate_local_seo(loc_name):
-    # 재실행 시에도 동일 지역은 같은 문구를 유지하도록 고유 해시값 사용
-    hash_val = int(hashlib.md5(loc_name.encode("utf-8")).hexdigest(), 16)
+    # juju_ 접두어를 사용해 고유 해시 생성 (이전 사이트와 패턴 번호 분리)
+    hash_val = int(hashlib.md5(f"juju_{loc_name}".encode("utf-8")).hexdigest(), 16)
     keyword = MIXED_KEYWORD_PATTERNS[hash_val % len(MIXED_KEYWORD_PATTERNS)].format(loc=loc_name)
     suffix = TITLE_SUFFIXES[(hash_val // 10) % len(TITLE_SUFFIXES)]
     desc_tmpl = LOCAL_DESC_TEMPLATES[(hash_val // 100) % len(LOCAL_DESC_TEMPLATES)]
@@ -74,7 +75,7 @@ def generate_local_seo(loc_name):
     return {"title": title, "desc": desc}
 
 # ==============================================================================
-# 2. 서울, 경기, 인천 지역 데이터
+# 2. 광역 지역 데이터 (서울, 경기, 인천, 천안, 아산 - 총 5대 권역)
 # ==============================================================================
 regions_data = {
     "seoul": {
@@ -157,31 +158,44 @@ regions_data = {
             "ganghwa": {"name": "강화군", "dongs": ["강화읍", "선원면", "불은면", "길상면", "화도면", "마니산", "동막해변"]},
             "ongjin": {"name": "옹진군", "dongs": ["영흥도", "백령면", "대청면", "연평면", "덕적면", "자월면", "북도면"]}
         }
+    },
+    "cheonan": {
+        "name": "천안",
+        "gus": {
+            "seobuk": {"name": "서북구", "dongs": ["두정동", "백석동", "불당동", "신불당", "성정동", "쌍용동", "와촌동", "성성동", "차암동", "직산읍", "성환읍", "입장면"]},
+            "dongnam": {"name": "동남구", "dongs": ["신부동", "원성동", "구성동", "청수동", "청당동", "삼룡동", "다가동", "봉명동", "안서동", "목천읍", "신방동"]}
+        }
+    },
+    "asan": {
+        "name": "아산",
+        "gus": {
+            "asan_main": {"name": "아산시", "dongs": ["온천동", "모종동", "배방읍", "탕정면", "음봉면", "둔포면", "신창면", "권곡동", "용화동", "풍기동", "장재리"]}
+        }
     }
 }
 
 count = 0
 
 # ==============================================================================
-# 0) 루트 메인 페이지 (index.html) - 출장·마사지 스팸 키워드 완전 배제
+# 0) 루트 메인 페이지 (index.html) - 키워드 스터핑 배제 & 프리미엄 브랜드 SEO
 # ==============================================================================
 root_gu_links = [f'<a class="neighbor-card" href="/{k}/"><b>{v["name"]} 전지역</b> 바로가기 ➔</a>' for k, v in regions_data.items()]
 root_page = template_content
-root_page = root_page.replace("{{BREADCRUMBS}}", '<span>오늘밤테라피 공식 홈</span>')
-root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 방문 홈케어 테라피")
-root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 프라이빗 힐링 테라피. 전화 한 통으로 25분 내 신속 방문 안내.")
+root_page = root_page.replace("{{BREADCRUMBS}}", f'<span>{BRAND_NAME} 공식 홈</span>')
+root_page = root_page.replace("{{PAGE_TITLE}}", f"{BRAND_NAME} | 수도권·충남 24시 프리미엄 방문 홈케어 테라피")
+root_page = root_page.replace("{{PAGE_DESC}}", "수도권 및 충남 주요 권역 24시간 100% 안심 후불제 프라이빗 힐링 테라피. 한국인 골든 스웨디시·20대 혼혈 프리미엄 1:1 방문 케어 안내.")
 root_page = root_page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/")
-root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
+root_page = root_page.replace("{{REGION_NAME}}", "수도권·충남 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
 root_page = root_page.replace("{{neighborhood_links}}", "\n".join(root_gu_links))
 
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(root_page)
 count += 1
-print("✅ 메인 루트 index.html 생성 완료 (출장·마사지 키워드 완전 배제)")
+print("✅ 메인 루트 index.html 생성 완료 (스팸 방지 타이틀 적용)")
 
 # ==============================================================================
-# 1) 광역 페이지 (/seoul/, /gyeonggi/, /incheon/)
+# 1) 광역 페이지 (/seoul/, /gyeonggi/, /cheonan/ 등)
 # ==============================================================================
 for sido_key, sido_val in regions_data.items():
     sido_dir = sido_key
@@ -204,7 +218,7 @@ for sido_key, sido_val in regions_data.items():
     count += 1
 
 # ==============================================================================
-# 2) 구/시 단위 페이지 (/seoul/gangnam/ 등)
+# 2) 구/시 단위 페이지 (/seoul/gangnam/, /cheonan/seobuk/ 등)
 # ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
@@ -228,7 +242,7 @@ for sido_key, sido_val in regions_data.items():
         count += 1
 
 # ==============================================================================
-# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/ 등)
+# 3) 읍/면/동 세부 페이지 (/seoul/gangnam/역삼동/, /cheonan/seobuk/불당동/ 등)
 # ==============================================================================
 for sido_key, sido_val in regions_data.items():
     for gu_key, gu_info in sido_val["gus"].items():
@@ -254,4 +268,4 @@ for sido_key, sido_val in regions_data.items():
                 f.write(page)
             count += 1
 
-print(f"\n>> [오늘밤테라피] 네이버·구글 SEO 규격 최적화 완료! 총 {count}개 페이지 빌드 완료.")
+print(f"\n>> [{BRAND_NAME}] 수도권·충남 최적화 완료! 총 {count}개 페이지 빌드 완료.")

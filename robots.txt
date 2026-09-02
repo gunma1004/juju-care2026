@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tonight-therapy.netlify.app/sitemap.xml
+Sitemap: https://juju-care2026.netlify.app/sitemap.xml
