@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oneulbam2.netlify.app/sitemap.xml
+Sitemap: https://tonight-therapy.netlify.app/sitemap.xml

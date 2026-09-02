@@ -3,7 +3,7 @@ import datetime
 import urllib.parse
 
 # 실제 배포 도메인 주소 (끝에 슬래시 제외)
-BASE_URL = "https://oneulbam2.netlify.app"
+BASE_URL = "https://tonight-therapy.netlify.app"
 
 # 파일 저장 경로
 SITEMAP_FILE = "sitemap.xml"

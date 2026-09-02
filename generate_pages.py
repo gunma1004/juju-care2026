@@ -1,5 +1,6 @@
 import os
 import random
+import hashlib
 import urllib.parse
 
 if not os.path.exists("template.html"):
@@ -9,46 +10,69 @@ if not os.path.exists("template.html"):
 with open("template.html", "r", encoding="utf-8") as f:
     template_content = f.read()
 
-BASE_URL = "https://oneulbam2.netlify.app"
+# 도메인 주소 반영
+BASE_URL = "https://tonight-therapy.netlify.app"
 
 # ==============================================================================
-# 1. SEO 최적화 문구 (제목 30~38자, 설명 70~78자 제한 준수)
+# 1. 25가지 스팸 회피형 혼합 패턴 (출장과 마사지 사이에 지역·수식어 교차 배치)
 # ==============================================================================
-LOCAL_TITLE_PREFIXES = [
-    "{loc} 24시 출장 힐링 마사지",
-    "{loc} 출장 홈타이 & 스웨디시",
-    "{loc} 100% 후불 출장 스웨디시 마사지",
-    "{loc} 25분 도착 출장 아로마 마사지",
-    "{loc} 프라이빗 출장 홈케어 마사지",
-    "{loc} 맞춤 케어 출장 릴렉스 마사지",
-    "{loc} 전문 관리사 출장 타이 마사지",
-    "{loc} 감성 힐링 출장 스웨디시 마사지"
+MIXED_KEYWORD_PATTERNS = [
+    "{loc} 출장 힐링 마사지",
+    "출장 {loc} 힐링 마사지",
+    "{loc} 출장 안심 마사지",
+    "출장 {loc} 릴렉스 마사지",
+    "{loc} 출장 스웨디시 마사지",
+    "출장 {loc} 스웨디시 마사지",
+    "출장 프리미엄 {loc} 마사지",
+    "{loc} 출장 아로마 마사지",
+    "출장 {loc} 아로마 마사지",
+    "출장 홈케어 {loc} 마사지",
+    "{loc} 출장 홈타이 마사지",
+    "출장 {loc} 홈타이 마사지",
+    "프라이빗 {loc} 출장 케어 마사지",
+    "{loc} 출장 1:1 맞춤 마사지",
+    "출장 {loc} 1:1 맞춤 마사지",
+    "출장 감성 테라피 {loc} 마사지",
+    "{loc} 출장 호텔식 힐링 마사지",
+    "출장 {loc} 야간 힐링 마사지",
+    "전신 피로회복 출장 {loc} 마사지",
+    "{loc} 출장 딥티슈 릴렉싱 마사지",
+    "출장 {loc} 바디 밸런스 마사지",
+    "24시 {loc} 출장 힐링 마사지",
+    "출장 전문 테라피스트 {loc} 마사지",
+    "{loc} 출장 감성 로드 힐링 마사지",
+    "출장 {loc} 방문 홈케어 마사지"
 ]
 
-LOCAL_TITLE_FEATURES = [
-    "후불제",
-    "24시",
-    "홈케어",
-    "25분도착",
-    "힐링케어",
-    "안심예약"
+TITLE_SUFFIXES = [
+    "24시 빠른방문 | 오늘밤테라피",
+    "100% 후불 안심예약 | 오늘밤테라피",
+    "프라이빗 힐링케어 | 오늘밤테라피",
+    "전문 테라피스트 안내 | 오늘밤테라피",
+    "코스별 힐링 안내 | 오늘밤테라피",
+    "25분 신속방문 | 오늘밤테라피"
 ]
 
 LOCAL_DESC_TEMPLATES = [
-    "{loc} 24시간 100% 후불제 출장 힐링 마사지. 건식·스웨디시·아로마 25분 내 신속 방문.",
-    "{loc} 자택·호텔 어디든 방문하는 출장 홈케어 마사지. 선입금 없는 안심 후불 테라피.",
-    "피로를 풀어드리는 {loc} 출장 스웨디시 마사지. 정통 지압과 감성 아로마 맞춤 힐링.",
-    "{loc} 100% 안심 후불제 출장 타이 마사지. 전화 한 통으로 25분 내 빠른 배정 방문.",
-    "{loc} 어디서나 편하게 받는 출장 홈타이 마사지. 전문 테라피스트의 프리미엄 1:1 케어.",
-    "{loc} 전지역 25분 도착 출장 릴렉스 마사지! 건식·스웨디시 정찰 요금제 24시 운영.",
-    "내 공간에서 누리는 VIP 케어, {loc} 출장 아로마 마사지. 예약금 없는 100% 후불제."
+    "{loc} 전지역 24시간 100% 안심 후불제 {keyword}. 피로를 풀어드리는 1:1 맞춤 방문 힐링 케어.",
+    "자택·호텔 어디든 25분 내 신속 방문하는 {keyword}. 선입금 없는 안전한 정찰제 예약 안내.",
+    "지친 일상에 편안한 휴식을 선사하는 {keyword}. 전문 테라피스트의 프라이빗 홈케어 프로그램.",
+    "{loc} 인근 24시 언제나 편하게 이용하는 {keyword}. 아로마·건식·스웨디시 안심 후불제 운영.",
+    "내 공간에서 안전하게 누리는 프리미엄 케어, {keyword}. 전화 한 통으로 신속 배정 및 방문.",
+    "{keyword} 추천 안내. 숙련된 관리사의 정성스러운 테라피와 철저한 위생 관리를 보장합니다."
 ]
 
 def generate_local_seo(loc_name):
-    prefix = random.choice(LOCAL_TITLE_PREFIXES).format(loc=loc_name)
-    feature = random.choice(LOCAL_TITLE_FEATURES)
-    title = f"{prefix} {feature} | 오늘밤테라피"  # 40자 이내
-    desc = random.choice(LOCAL_DESC_TEMPLATES).format(loc=loc_name)  # 80자 이내
+    # 빌드할 때마다 동일한 지역은 일관된 패턴을 유지하도록 고유 해시값 사용
+    hash_val = int(hashlib.md5(loc_name.encode("utf-8")).hexdigest(), 16)
+    
+    # 25가지 패턴 중 선택
+    keyword = MIXED_KEYWORD_PATTERNS[hash_val % len(MIXED_KEYWORD_PATTERNS)].format(loc=loc_name)
+    suffix = TITLE_SUFFIXES[(hash_val // 10) % len(TITLE_SUFFIXES)]
+    desc_tmpl = LOCAL_DESC_TEMPLATES[(hash_val // 100) % len(LOCAL_DESC_TEMPLATES)]
+    
+    title = f"{keyword} {suffix}"
+    desc = desc_tmpl.format(loc=loc_name, keyword=keyword)
     return {"title": title, "desc": desc}
 
 # ==============================================================================
@@ -141,13 +165,13 @@ regions_data = {
 count = 0
 
 # ==============================================================================
-# 0) 루트 메인 페이지 (index.html) - 제목 29자, 설명 76자
+# 0) 루트 메인 페이지 (index.html)
 # ==============================================================================
 root_gu_links = [f'<a class="neighbor-card" href="/{k}/"><b>{v["name"]} 전지역</b> 바로가기 ➔</a>' for k, v in regions_data.items()]
 root_page = template_content
 root_page = root_page.replace("{{BREADCRUMBS}}", '<span>오늘밤테라피 공식 홈</span>')
-root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 출장 홈케어 마사지")  # 32자
-root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 출장 홈케어 마사지. 전화 한 통으로 25분 내 신속 방문.")  # 65자
+root_page = root_page.replace("{{PAGE_TITLE}}", "오늘밤테라피 | 서울·경기·인천 24시 출장 힐링 홈케어 마사지")
+root_page = root_page.replace("{{PAGE_DESC}}", "서울, 경기, 인천 전지역 24시간 100% 안심 후불제 출장 홈케어 마사지. 전화 한 통으로 25분 내 신속 방문 안내.")
 root_page = root_page.replace("{{CANONICAL_URL}}", f"{BASE_URL}/")
 root_page = root_page.replace("{{REGION_NAME}}", "서울·경기·인천 전지역")
 root_page = root_page.replace("{{SUB_NAV_TITLE}}", "📍 서비스 광역 권역 선택")
@@ -232,4 +256,4 @@ for sido_key, sido_val in regions_data.items():
                 f.write(page)
             count += 1
 
-print(f"\n>> [오늘밤테라피] 네이버 SEO 규격 최적화 완료! 총 {count}개 페이지 빌드.")
+print(f"\n>> [오늘밤테라피] 네이버·구글 SEO 규격 최적화 완료! 총 {count}개 페이지 빌드 완료.")
